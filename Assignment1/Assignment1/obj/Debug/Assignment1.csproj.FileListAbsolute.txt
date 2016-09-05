@@ -1,0 +1,6 @@
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\bin\Debug\Assignment1.exe.config
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\bin\Debug\Assignment1.exe
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\bin\Debug\Assignment1.pdb
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\obj\Debug\Assignment1.csprojResolveAssemblyReference.cache
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\obj\Debug\Assignment1.exe
+C:\Users\Brye\Desktop\COMPE361\Assignment1\Assignment1\obj\Debug\Assignment1.pdb
