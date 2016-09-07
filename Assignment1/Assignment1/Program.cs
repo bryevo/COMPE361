@@ -12,17 +12,17 @@ namespace Assignment1 {
             float user_pos_x = float.Parse(Console.ReadLine()); //User X input
             Console.Write("Enter Your Y Coordinate Location in feet: ");
             float user_pos_y = float.Parse(Console.ReadLine()); //User Y input
-            Console.WriteLine("You are here at x: {0} ft, y: {1} ft", Math.Round(user_pos_x, 3), Math.Round(user_pos_y, 3));
+            Console.WriteLine("You are here at x: {0:F3} ft, y: {1:F3} ft", user_pos_x, user_pos_y);
 
             Console.Write("Where does business take you? Enter X Coordinate: "); //Destination X input
             float next_pos_x = float.Parse(Console.ReadLine());
             Console.Write("Enter Y Coordinate: "); //Destination Y input
             float next_pos_y = float.Parse(Console.ReadLine());
-            Console.WriteLine("You seek to go to position x: {0} ft, y: {1} ft?", Math.Round(next_pos_x, 3), Math.Round(next_pos_y, 3));
+            Console.WriteLine("You seek to go to position x: {0:F3} ft, y: {1:F3} ft?", next_pos_x, next_pos_y);
 
             float distance = Distance(user_pos_x, next_pos_x, user_pos_y, next_pos_y); //Calculate distance based on user arguments
             float angle = Angle(user_pos_x, next_pos_x, user_pos_y, next_pos_y);    //Calculate angle based on user arguments
-            Console.WriteLine("You must travel onward for {0} ft with an angle of {1} degrees.", Math.Round(distance, 3), Math.Round(angle, 3));
+            Console.WriteLine("You must travel onward for {0:F3} ft with an angle of {1:F3} degrees.", distance, angle);
             Console.WriteLine("Stay safe my friend...for the night is dark and full of terrors.");
             Console.ReadKey();
         }
