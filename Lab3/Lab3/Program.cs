@@ -11,10 +11,10 @@ namespace Lab3 {
             double originalFar = double.Parse(Console.ReadLine());  //User Input for Fahrenheit
         
             double endCel = ConvertFar(originalFar);                //variable set for conversion Fahrenheit
-            Console.WriteLine("Converting {0:F1} Fahrenheit to Celsius: {1:F1} Celsius.", originalFar, endCel);
+            Console.WriteLine("Converting {0:F1} Fahrenheit to Celsius: {1:F1} degrees.", originalFar, endCel);
 
             double endFar = ConvertCel(endCel);                     //variable set for conversion Celsius
-            Console.WriteLine("Converting {0:F1} Celsius to Fahrenheight: {1:F1} Fahrenheight.", endCel, endFar);
+            Console.WriteLine("Converting {0:F1} Celsius to Fahrenheight: {1:F1} degrees.", endCel, endFar);
         }
 
         public static double ConvertFar(double temp) { //Method to convert Fahrenheit to Celsius
