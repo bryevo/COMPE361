@@ -11,6 +11,7 @@ namespace Assignment2
     {
         static void Main(string[] args)
         {
+            Words word = new Words();
             bool exit = false;
             while (!exit)
             {
@@ -20,16 +21,13 @@ namespace Assignment2
                 switch (input)
                 {
                     case 1:
-                        Words word = new Words();
                         word.PrintAll();
                         break;
                     case 2:
-                        Console.WriteLine("Let's see your freestyle! Pick a rhyme scheme: ");
-                        string rhyme = Console.ReadLine();
+                        word.RhymeWord();
                         break;
                     case 3:
-                        Console.WriteLine("You don't know how to rap? Don't worry, I'll search a word that your looking for: ");
-             
+                        word.ScrabbleWord();
                         break;
                     case 4:
                         Console.WriteLine("I'll try to morph your word into something cool");
