@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace Assignment2
 {
     public class Words
     {
-        private string[] lines = File.ReadAllLines(@"..\..\WordList.txt");
+        public static string[] lines = File.ReadAllLines(@"..\..\WordList.txt");
 
         public void PrintAll()
         {
@@ -32,66 +33,53 @@ namespace Assignment2
         public void ScrabbleWord(string scrabble)
         {
             Console.WriteLine("Scrabbling Word...");
-            char[] letters = scrabble.ToCharArray();
+            List<string> finalList = new List<string>();
             for (int k = 0; k < lines.Length; k++)
             {
+                List<char> word = new List<char>();
                 string line = lines[k];
                 if (scrabble.Length >= line.Length)
                 {
-                    List<char> scrab = new List<char>();
                     for (int i = 0; i < line.Length; i++)
                     {
                         for (int j = 0; j < scrabble.Length; j++)
                         {
                             if (scrabble[j].Equals(lines[k][i]))
                             {
-                                scrab.Add(lines[k][i]);
-//                                Console.WriteLine(lines[k][i]);
+                                word.Add(lines[k][i]);
                                 break;
                             }
                         }
                     }
-                        DisplaySet(scrab);
                 }
+                finalList.Add(AddWord(word));
+            }
+            foreach (string item in finalList.Distinct().ToList())
+            {
+                Console.WriteLine(item);
             }
         }
 
-        public void DisplaySet(List<char> set)
+        public string AddWord(List<char> set)
         {
+            List<string> refer = new List<string>();
             if (set.Count >= 3 && set.Count <= 7)
             {
-                Console.Write("{");
-                    foreach (char i in set)
-                    {
-//                        for (int j = 0; j < lines.Length; j++)
-//                        {
-//                            string line = lines[j];   
-//                            if (line.Equals(i.ToString()))
-                        i.ToString();
-                            Console.Write("{0}", i);
-//                    }
-                }
-                Console.WriteLine("}");
-            }
-        }
-
-        private void Refractor(List<char> set)
-        {
-            if (set.Count >= 3 && set.Count <= 7)
-            {
-                string result = set.ToString();
-                foreach (string line in lines)
+                char[] list = set.ToArray();
+                string s = new string(list);
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    for (int i = 0; i < set.Count; i++)
+                    string line = lines[i];
+                    if (line.Equals(s))
                     {
-                        if (line.Equals(result))
-                        {
-                            Console.WriteLine(line);
-                        }
-
+                        refer.Add(line);
+//                        string result = string.Join("", refer.ToArray());
+//                        Console.WriteLine(result);
                     }
                 }
             }
+            string result = string.Join("", refer.ToArray());
+            return result;
         }
     }
 }
