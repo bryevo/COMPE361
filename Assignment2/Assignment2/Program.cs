@@ -24,10 +24,14 @@ namespace Assignment2
                         word.PrintAll();
                         break;
                     case 2:
-                        word.RhymeWord();
+                        Console.Write("Let's see your freestyle! Pick a rhyme scheme: ");
+                        string rhyme = Console.ReadLine();
+                        word.RhymeWord(rhyme);
                         break;
                     case 3:
-                        word.ScrabbleWord();
+                        Console.WriteLine("You don't know how to rap? Don't worry, I'll search a word that your looking for: ");
+                        string scrabble = Console.ReadLine();
+                        word.ScrabbleWord(scrabble);
                         break;
                     case 4:
                         Console.WriteLine("I'll try to morph your word into something cool");
