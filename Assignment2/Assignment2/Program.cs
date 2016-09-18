@@ -35,13 +35,16 @@ namespace Assignment2
                         break;
                     case 4:
                         Console.WriteLine("I'll try to morph your word into something cool");
+                        string morph = Console.ReadLine();
+                        word.MorphWord(morph);
                         break;
                     case 5:
-                        Console.WriteLine("Done");
+                        Console.WriteLine("Awesome job, thanks for playing!");
                         exit = true;
                         break;
                 }
             }
+            Console.ReadKey();
         }
     }
 }
