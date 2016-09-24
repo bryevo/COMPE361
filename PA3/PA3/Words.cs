@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Assignment2
+namespace Assignment3
 {
 	/// <summary>
 	/// The Bulk of the Assignment.  Provides methods for variables.  Class uses default constructor.
@@ -177,12 +177,10 @@ namespace Assignment2
 		/// Checks for words in the dictionary if it is equal to the morphed word "temp"
 		/// </summary>
 		/// <param name="morph"></param>
-		public void MorphWord(string morph)
+		public string[] MorphWord(string morph)
 		{
-			int index = 1;
-			HashSet<string> FinalMorphSet = new HashSet<string>();
+            HashSet<string> MorphSet = new HashSet<string>();
 			string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
-			Console.WriteLine("Its Morphin' time!");
 			for (int i = 0; i < Lines.Length; i++)
 			{
 				string line = Lines[i];
@@ -196,16 +194,37 @@ namespace Assignment2
 						// Checks if the from the WordList.txt equals temp and not equal to the user input morph word; prints results
 						if ((string.Equals(line, temp, StringComparison.OrdinalIgnoreCase)) && !line.Equals(morph)) //StringComparison.OrdinalIgnoreCase makes word case-insensitive
 						{
-							FinalMorphSet.Add(line);        //Adds to the Hashset to remove any duplicate strings
+							MorphSet.Add(line);        //Adds to the Hashset to remove any duplicate strings
 						}
 					}
 				}
 			}
-			foreach (string s in FinalMorphSet)
-			{
-				Console.WriteLine("Morph Word {0}: {1}", index, s);
-				index++;
-			}
+		    string[] set = MorphSet.ToArray();
+		    return set;
 		}
-	}
+
+	    public void MorphChain(string start, string end, int max)
+	    {
+	        int index = 1;
+            string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
+            Console.WriteLine("Solution Chain");
+            Words morphSet = new Words();
+            string [] setOne = morphSet.MorphWord(start);
+	        string[] setTwo = morphSet.MorphWord(end);
+            List<string> foundWords = new List<string>();
+	        for (int i = 0; i < setOne.Length; i++)
+	        {   
+                List<string> strings = new List<string>();
+	            string[]  chains = morphSet.MorphWord(setOne[i]);
+	            foreach (string item in chains)
+	            {
+	                foundWords.Add(item);   
+	            }
+	        }
+            for (int i = 0; i < foundWords.Count; i++)
+            {
+            	                
+            }
+        }
+    }
 }
