@@ -179,7 +179,7 @@ namespace Assignment3
 		/// <param name="morph"></param>
 		public string[] MorphWord(string morph)
 		{
-            HashSet<string> MorphSet = new HashSet<string>();
+			HashSet<string> MorphSet = new HashSet<string>();
 			string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
 			for (int i = 0; i < Lines.Length; i++)
 			{
@@ -199,32 +199,32 @@ namespace Assignment3
 					}
 				}
 			}
-		    string[] set = MorphSet.ToArray();
-		    return set;
+			string[] set = MorphSet.ToArray();
+			return set;
 		}
 
-	    public void MorphChain(string start, string end, int max)
-	    {
-	        int index = 1;
-            string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
-            Console.WriteLine("Solution Chain");
-            Words morphSet = new Words();
-            string [] setOne = morphSet.MorphWord(start);
-	        string[] setTwo = morphSet.MorphWord(end);
-            List<string> foundWords = new List<string>();
-	        for (int i = 0; i < setOne.Length; i++)
-	        {   
-                List<string> strings = new List<string>();
-	            string[]  chains = morphSet.MorphWord(setOne[i]);
-	            foreach (string item in chains)
-	            {
-	                foundWords.Add(item);   
-	            }
-	        }
-            for (int i = 0; i < foundWords.Count; i++)
-            {
-            	                
-            }
-        }
-    }
+		public void MorphChain(string start, string end, int max)
+		{
+			int index = 1;
+			string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
+			Console.WriteLine("Solution Chain");
+			Words morphSet = new Words();
+			string[] setOne = morphSet.MorphWord(start);
+			string[] setTwo = morphSet.MorphWord(end);
+			List<string> foundWords = new List<string>();
+			for (int i = 0; i < setOne.Length; i++)
+			{
+				List<string> strings = new List<string>();
+				string[] chains = morphSet.MorphWord(setOne[i]);
+				foreach (string item in chains)
+				{
+					foundWords.Add(item);
+				}
+			}
+			for (int i = 0; i < foundWords.Count; i++)
+			{
+				Console.WriteLine(foundWords[i]);
+			}
+		}
+	}
 }
