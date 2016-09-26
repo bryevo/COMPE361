@@ -205,25 +205,46 @@ namespace Assignment3
 
 		public void MorphChain(string start, string end, int max)
 		{
-			int index = 1;
-			string alphabet = "abcdefghijklmnopqrstuvwxyz";     //used for replacing the index of morph word
 			Console.WriteLine("Solution Chain");
 			Words morphSet = new Words();
-			string[] setOne = morphSet.MorphWord(start);
-			string[] setTwo = morphSet.MorphWord(end);
-			List<string> foundWords = new List<string>();
-			for (int i = 0; i < setOne.Length; i++)
+			List<string> setOne = new List<string> (morphSet.MorphWord(start));
+			List<string> foundWords = new List<string>().Distinct().ToList();
+			for (int i = 0; i < setOne.Count; i++)
 			{
-				List<string> strings = new List<string>();
-				string[] chains = morphSet.MorphWord(setOne[i]);
-				foreach (string item in chains)
-				{
-					foundWords.Add(item);
-				}
+
+				foundWords.Add(setOne[i]);
+				//foreach (string morphItem in foundWords.Distinct().ToList())
+				//{
+				//	List<string> morphlol = new List<string>(morphSet.MorphWord(morphItem));
+				//	foreach (string morphItem2 in morph1)
+				//	{
+				//		foundWords.Add(morphItem2);
+				//		if (foundWords.Contains(end))
+				//		{
+				//			break;
+				//		}
+				//	}
+				//}
 			}
-			for (int i = 0; i < foundWords.Count; i++)
+			int counter = 1;
+			while (counter != max)
 			{
-				Console.WriteLine(foundWords[i]);
+				List<string> temp = new List<string>().Distinct().ToList();
+				for (int x = 0; x < foundWords.Count; x++)  //bold, cold, sold...
+				{
+					List<string> morphIt = new List<string>(morphSet.MorphWord(foundWords[x])); //bold{bald,sold}
+					for (int y = 0; y < morphIt.Count; y++)
+					{
+						temp.Add(morphIt[y]);
+					}
+				}
+				counter++;
+				foundWords = temp;
+			}
+			foreach (string item in foundWords.Distinct().ToList())
+			{
+
+				Console.WriteLine(item);
 			}
 		}
 	}
