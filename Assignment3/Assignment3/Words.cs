@@ -224,32 +224,44 @@ namespace Assignment3
 
 			for (int i = 0; i < totalChains.Count; i++)
 			{
-				List<List<string>> chain = new List<List<string>>(totalChains);
-
-				//while MorphChain is less than max length and does not contain end word; loop
-				while (!totalChains[i].Contains(end) && chain[i].Count < max)
+				List<string> chain = new List<string>(totalChains[i]);      //{told, bold}
+                List<string> foundWords = new List<string>();
+                List<string> nextChain = new List<string>(morphSet.MorphWord(chain.Last(), end));     //Start out to morph bold: {bald, cold, sold}
+                chain.AddRange(nextChain);
+                //while MorphChain is less than max length and does not contain end word; loop
+                while (!chain.Contains(end) && chain.Count < max)
 				{
-					List<string> nextChain = new List<string>(morphSet.MorphWord(chain[i].Last(), end));  //morph bold: {bald, cold, sold}
-					//chain.Add(nextChain);
-					for (int j = 0; j < nextChain.Count; j++)   //for loop for nextChain morph words Sold: 0: {cold , sold}
-					{
-						if (chain[i].Contains(nextChain[j])) 	//if chain contains nextChain.last
-						{
-							//totalChains[i].RemoveAt(totalChains[i].Last(), totalChains[i].Count)
-							chain[i].RemoveRange(chain[i].IndexOf(nextChain[j]), (chain[i].Count - chain[i].IndexOf(nextChain[j])));
-							break;
-						}
-						else if (!chain.Contains(nextChain[j]))
-						{
-							chain[i].Add(nextChain[j]);
-						}
-					}
-					//if (something)
-					{
-						nextChain.Remove(nextChain.Last());
-					}
+                    nextChain = new List<string>(morphSet.MorphWord(chain.Last(), end));   //morph whatever is last
+				    foreach (string s in nextChain)
+				    {
+				        foundWords.Add(s);         //Add every string from the morphed Word in foundWords
+				    }
+				    if (nextChain.Count == 0)       //if Chip bag is empty - return that shiet
+				        return;
+				    if (foundWords.Contains(end))       //if found word contains our end word already, then we add it and break out of while loop
+				    {
+				        chain.Add(end);
+				        break;
+				    }
+				    if (chain.Contains(nextChain.Last())) //To stop nextLast from repeating itself in the List Chain
+				    {
+				        chain.RemoveRange(chain.IndexOf(nextChain.Last()), (chain.Count - chain.IndexOf(nextChain.Last())));    //Removes from nextChain.Last to end index from the List
+				    }
+                    else if (!chain.Contains(nextChain.Last()))     //Its not in the List and we add it
+				    {
+				        chain.Add(nextChain.Last());
+				    }
 				}
-			}
+                if (chain.Contains(end) && chain.Count <= max)      //If our List contains the end word and is less than or equal to maa
+                {
+                    foreach (string item in chain)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                else
+                    Console.WriteLine("No Solution!");      //Everything else fails
+            }
 		}
 	}
 }
