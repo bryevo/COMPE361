@@ -212,64 +212,42 @@ namespace Assignment3
 			Console.WriteLine("Solution Chain");
 			string alphabet = "abcdefghijklmnopqrstuvwxyz"; //used for replacing the index of morph word
 			Words morphSet = new Words();
-			List<string[]> totalChains = new List<string[]>().Distinct().ToList();		//List of string arrays
+			List<List<string>> totalChains = new List<List<string>>().Distinct().ToList();      //List of string arrays
 			List<string> setOne = new List<string>(morphSet.MorphWord(start, alphabet));      //starting word {e.g told: {bold, cold, fold, gold...}
-			List<string> foundWords = new List<string>().Distinct().ToList();
-			List<string[]> totalFound = new List<string[]>().Distinct().ToList();
-			int counter = 1;							//there has to be atleast 1 chain
-
-			//for loop to add morphset of each element in setOne into totalChains
 			for (int i = 0; i < setOne.Count; i++)
 			{
-				string[] chain = morphSet.MorphWord(setOne[i], end);
-				totalChains.Add(chain);
+				List<string> temp = new List<string>();
+				temp.Add(start);
+				temp.Add(setOne[i]);
+				totalChains.Add(temp);		//total chain gets 0: {told, bold}, 1: {told, cold}, 2: {told, sold}
 			}
 
-			//for loop to add items into foundWords.
-			for (int i = 0; i < totalChains.Count; i++) // told:{bold, cold, sold}	counter =1
+			for (int i = 0; i < totalChains.Count; i++)
 			{
-				string[] chains = totalChains[i];
-				//totalFound.Add(chains);
-				if (chains.Contains(end))
+				List<List<string>> chain = new List<List<string>>(totalChains);
+
+				//while MorphChain is less than max length and does not contain end word; loop
+				while (!totalChains[i].Contains(end) && chain[i].Count < max)
 				{
-					counter = 1;
-					break;
-				}
-				for (int j = 0; j < chains.Length; j++) // bold: {bald, cold, sold}					counter = 2
-				{
-					foundWords.Add(chains[j]);  //0.{bald, cold, sold}, 1.{cola, sold}, 2.{cold, fork, sold}
-				}
-			}
-			while (counter != max)
-			{
-				if (foundWords.Contains(end))
-				{
-					Console.WriteLine("FOUND!");
-					break;
-				}
-				while (!foundWords.Contains(end))
-				{
-					counter++;
-					List<string> temp = new List<string>().Distinct().ToList();
-					for (int k = 0; k < foundWords.Count; k++) // bold: {bald, cold, sold}					counter = 2
+					List<string> nextChain = new List<string>(morphSet.MorphWord(chain[i].Last(), end));  //morph bold: {bald, cold, sold}
+					//chain.Add(nextChain);
+					for (int j = 0; j < nextChain.Count; j++)   //for loop for nextChain morph words Sold: 0: {cold , sold}
 					{
-						List<string> morph0 = new List<string>(morphSet.MorphWord(foundWords[k], end));
-						for (int x = 0; x < morph0.Count; x++)												//counter = 3
+						if (chain[i].Contains(nextChain[j])) 	//if chain contains nextChain.last
 						{
-							temp.Add(morph0[x]); //0.{bald, cold, sold}, 1.{cola, sold}, 2.{cold, fork, sold}
-							if (temp.Contains(end))
-							{
-								Console.WriteLine("FOUND!");
-								break;
-							}
-						}
-						if (temp.Contains(end))
-						{
-							Console.WriteLine("FOUND!");
+							//totalChains[i].RemoveAt(totalChains[i].Last(), totalChains[i].Count)
+							chain[i].RemoveRange(chain[i].IndexOf(nextChain[j]), (chain[i].Count - chain[i].IndexOf(nextChain[j])));
 							break;
 						}
+						else if (!chain.Contains(nextChain[j]))
+						{
+							chain[i].Add(nextChain[j]);
+						}
 					}
-					foundWords = temp;
+					//if (something)
+					{
+						nextChain.Remove(nextChain.Last());
+					}
 				}
 			}
 		}
