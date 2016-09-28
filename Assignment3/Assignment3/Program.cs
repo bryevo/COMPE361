@@ -53,7 +53,7 @@ namespace Assignment3
 					case 4:
 						Console.WriteLine("I'll try to morph your word into something cool.");
 						string morph = Console.ReadLine();
-                        string alphabet = "sack"; //used for replacing the index of morph word
+                        string alphabet = "abcdefghijklmnopqrstuvwxyz"; //used for replacing the index of morph word
                         string[] set = word.MorphWord(morph, alphabet);      //Takes a string (user input) for the function.
 				        int index = 0;
                         Console.WriteLine("Its Morphin' time!");
