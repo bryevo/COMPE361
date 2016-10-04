@@ -200,6 +200,7 @@ namespace Assignment3
             Words morphSet = new Words();
             List<List<string>> totalChains = new List<List<string>>().Distinct().ToList();      //List of string arrays
             List<string> setOne = new List<string>(morphSet.MorphWord(start, alphabet));      //starting word {e.g told: {bold, cold, fold, gold...}
+            List<string> wordsFound = new List<string>();
             List<string> foundMorph = new List<string>();
             for (int i = 0; i < setOne.Count; i++)
             {
@@ -208,6 +209,7 @@ namespace Assignment3
                 temp.Add(start);                            //add start word
                 temp.Add(setOne[i]);                        //add that specific index word
                 totalChains.Add(temp);		//totalChains gets e.g 0: {told, bold}, 1: {told, cold}, 2: {told, sold}...
+                wordsFound.Add(setOne[i]);
             }
             int x = 0;
 
@@ -227,14 +229,18 @@ namespace Assignment3
                     //iterate through the morph word
                     for (int i = 0; i < nextChain.Count; i++) 
                     {
-                        //temp gets every element inside chain; copies all of its contents
-                        List<string> temp = new List<string>();
-                        foreach (string element in chain)
+                        if (!wordsFound.Contains(nextChain[i]))
                         {
-                            temp.Add(element);
+                            //temp gets every element inside chain; copies all of its contents
+                            List<string> temp = new List<string>();
+                            foreach (string element in chain)
+                            {
+                                temp.Add(element);
+                            }
+                            temp.Add(nextChain[i]); //temps adds the last index of next chain
+                            totalChains.Add(temp); //total chains adds new list temp
+                            wordsFound.Add(nextChain[i]);
                         }
-                        temp.Add(nextChain[i]); //temps adds the last index of next chain
-                        totalChains.Add(temp); //total chains adds new list temp
                     }
                 }
                 else if (chain.Count >= max)
