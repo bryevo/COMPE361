@@ -219,9 +219,9 @@ namespace Assignment3
                 List<string> chain = totalChains[x]; //assign chain to that specfic x index
                 if (chain.Count <= max) // while the number of elements in chain is less than the max length provided
                 {
-                    if (chain.Contains(end)) //if the end word/word we're looking for is inside chain
+                    if (foundMorph.Contains(end)) //if the end word/word we're looking for is inside chain
                     {
-                        foundMorph = chain; //found the morph list; gets that chain; breaks out of loop
+                        //foundMorph = chain; //found the morph list; gets that chain; breaks out of loop
                         break;
                     }
                     List<string> nextChain = new List<string>(morphSet.MorphWord(chain.Last(), alphabet)); //nextChain gets the morphed word of the last word in chain
@@ -238,6 +238,11 @@ namespace Assignment3
                                 temp.Add(element);
                             }
                             temp.Add(nextChain[i]); //temps adds the last index of next chain
+                            if (nextChain[i].Equals(end))
+                            {
+                                foundMorph = temp;
+                                break;
+                            }
                             totalChains.Add(temp); //total chains adds new list temp
                             wordsFound.Add(nextChain[i]);
                         }
