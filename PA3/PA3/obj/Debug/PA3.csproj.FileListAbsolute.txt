@@ -1,0 +1,6 @@
+C:\Users\Brian\Desktop\PA3\PA3\bin\Debug\PA3.exe.config
+C:\Users\Brian\Desktop\PA3\PA3\bin\Debug\PA3.exe
+C:\Users\Brian\Desktop\PA3\PA3\bin\Debug\PA3.pdb
+C:\Users\Brian\Desktop\PA3\PA3\obj\Debug\PA3.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\PA3\PA3\obj\Debug\PA3.exe
+C:\Users\Brian\Desktop\PA3\PA3\obj\Debug\PA3.pdb

@@ -117,7 +117,14 @@ namespace PA4.Properties {
         ///abrasive
         ///abreact
         ///abreast
-        ///abridge [rest of string was truncated]&quot;;.
+        ///abridge
+        ///abridgment
+        ///abroad
+        ///abrogate
+        ///abrupt
+        ///abscess
+        ///abscissa
+        ///absc [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string WordList {
             get {

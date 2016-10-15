@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Windows.Forms;
 
-namespace day12
+namespace PA4
 {
     /// <summary>
     /// The Bulk of the Assignment.  Provides methods for variables.  Class uses default constructor.
@@ -13,35 +14,32 @@ namespace day12
     public class Words
     {
         //Initialized the dictionary text into a string array[].
-        public string[] Lines = File.ReadAllLines(@"../../WordList.txt");
+        public string[] Lines = Properties.Resources.WordList.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+
         /// <summary>
         /// Prints all the content inside the WordList.txt
         /// </summary>
-        public void PrintAll()
+        public string[] PrintAll()
         {
             // Uses foreach to iterate through each index/line of the dictionary and print out that line.
-            foreach (string line in Lines)
-            {
-                Console.WriteLine(line);
-            }
+            return Lines;
         }
         /// <summary>
         /// Checks to see if word rhymes/ends in the same user input string
         /// </summary>
         /// <param name="rhyme"></param>
-        public void RhymeWord(string rhyme)
+        public List<string> RhymeWord(string rhyme)
         {
-            //index to keep track of the number of rhyme words
-            int index = 1;
+            List<string> rhymeList = new List<string>();
             //Iterates through each index/line of the dictionary to see if the string line ends with user input string rhyme and prints it out.
             foreach (string line in Lines)
             {
-                if (line.EndsWith(rhyme))
+                if (line.EndsWith(rhyme) && !line.Equals(rhyme))
                 {
-                    Console.WriteLine("Rhyme Word: {0}: {1}", index, line);
-                    index++;
+                    rhymeList.Add(line);
                 }
             }
+            return rhymeList;
         }
         /// <summary>
         /// Checks user input to make up a word inside the dictionary
@@ -189,6 +187,8 @@ namespace day12
         /// <param name="max"></param>
         public List<string> MorphChain(string start, string end, int max)
         {
+            if (!Lines.Contains(start) || !Lines.Contains(end) || start.Length != end.Length)
+                return null;
             Console.WriteLine("Solution Chain");
             Words morphSet = new Words();
             List<List<string>> totalChains = new List<List<string>>().Distinct().ToList();      //List of string arrays
@@ -212,9 +212,14 @@ namespace day12
                 List<string> chain = totalChains[x]; //assign chain to that specfic x index
                 if (chain.Count <= max) // while the number of elements in chain is less than the max length provided
                 {
+                    if (chain.Contains(end))
+                    {
+                        foundMorph = chain;
+                        break;
+                    }
                     if (foundMorph.Contains(end)) //if the end word/word we're looking for is inside chain
                     {
-                        //foundMorph = chain; //found the morph list; gets that chain; breaks out of loop
+                        //found the morph list; gets that chain; breaks out of loop
                         break;
                     }
                     List<string> nextChain = new List<string>(morphSet.MorphWord(chain.Last())); //nextChain gets the morphed word of the last word in chain
@@ -242,15 +247,9 @@ namespace day12
                     }
                 }
                 else if (chain.Count >= max)
-                {
-                    Console.WriteLine("No Solution within given maximum Length.");
                     break;
-                }
+
                 x++; //x will increment until it hits the max count in total chains
-            }
-            foreach (string chain in foundMorph)
-            {
-                Console.WriteLine(chain);
             }
             return foundMorph;
         }

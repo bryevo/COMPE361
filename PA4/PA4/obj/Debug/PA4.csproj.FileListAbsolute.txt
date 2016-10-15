@@ -1,0 +1,8 @@
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\bin\Debug\PA4.exe.config
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\bin\Debug\PA4.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\bin\Debug\PA4.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.Properties.Resources.resources
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.csproj.GenerateResource.Cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.pdb
