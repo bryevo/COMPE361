@@ -7,3 +7,13 @@ C:\Users\TFS206\Desktop\PA5\PA5\obj\Debug\PA5.Properties.Resources.resources
 C:\Users\TFS206\Desktop\PA5\PA5\obj\Debug\PA5.csproj.GenerateResource.Cache
 C:\Users\TFS206\Desktop\PA5\PA5\obj\Debug\PA5.exe
 C:\Users\TFS206\Desktop\PA5\PA5\obj\Debug\PA5.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\bin\Debug\PA5.exe.config
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\bin\Debug\PA5.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\bin\Debug\PA5.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.Form1.resources
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.Properties.Resources.resources
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.csproj.GenerateResource.Cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA5\PA5\obj\Debug\PA5.AlarmMessageBox.resources
