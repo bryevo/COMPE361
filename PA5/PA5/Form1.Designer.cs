@@ -32,7 +32,7 @@ namespace PA5
         {
             this.components = new System.ComponentModel.Container();
             this.btnAddAlarm = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbAlarm = new System.Windows.Forms.GroupBox();
             this.lbAlarm = new System.Windows.Forms.Label();
             this.lbSnooze = new System.Windows.Forms.Label();
             this.snzText = new System.Windows.Forms.TextBox();
@@ -42,16 +42,16 @@ namespace PA5
             this.snzDec = new System.Windows.Forms.Button();
             this.btnDelAlarm = new System.Windows.Forms.Button();
             this.snzAdd = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbApp = new System.Windows.Forms.GroupBox();
             this.cbAppointment = new System.Windows.Forms.CheckedListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelApp = new System.Windows.Forms.Button();
+            this.btnAddApp = new System.Windows.Forms.Button();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer_Time = new System.Windows.Forms.Timer(this.components);
             this.timer_Alarm = new System.Windows.Forms.Timer(this.components);
             this.timer_Snooze = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbAlarm.SuspendLayout();
+            this.gbApp.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddAlarm
@@ -65,27 +65,27 @@ namespace PA5
             this.btnAddAlarm.UseVisualStyleBackColor = true;
             this.btnAddAlarm.Click += new System.EventHandler(this.btnAddAlarm_Click);
             // 
-            // groupBox1
+            // gbAlarm
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Black;
-            this.groupBox1.Controls.Add(this.lbAlarm);
-            this.groupBox1.Controls.Add(this.lbSnooze);
-            this.groupBox1.Controls.Add(this.snzText);
-            this.groupBox1.Controls.Add(this.cbOptions);
-            this.groupBox1.Controls.Add(this.dateTimeAlarm);
-            this.groupBox1.Controls.Add(this.cbAlarm);
-            this.groupBox1.Controls.Add(this.snzDec);
-            this.groupBox1.Controls.Add(this.btnDelAlarm);
-            this.groupBox1.Controls.Add(this.snzAdd);
-            this.groupBox1.Controls.Add(this.btnAddAlarm);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(13, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(194, 329);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Alarm";
+            this.gbAlarm.BackColor = System.Drawing.Color.Black;
+            this.gbAlarm.Controls.Add(this.lbAlarm);
+            this.gbAlarm.Controls.Add(this.lbSnooze);
+            this.gbAlarm.Controls.Add(this.snzText);
+            this.gbAlarm.Controls.Add(this.cbOptions);
+            this.gbAlarm.Controls.Add(this.dateTimeAlarm);
+            this.gbAlarm.Controls.Add(this.cbAlarm);
+            this.gbAlarm.Controls.Add(this.snzDec);
+            this.gbAlarm.Controls.Add(this.btnDelAlarm);
+            this.gbAlarm.Controls.Add(this.snzAdd);
+            this.gbAlarm.Controls.Add(this.btnAddAlarm);
+            this.gbAlarm.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAlarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.gbAlarm.Location = new System.Drawing.Point(13, 50);
+            this.gbAlarm.Name = "gbAlarm";
+            this.gbAlarm.Size = new System.Drawing.Size(194, 329);
+            this.gbAlarm.TabIndex = 3;
+            this.gbAlarm.TabStop = false;
+            this.gbAlarm.Text = "Alarm";
             // 
             // lbAlarm
             // 
@@ -140,6 +140,7 @@ namespace PA5
             this.cbAlarm.BackColor = System.Drawing.Color.Black;
             this.cbAlarm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cbAlarm.ForeColor = System.Drawing.Color.White;
+            this.cbAlarm.FormatString = "G";
             this.cbAlarm.FormattingEnabled = true;
             this.cbAlarm.Location = new System.Drawing.Point(7, 79);
             this.cbAlarm.Name = "cbAlarm";
@@ -179,20 +180,20 @@ namespace PA5
             this.snzAdd.UseVisualStyleBackColor = true;
             this.snzAdd.Click += new System.EventHandler(this.snzAdd_Click);
             // 
-            // groupBox2
+            // gbApp
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Black;
-            this.groupBox2.Controls.Add(this.cbAppointment);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.groupBox2.Location = new System.Drawing.Point(213, 50);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(194, 329);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Appointments";
+            this.gbApp.BackColor = System.Drawing.Color.Black;
+            this.gbApp.Controls.Add(this.cbAppointment);
+            this.gbApp.Controls.Add(this.btnDelApp);
+            this.gbApp.Controls.Add(this.btnAddApp);
+            this.gbApp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.gbApp.Location = new System.Drawing.Point(213, 50);
+            this.gbApp.Name = "gbApp";
+            this.gbApp.Size = new System.Drawing.Size(194, 329);
+            this.gbApp.TabIndex = 3;
+            this.gbApp.TabStop = false;
+            this.gbApp.Text = "Appointments";
             // 
             // cbAppointment
             // 
@@ -202,29 +203,31 @@ namespace PA5
             this.cbAppointment.FormattingEnabled = true;
             this.cbAppointment.Location = new System.Drawing.Point(6, 21);
             this.cbAppointment.Name = "cbAppointment";
-            this.cbAppointment.Size = new System.Drawing.Size(145, 272);
+            this.cbAppointment.Size = new System.Drawing.Size(145, 170);
             this.cbAppointment.TabIndex = 3;
             // 
-            // button4
+            // btnDelApp
             // 
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(157, 40);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 24);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "-";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDelApp.ForeColor = System.Drawing.Color.Black;
+            this.btnDelApp.Location = new System.Drawing.Point(157, 40);
+            this.btnDelApp.Name = "btnDelApp";
+            this.btnDelApp.Size = new System.Drawing.Size(31, 24);
+            this.btnDelApp.TabIndex = 2;
+            this.btnDelApp.Text = "-";
+            this.btnDelApp.UseVisualStyleBackColor = true;
+            this.btnDelApp.Click += new System.EventHandler(this.btnDelApp_Click);
             // 
-            // button2
+            // btnAddApp
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(157, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 24);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAddApp.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddApp.ForeColor = System.Drawing.Color.Black;
+            this.btnAddApp.Location = new System.Drawing.Point(157, 10);
+            this.btnAddApp.Name = "btnAddApp";
+            this.btnAddApp.Size = new System.Drawing.Size(31, 24);
+            this.btnAddApp.TabIndex = 2;
+            this.btnAddApp.Text = "+";
+            this.btnAddApp.UseVisualStyleBackColor = false;
+            this.btnAddApp.Click += new System.EventHandler(this.btnAddApp_Click);
             // 
             // lbTime
             // 
@@ -249,6 +252,7 @@ namespace PA5
             // 
             // timer_Snooze
             // 
+            this.timer_Snooze.Interval = 1000;
             this.timer_Snooze.Tick += new System.EventHandler(this.timer_Snooze_Tick);
             // 
             // Form1
@@ -258,13 +262,14 @@ namespace PA5
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(424, 391);
             this.Controls.Add(this.lbTime);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbApp);
+            this.Controls.Add(this.gbAlarm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Program Assignment 5";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.gbAlarm.ResumeLayout(false);
+            this.gbAlarm.PerformLayout();
+            this.gbApp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,11 +278,11 @@ namespace PA5
         #endregion
 
         private System.Windows.Forms.Button btnAddAlarm;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbAlarm;
         private System.Windows.Forms.Button btnDelAlarm;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox gbApp;
+        private System.Windows.Forms.Button btnDelApp;
+        private System.Windows.Forms.Button btnAddApp;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.CheckedListBox cbAlarm;
         private System.Windows.Forms.CheckedListBox cbAppointment;
