@@ -43,21 +43,26 @@ namespace PA5
             this.btnDelAlarm = new System.Windows.Forms.Button();
             this.snzAdd = new System.Windows.Forms.Button();
             this.gbApp = new System.Windows.Forms.GroupBox();
-            this.cbAppointment = new System.Windows.Forms.CheckedListBox();
+            this.lbApp = new System.Windows.Forms.ListBox();
             this.btnDelApp = new System.Windows.Forms.Button();
             this.btnAddApp = new System.Windows.Forms.Button();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer_Time = new System.Windows.Forms.Timer(this.components);
             this.timer_Alarm = new System.Windows.Forms.Timer(this.components);
             this.timer_Snooze = new System.Windows.Forms.Timer(this.components);
+            this.timer_Appointment = new System.Windows.Forms.Timer(this.components);
+            this.picRemind = new System.Windows.Forms.PictureBox();
+            this.timer_Reminder = new System.Windows.Forms.Timer(this.components);
+            this.lbReminder = new System.Windows.Forms.LinkLabel();
             this.gbAlarm.SuspendLayout();
             this.gbApp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemind)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddAlarm
             // 
             this.btnAddAlarm.ForeColor = System.Drawing.Color.Black;
-            this.btnAddAlarm.Location = new System.Drawing.Point(9, 49);
+            this.btnAddAlarm.Location = new System.Drawing.Point(156, 49);
             this.btnAddAlarm.Name = "btnAddAlarm";
             this.btnAddAlarm.Size = new System.Drawing.Size(31, 24);
             this.btnAddAlarm.TabIndex = 2;
@@ -94,7 +99,7 @@ namespace PA5
             this.lbAlarm.Name = "lbAlarm";
             this.lbAlarm.Size = new System.Drawing.Size(81, 16);
             this.lbAlarm.TabIndex = 8;
-            this.lbAlarm.Text = "Add/Remove";
+            this.lbAlarm.Text = "Remove/Add";
             // 
             // lbSnooze
             // 
@@ -161,7 +166,7 @@ namespace PA5
             // btnDelAlarm
             // 
             this.btnDelAlarm.ForeColor = System.Drawing.Color.Black;
-            this.btnDelAlarm.Location = new System.Drawing.Point(156, 49);
+            this.btnDelAlarm.Location = new System.Drawing.Point(7, 49);
             this.btnDelAlarm.Name = "btnDelAlarm";
             this.btnDelAlarm.Size = new System.Drawing.Size(31, 24);
             this.btnDelAlarm.TabIndex = 2;
@@ -183,7 +188,9 @@ namespace PA5
             // gbApp
             // 
             this.gbApp.BackColor = System.Drawing.Color.Black;
-            this.gbApp.Controls.Add(this.cbAppointment);
+            this.gbApp.Controls.Add(this.lbReminder);
+            this.gbApp.Controls.Add(this.picRemind);
+            this.gbApp.Controls.Add(this.lbApp);
             this.gbApp.Controls.Add(this.btnDelApp);
             this.gbApp.Controls.Add(this.btnAddApp);
             this.gbApp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,16 +202,19 @@ namespace PA5
             this.gbApp.TabStop = false;
             this.gbApp.Text = "Appointments";
             // 
-            // cbAppointment
+            // lbApp
             // 
-            this.cbAppointment.BackColor = System.Drawing.Color.Black;
-            this.cbAppointment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cbAppointment.ForeColor = System.Drawing.Color.White;
-            this.cbAppointment.FormattingEnabled = true;
-            this.cbAppointment.Location = new System.Drawing.Point(6, 21);
-            this.cbAppointment.Name = "cbAppointment";
-            this.cbAppointment.Size = new System.Drawing.Size(145, 170);
-            this.cbAppointment.TabIndex = 3;
+            this.lbApp.BackColor = System.Drawing.Color.Black;
+            this.lbApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbApp.ForeColor = System.Drawing.Color.White;
+            this.lbApp.FormatString = "M";
+            this.lbApp.FormattingEnabled = true;
+            this.lbApp.ItemHeight = 16;
+            this.lbApp.Location = new System.Drawing.Point(6, 21);
+            this.lbApp.Name = "lbApp";
+            this.lbApp.Size = new System.Drawing.Size(145, 160);
+            this.lbApp.TabIndex = 3;
+            this.lbApp.DoubleClick += new System.EventHandler(this.lbApp_DoubleClick);
             // 
             // btnDelApp
             // 
@@ -232,7 +242,7 @@ namespace PA5
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Bodoni MT", 24F);
+            this.lbTime.Font = new System.Drawing.Font("Bodoni MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lbTime.Location = new System.Drawing.Point(13, 9);
             this.lbTime.Name = "lbTime";
@@ -255,6 +265,42 @@ namespace PA5
             this.timer_Snooze.Interval = 1000;
             this.timer_Snooze.Tick += new System.EventHandler(this.timer_Snooze_Tick);
             // 
+            // timer_Appointment
+            // 
+            this.timer_Appointment.Enabled = true;
+            this.timer_Appointment.Interval = 1000;
+            this.timer_Appointment.Tick += new System.EventHandler(this.timer_Appointment_Tick);
+            // 
+            // picRemind
+            // 
+            this.picRemind.Image = global::PA5.Properties.Resources.pleaseno;
+            this.picRemind.Location = new System.Drawing.Point(6, 207);
+            this.picRemind.Name = "picRemind";
+            this.picRemind.Size = new System.Drawing.Size(182, 113);
+            this.picRemind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemind.TabIndex = 4;
+            this.picRemind.TabStop = false;
+            this.picRemind.Visible = false;
+            // 
+            // timer_Reminder
+            // 
+            this.timer_Reminder.Enabled = true;
+            this.timer_Reminder.Interval = 1000;
+            this.timer_Reminder.Tick += new System.EventHandler(this.timer_Reminder_Tick);
+            // 
+            // lbReminder
+            // 
+            this.lbReminder.AutoSize = true;
+            this.lbReminder.LinkColor = System.Drawing.Color.Red;
+            this.lbReminder.Location = new System.Drawing.Point(7, 188);
+            this.lbReminder.Name = "lbReminder";
+            this.lbReminder.Size = new System.Drawing.Size(140, 16);
+            this.lbReminder.TabIndex = 5;
+            this.lbReminder.TabStop = true;
+            this.lbReminder.Text = "Appointment Reminder";
+            this.lbReminder.Visible = false;
+            this.lbReminder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbAppointment_Clicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +316,8 @@ namespace PA5
             this.gbAlarm.ResumeLayout(false);
             this.gbAlarm.PerformLayout();
             this.gbApp.ResumeLayout(false);
+            this.gbApp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemind)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +333,6 @@ namespace PA5
         private System.Windows.Forms.Button btnAddApp;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.CheckedListBox cbAlarm;
-        private System.Windows.Forms.CheckedListBox cbAppointment;
         private System.Windows.Forms.Timer timer_Time;
         private System.Windows.Forms.DateTimePicker dateTimeAlarm;
         private System.Windows.Forms.ComboBox cbOptions;
@@ -296,6 +343,11 @@ namespace PA5
         private System.Windows.Forms.Label lbAlarm;
         private System.Windows.Forms.Label lbSnooze;
         public System.Windows.Forms.Timer timer_Snooze;
+        private System.Windows.Forms.ListBox lbApp;
+        private System.Windows.Forms.Timer timer_Appointment;
+        private System.Windows.Forms.PictureBox picRemind;
+        private System.Windows.Forms.Timer timer_Reminder;
+        private System.Windows.Forms.LinkLabel lbReminder;
     }
 }
 

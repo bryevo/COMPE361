@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MaximizeBox = false;
             this.dtApp = new System.Windows.Forms.DateTimePicker();
             this.cbApp = new System.Windows.Forms.ComboBox();
             this.lbDue = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.tbNote = new System.Windows.Forms.RichTextBox();
             this.lbNote = new System.Windows.Forms.Label();
             this.btnSetApp = new System.Windows.Forms.Button();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dtApp
@@ -45,7 +47,7 @@
             this.dtApp.CustomFormat = "hh:mm:ss tt";
             this.dtApp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtApp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtApp.Location = new System.Drawing.Point(78, 11);
+            this.dtApp.Location = new System.Drawing.Point(78, 39);
             this.dtApp.Name = "dtApp";
             this.dtApp.Size = new System.Drawing.Size(110, 22);
             this.dtApp.TabIndex = 5;
@@ -58,7 +60,7 @@
             this.cbApp.Items.AddRange(new object[] {
             "Time",
             "Date"});
-            this.cbApp.Location = new System.Drawing.Point(194, 11);
+            this.cbApp.Location = new System.Drawing.Point(194, 37);
             this.cbApp.Name = "cbApp";
             this.cbApp.Size = new System.Drawing.Size(65, 24);
             this.cbApp.TabIndex = 6;
@@ -68,7 +70,7 @@
             // 
             this.lbDue.AutoSize = true;
             this.lbDue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDue.Location = new System.Drawing.Point(12, 16);
+            this.lbDue.Location = new System.Drawing.Point(13, 45);
             this.lbDue.Name = "lbDue";
             this.lbDue.Size = new System.Drawing.Size(31, 16);
             this.lbDue.TabIndex = 7;
@@ -80,7 +82,7 @@
             this.dtReminder.CustomFormat = "hh:mm:ss tt";
             this.dtReminder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReminder.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtReminder.Location = new System.Drawing.Point(78, 36);
+            this.dtReminder.Location = new System.Drawing.Point(78, 66);
             this.dtReminder.Name = "dtReminder";
             this.dtReminder.Size = new System.Drawing.Size(110, 22);
             this.dtReminder.TabIndex = 5;
@@ -93,7 +95,7 @@
             this.cbReminder.Items.AddRange(new object[] {
             "Time",
             "Date"});
-            this.cbReminder.Location = new System.Drawing.Point(194, 37);
+            this.cbReminder.Location = new System.Drawing.Point(194, 64);
             this.cbReminder.Name = "cbReminder";
             this.cbReminder.Size = new System.Drawing.Size(65, 24);
             this.cbReminder.TabIndex = 6;
@@ -103,7 +105,7 @@
             // 
             this.lbReminder.AutoSize = true;
             this.lbReminder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbReminder.Location = new System.Drawing.Point(12, 42);
+            this.lbReminder.Location = new System.Drawing.Point(12, 71);
             this.lbReminder.Name = "lbReminder";
             this.lbReminder.Size = new System.Drawing.Size(63, 16);
             this.lbReminder.TabIndex = 7;
@@ -111,7 +113,7 @@
             // 
             // tbNote
             // 
-            this.tbNote.Location = new System.Drawing.Point(16, 95);
+            this.tbNote.Location = new System.Drawing.Point(16, 117);
             this.tbNote.Name = "tbNote";
             this.tbNote.Size = new System.Drawing.Size(243, 70);
             this.tbNote.TabIndex = 8;
@@ -121,7 +123,7 @@
             // 
             this.lbNote.AutoSize = true;
             this.lbNote.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNote.Location = new System.Drawing.Point(12, 76);
+            this.lbNote.Location = new System.Drawing.Point(12, 98);
             this.lbNote.Name = "lbNote";
             this.lbNote.Size = new System.Drawing.Size(35, 16);
             this.lbNote.TabIndex = 9;
@@ -129,7 +131,7 @@
             // 
             // btnSetApp
             // 
-            this.btnSetApp.Location = new System.Drawing.Point(101, 176);
+            this.btnSetApp.Location = new System.Drawing.Point(97, 194);
             this.btnSetApp.Name = "btnSetApp";
             this.btnSetApp.Size = new System.Drawing.Size(75, 23);
             this.btnSetApp.TabIndex = 10;
@@ -137,11 +139,21 @@
             this.btnSetApp.UseVisualStyleBackColor = true;
             this.btnSetApp.Click += new System.EventHandler(this.btnSetApp_Click);
             // 
+            // tbName
+            // 
+            this.tbName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.Location = new System.Drawing.Point(15, 13);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(244, 22);
+            this.tbName.TabIndex = 11;
+            this.tbName.Text = "Add a to-do...";
+            // 
             // AppMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 211);
+            this.ClientSize = new System.Drawing.Size(271, 229);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.btnSetApp);
             this.Controls.Add(this.lbNote);
             this.Controls.Add(this.tbNote);
@@ -152,6 +164,7 @@
             this.Controls.Add(this.dtReminder);
             this.Controls.Add(this.dtApp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "AppMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set an Appointment";
@@ -171,5 +184,6 @@
         private System.Windows.Forms.RichTextBox tbNote;
         private System.Windows.Forms.Label lbNote;
         private System.Windows.Forms.Button btnSetApp;
+        private System.Windows.Forms.TextBox tbName;
     }
 }
