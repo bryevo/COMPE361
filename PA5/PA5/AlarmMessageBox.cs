@@ -14,8 +14,13 @@ namespace PA5
 
     public partial class AlarmMessageBox : Form
     {
-        private readonly Timer _timer;
-        SoundPlayer ring = new SoundPlayer(Properties.Resources.yeet);
+        private readonly Timer _timer;  //variable to start the timer
+        SoundPlayer ring = new SoundPlayer(Properties.Resources.yeet);  //sound
+
+        /// <summary>
+        /// Constructor when the Alarm box opens, it plays the sound
+        /// </summary>
+        /// <param name="timer"></param>
         public AlarmMessageBox(Timer timer)
         {
             InitializeComponent();
@@ -23,13 +28,22 @@ namespace PA5
             _timer = timer;
         }
  
+        /// <summary>
+        /// if you click the snooze button, it starts the timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btSnooze_Click(object sender, EventArgs e)
         {
             ring.Stop();
             _timer.Start();
             Dispose();
         }
-
+        /// <summary>
+        /// stops the ringer, closes the app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btOk_Click(object sender, EventArgs e)
         {
             ring.Stop();

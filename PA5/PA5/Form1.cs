@@ -88,8 +88,11 @@ namespace PA5
         private void alarm_Elapsed(object sender, EventArgs e)
         {
             int t = 0;
+
+            //Checks the time for all checked elements for the alarm clock
             while (t < cbAlarm.CheckedItems.Count)
             {
+                //if the alarm time is equal to the current time
                 string alarm = cbAlarm.CheckedItems[t].ToString();
                 if (alarm == DateTime.Now.ToString())
                 {
@@ -108,8 +111,11 @@ namespace PA5
         /// <param name="e"></param>
         public void timer_Snooze_Tick(object sender, EventArgs e)
         {
+            //counter increments until it hits the set snooze time
             if (_counter < int.Parse(snzText.Text))
                 _counter++;
+
+            //once time it shows the alarm message box to stop/reset snooze
             else
             {
                 timer_Snooze.Stop();
@@ -165,25 +171,43 @@ namespace PA5
             lbApp.Items.Remove(lbApp.SelectedItem);
         }
 
+        /// <summary>
+        /// Opens the appointment's details, creates a new form
+        /// which passes in the selected items details so it retains data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbApp_DoubleClick(object sender, EventArgs e)
         {
             AppMessageBox app = new AppMessageBox(lbApp.SelectedItem, lbApp);
             app.ShowDialog();
         }
 
+        /// <summary>
+        /// Timer for appointment due
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Appointment_Tick(object sender, EventArgs e)
         {
             int t = 0;
+            
+            //checks every item in the appointment list
             while (t < lbApp.Items.Count)
             {
                 List<object> compareType = new List<object>();
+
+                //gets the properties of each item
                 Type parseType = lbApp.Items[t].GetType();
                 IList<PropertyInfo> props = new List<PropertyInfo>(parseType.GetProperties());
                 foreach (PropertyInfo item in props)
                 {
-                    object propValue = item.GetValue(lbApp.Items[t], null);
+                    object propValue = item.GetValue(lbApp.Items[t], null); //stores the data in the List
                     compareType.Add(propValue);
                 }
+
+                //I know that the index #1 dt is a datetime based on how i stored my data, so i
+                //compared it to the current time.  this will play the sound.
                 if (compareType[1].ToString().Equals(DateTime.Now.ToString()))
                 {
                     SoundPlayer ring = new SoundPlayer(Properties.Resources.yeet);
@@ -196,6 +220,12 @@ namespace PA5
             }
         }
 
+        /// <summary>
+        /// Timer for appointment reminder. same functionality as the appointment timer
+        /// except it shows the animation; no sound.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Reminder_Tick(object sender, EventArgs e)
         {
             int t = 0;

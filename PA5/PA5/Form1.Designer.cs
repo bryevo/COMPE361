@@ -88,7 +88,7 @@ namespace PA5
             this.gbAlarm.Location = new System.Drawing.Point(13, 50);
             this.gbAlarm.Name = "gbAlarm";
             this.gbAlarm.Size = new System.Drawing.Size(194, 329);
-            this.gbAlarm.TabIndex = 3;
+            this.gbAlarm.TabIndex = 10;
             this.gbAlarm.TabStop = false;
             this.gbAlarm.Text = "Alarm";
             // 
@@ -98,7 +98,7 @@ namespace PA5
             this.lbAlarm.Location = new System.Drawing.Point(57, 53);
             this.lbAlarm.Name = "lbAlarm";
             this.lbAlarm.Size = new System.Drawing.Size(81, 16);
-            this.lbAlarm.TabIndex = 8;
+            this.lbAlarm.TabIndex = 10;
             this.lbAlarm.Text = "Remove/Add";
             // 
             // lbSnooze
@@ -107,7 +107,7 @@ namespace PA5
             this.lbSnooze.Location = new System.Drawing.Point(6, 304);
             this.lbSnooze.Name = "lbSnooze";
             this.lbSnooze.Size = new System.Drawing.Size(85, 16);
-            this.lbSnooze.TabIndex = 7;
+            this.lbSnooze.TabIndex = 10;
             this.lbSnooze.Text = "Snooze (sec)";
             // 
             // snzText
@@ -115,7 +115,7 @@ namespace PA5
             this.snzText.Location = new System.Drawing.Point(131, 302);
             this.snzText.Name = "snzText";
             this.snzText.Size = new System.Drawing.Size(30, 22);
-            this.snzText.TabIndex = 6;
+            this.snzText.TabIndex = 4;
             this.snzText.Text = "5";
             // 
             // cbOptions
@@ -127,7 +127,7 @@ namespace PA5
             this.cbOptions.Location = new System.Drawing.Point(122, 21);
             this.cbOptions.Name = "cbOptions";
             this.cbOptions.Size = new System.Drawing.Size(65, 24);
-            this.cbOptions.TabIndex = 5;
+            this.cbOptions.TabIndex = 1;
             this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
             // 
             // dateTimeAlarm
@@ -137,7 +137,7 @@ namespace PA5
             this.dateTimeAlarm.Location = new System.Drawing.Point(6, 21);
             this.dateTimeAlarm.Name = "dateTimeAlarm";
             this.dateTimeAlarm.Size = new System.Drawing.Size(110, 22);
-            this.dateTimeAlarm.TabIndex = 4;
+            this.dateTimeAlarm.TabIndex = 0;
             this.dateTimeAlarm.Value = new System.DateTime(2016, 10, 14, 19, 55, 36, 960);
             // 
             // cbAlarm
@@ -169,7 +169,7 @@ namespace PA5
             this.btnDelAlarm.Location = new System.Drawing.Point(7, 49);
             this.btnDelAlarm.Name = "btnDelAlarm";
             this.btnDelAlarm.Size = new System.Drawing.Size(31, 24);
-            this.btnDelAlarm.TabIndex = 2;
+            this.btnDelAlarm.TabIndex = 3;
             this.btnDelAlarm.Text = "-";
             this.btnDelAlarm.UseVisualStyleBackColor = true;
             this.btnDelAlarm.Click += new System.EventHandler(this.btnDelAlarm_Click);
@@ -222,7 +222,7 @@ namespace PA5
             this.btnDelApp.Location = new System.Drawing.Point(157, 40);
             this.btnDelApp.Name = "btnDelApp";
             this.btnDelApp.Size = new System.Drawing.Size(31, 24);
-            this.btnDelApp.TabIndex = 2;
+            this.btnDelApp.TabIndex = 6;
             this.btnDelApp.Text = "-";
             this.btnDelApp.UseVisualStyleBackColor = true;
             this.btnDelApp.Click += new System.EventHandler(this.btnDelApp_Click);
@@ -234,7 +234,7 @@ namespace PA5
             this.btnAddApp.Location = new System.Drawing.Point(157, 10);
             this.btnAddApp.Name = "btnAddApp";
             this.btnAddApp.Size = new System.Drawing.Size(31, 24);
-            this.btnAddApp.TabIndex = 2;
+            this.btnAddApp.TabIndex = 5;
             this.btnAddApp.Text = "+";
             this.btnAddApp.UseVisualStyleBackColor = false;
             this.btnAddApp.Click += new System.EventHandler(this.btnAddApp_Click);
@@ -247,7 +247,7 @@ namespace PA5
             this.lbTime.Location = new System.Drawing.Point(13, 9);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(0, 38);
-            this.lbTime.TabIndex = 4;
+            this.lbTime.TabIndex = 10;
             // 
             // timer_Time
             // 
@@ -278,7 +278,7 @@ namespace PA5
             this.picRemind.Name = "picRemind";
             this.picRemind.Size = new System.Drawing.Size(182, 113);
             this.picRemind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemind.TabIndex = 4;
+            this.picRemind.TabIndex = 10;
             this.picRemind.TabStop = false;
             this.picRemind.Visible = false;
             // 
@@ -295,7 +295,7 @@ namespace PA5
             this.lbReminder.Location = new System.Drawing.Point(7, 188);
             this.lbReminder.Name = "lbReminder";
             this.lbReminder.Size = new System.Drawing.Size(140, 16);
-            this.lbReminder.TabIndex = 5;
+            this.lbReminder.TabIndex = 10;
             this.lbReminder.TabStop = true;
             this.lbReminder.Text = "Appointment Reminder";
             this.lbReminder.Visible = false;

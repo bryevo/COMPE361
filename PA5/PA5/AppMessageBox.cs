@@ -13,9 +13,14 @@ namespace PA5
 {
     public partial class AppMessageBox : Form
     {
-        private ListBox _app;
+        private ListBox _app;   //variables to manipulate data from Form1
         private object _obj;
-        private List<object> refer = new List<object>();
+        private readonly List<object> _storeProperties = new List<object>();
+
+        /// <summary>
+        /// Constructor for the Appointment Message box
+        /// </summary>
+        /// <param name="app"></param>
         public AppMessageBox(ListBox app)
         {
             _app = app;
@@ -26,26 +31,41 @@ namespace PA5
             cbReminder.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Another constructor for the message box
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="app"></param>
         public AppMessageBox(object obj, ListBox app)
         {
+            //sets variables
             _obj = obj;
             _app = app;
+
+            //gets the properties of each item
             Type parseObj = _obj.GetType();
             InitializeComponent();
             IList<PropertyInfo> props = new List<PropertyInfo>(parseObj.GetProperties());
             foreach (PropertyInfo item in props)
             {
-                object propValue = item.GetValue(_obj, null);
-                refer.Add(propValue);
+                object propValue = item.GetValue(_obj, null); //stores the data in the List
+                _storeProperties.Add(propValue);
             }
-            tbName.Text = refer[0].ToString();
-            dtApp.Value = (DateTime)refer[1];
-            dtReminder.Value = (DateTime)refer[2];
-            tbNote.Text = refer[3].ToString();
+
+            //sets data in the form from the List of stored properties
+            tbName.Text = _storeProperties[0].ToString();
+            dtApp.Value = (DateTime)_storeProperties[1];
+            dtReminder.Value = (DateTime)_storeProperties[2];
+            tbNote.Text = _storeProperties[3].ToString();
             cbApp.SelectedIndex = 0;
             cbReminder.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// changes the date and time format for appointment due
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbApp_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbApp.SelectedIndex == 0)
@@ -63,6 +83,11 @@ namespace PA5
             }
         }
 
+        /// <summary>
+        /// changes the date and time format for reminder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbReminder_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbReminder.SelectedIndex == 0)
@@ -80,24 +105,33 @@ namespace PA5
             }
         }
 
-
-    private void btnSetApp_Click(object sender, EventArgs e)
+        /// <summary>
+        /// the Ok button in the appointment form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSetApp_Click(object sender, EventArgs e)
         {
-           Appointment info = new Appointment();
+            //create a new appointment class; set its properties to the data in the form
+            Appointment info = new Appointment();
             info.Name = tbName.Text;
             info.Note = tbNote.Text;
             info.AppDateTime = dtApp.Value;
             info.ReminderTime = dtReminder.Value;
+
+            //this is a check for when after you add your first appointment/change its data and won't affect other appointments
             if (_obj != null)
             {
+                //if your selected item in your appointment listBox is equal to the data youre manipulating
                 if (_app.SelectedItem.Equals(_obj))
                 {
+                    //remove old and insert new data
                     _app.Items.Remove(_app.SelectedItem);
                     _app.DisplayMember = "Name";
                     _app.Items.Add(info);
                 }
             }
-            else
+            else //if youre adding your first appointment data
             {
                 _app.DisplayMember = "Name";
                 _app.Items.Add(info);
