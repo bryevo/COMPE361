@@ -103,6 +103,15 @@
   <ItemGroup>
     <None Include="Resources\pleaseno.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NO GOD! PLEASE NO!!! NOOOOOOOOOO %28online-audio-converter.com%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_god.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my_name_jeff.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -43,6 +43,8 @@ namespace PA5
             this.btnDelAlarm = new System.Windows.Forms.Button();
             this.snzAdd = new System.Windows.Forms.Button();
             this.gbApp = new System.Windows.Forms.GroupBox();
+            this.lbReminder = new System.Windows.Forms.LinkLabel();
+            this.picRemind = new System.Windows.Forms.PictureBox();
             this.lbApp = new System.Windows.Forms.ListBox();
             this.btnDelApp = new System.Windows.Forms.Button();
             this.btnAddApp = new System.Windows.Forms.Button();
@@ -51,9 +53,7 @@ namespace PA5
             this.timer_Alarm = new System.Windows.Forms.Timer(this.components);
             this.timer_Snooze = new System.Windows.Forms.Timer(this.components);
             this.timer_Appointment = new System.Windows.Forms.Timer(this.components);
-            this.picRemind = new System.Windows.Forms.PictureBox();
             this.timer_Reminder = new System.Windows.Forms.Timer(this.components);
-            this.lbReminder = new System.Windows.Forms.LinkLabel();
             this.gbAlarm.SuspendLayout();
             this.gbApp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRemind)).BeginInit();
@@ -62,9 +62,10 @@ namespace PA5
             // btnAddAlarm
             // 
             this.btnAddAlarm.ForeColor = System.Drawing.Color.Black;
-            this.btnAddAlarm.Location = new System.Drawing.Point(156, 49);
+            this.btnAddAlarm.Location = new System.Drawing.Point(312, 94);
+            this.btnAddAlarm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAddAlarm.Name = "btnAddAlarm";
-            this.btnAddAlarm.Size = new System.Drawing.Size(31, 24);
+            this.btnAddAlarm.Size = new System.Drawing.Size(62, 46);
             this.btnAddAlarm.TabIndex = 2;
             this.btnAddAlarm.Text = "+";
             this.btnAddAlarm.UseVisualStyleBackColor = true;
@@ -85,9 +86,11 @@ namespace PA5
             this.gbAlarm.Controls.Add(this.btnAddAlarm);
             this.gbAlarm.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAlarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.gbAlarm.Location = new System.Drawing.Point(13, 50);
+            this.gbAlarm.Location = new System.Drawing.Point(26, 96);
+            this.gbAlarm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gbAlarm.Name = "gbAlarm";
-            this.gbAlarm.Size = new System.Drawing.Size(194, 329);
+            this.gbAlarm.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbAlarm.Size = new System.Drawing.Size(388, 633);
             this.gbAlarm.TabIndex = 10;
             this.gbAlarm.TabStop = false;
             this.gbAlarm.Text = "Alarm";
@@ -95,26 +98,29 @@ namespace PA5
             // lbAlarm
             // 
             this.lbAlarm.AutoSize = true;
-            this.lbAlarm.Location = new System.Drawing.Point(57, 53);
+            this.lbAlarm.Location = new System.Drawing.Point(114, 102);
+            this.lbAlarm.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbAlarm.Name = "lbAlarm";
-            this.lbAlarm.Size = new System.Drawing.Size(81, 16);
+            this.lbAlarm.Size = new System.Drawing.Size(164, 31);
             this.lbAlarm.TabIndex = 10;
             this.lbAlarm.Text = "Remove/Add";
             // 
             // lbSnooze
             // 
             this.lbSnooze.AutoSize = true;
-            this.lbSnooze.Location = new System.Drawing.Point(6, 304);
+            this.lbSnooze.Location = new System.Drawing.Point(12, 585);
+            this.lbSnooze.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbSnooze.Name = "lbSnooze";
-            this.lbSnooze.Size = new System.Drawing.Size(85, 16);
+            this.lbSnooze.Size = new System.Drawing.Size(165, 31);
             this.lbSnooze.TabIndex = 10;
             this.lbSnooze.Text = "Snooze (sec)";
             // 
             // snzText
             // 
-            this.snzText.Location = new System.Drawing.Point(131, 302);
+            this.snzText.Location = new System.Drawing.Point(262, 581);
+            this.snzText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.snzText.Name = "snzText";
-            this.snzText.Size = new System.Drawing.Size(30, 22);
+            this.snzText.Size = new System.Drawing.Size(56, 37);
             this.snzText.TabIndex = 4;
             this.snzText.Text = "5";
             // 
@@ -124,9 +130,10 @@ namespace PA5
             this.cbOptions.Items.AddRange(new object[] {
             "Time",
             "Date"});
-            this.cbOptions.Location = new System.Drawing.Point(122, 21);
+            this.cbOptions.Location = new System.Drawing.Point(244, 40);
+            this.cbOptions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbOptions.Name = "cbOptions";
-            this.cbOptions.Size = new System.Drawing.Size(65, 24);
+            this.cbOptions.Size = new System.Drawing.Size(126, 39);
             this.cbOptions.TabIndex = 1;
             this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
             // 
@@ -134,9 +141,10 @@ namespace PA5
             // 
             this.dateTimeAlarm.CustomFormat = "hh:mm:ss tt";
             this.dateTimeAlarm.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeAlarm.Location = new System.Drawing.Point(6, 21);
+            this.dateTimeAlarm.Location = new System.Drawing.Point(12, 40);
+            this.dateTimeAlarm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dateTimeAlarm.Name = "dateTimeAlarm";
-            this.dateTimeAlarm.Size = new System.Drawing.Size(110, 22);
+            this.dateTimeAlarm.Size = new System.Drawing.Size(216, 37);
             this.dateTimeAlarm.TabIndex = 0;
             this.dateTimeAlarm.Value = new System.DateTime(2016, 10, 14, 19, 55, 36, 960);
             // 
@@ -147,17 +155,19 @@ namespace PA5
             this.cbAlarm.ForeColor = System.Drawing.Color.White;
             this.cbAlarm.FormatString = "G";
             this.cbAlarm.FormattingEnabled = true;
-            this.cbAlarm.Location = new System.Drawing.Point(7, 79);
+            this.cbAlarm.Location = new System.Drawing.Point(14, 152);
+            this.cbAlarm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbAlarm.Name = "cbAlarm";
-            this.cbAlarm.Size = new System.Drawing.Size(180, 221);
+            this.cbAlarm.Size = new System.Drawing.Size(360, 416);
             this.cbAlarm.TabIndex = 3;
             // 
             // snzDec
             // 
             this.snzDec.ForeColor = System.Drawing.Color.Black;
-            this.snzDec.Location = new System.Drawing.Point(105, 302);
+            this.snzDec.Location = new System.Drawing.Point(210, 581);
+            this.snzDec.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.snzDec.Name = "snzDec";
-            this.snzDec.Size = new System.Drawing.Size(20, 22);
+            this.snzDec.Size = new System.Drawing.Size(40, 42);
             this.snzDec.TabIndex = 2;
             this.snzDec.Text = "-";
             this.snzDec.UseVisualStyleBackColor = true;
@@ -166,9 +176,10 @@ namespace PA5
             // btnDelAlarm
             // 
             this.btnDelAlarm.ForeColor = System.Drawing.Color.Black;
-            this.btnDelAlarm.Location = new System.Drawing.Point(7, 49);
+            this.btnDelAlarm.Location = new System.Drawing.Point(14, 94);
+            this.btnDelAlarm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDelAlarm.Name = "btnDelAlarm";
-            this.btnDelAlarm.Size = new System.Drawing.Size(31, 24);
+            this.btnDelAlarm.Size = new System.Drawing.Size(62, 46);
             this.btnDelAlarm.TabIndex = 3;
             this.btnDelAlarm.Text = "-";
             this.btnDelAlarm.UseVisualStyleBackColor = true;
@@ -177,9 +188,10 @@ namespace PA5
             // snzAdd
             // 
             this.snzAdd.ForeColor = System.Drawing.Color.Black;
-            this.snzAdd.Location = new System.Drawing.Point(167, 301);
+            this.snzAdd.Location = new System.Drawing.Point(334, 579);
+            this.snzAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.snzAdd.Name = "snzAdd";
-            this.snzAdd.Size = new System.Drawing.Size(20, 22);
+            this.snzAdd.Size = new System.Drawing.Size(40, 42);
             this.snzAdd.TabIndex = 2;
             this.snzAdd.Text = "+";
             this.snzAdd.UseVisualStyleBackColor = true;
@@ -195,12 +207,40 @@ namespace PA5
             this.gbApp.Controls.Add(this.btnAddApp);
             this.gbApp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.gbApp.Location = new System.Drawing.Point(213, 50);
+            this.gbApp.Location = new System.Drawing.Point(426, 96);
+            this.gbApp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gbApp.Name = "gbApp";
-            this.gbApp.Size = new System.Drawing.Size(194, 329);
+            this.gbApp.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbApp.Size = new System.Drawing.Size(388, 633);
             this.gbApp.TabIndex = 3;
             this.gbApp.TabStop = false;
             this.gbApp.Text = "Appointments";
+            // 
+            // lbReminder
+            // 
+            this.lbReminder.AutoSize = true;
+            this.lbReminder.LinkColor = System.Drawing.Color.Red;
+            this.lbReminder.Location = new System.Drawing.Point(14, 362);
+            this.lbReminder.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbReminder.Name = "lbReminder";
+            this.lbReminder.Size = new System.Drawing.Size(188, 31);
+            this.lbReminder.TabIndex = 10;
+            this.lbReminder.TabStop = true;
+            this.lbReminder.Text = "Hide Reminder";
+            this.lbReminder.Visible = false;
+            this.lbReminder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbAppointment_Clicked);
+            // 
+            // picRemind
+            // 
+            this.picRemind.Image = global::PA5.Properties.Resources.pleaseno;
+            this.picRemind.Location = new System.Drawing.Point(12, 398);
+            this.picRemind.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.picRemind.Name = "picRemind";
+            this.picRemind.Size = new System.Drawing.Size(364, 217);
+            this.picRemind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRemind.TabIndex = 10;
+            this.picRemind.TabStop = false;
+            this.picRemind.Visible = false;
             // 
             // lbApp
             // 
@@ -209,19 +249,21 @@ namespace PA5
             this.lbApp.ForeColor = System.Drawing.Color.White;
             this.lbApp.FormatString = "M";
             this.lbApp.FormattingEnabled = true;
-            this.lbApp.ItemHeight = 16;
-            this.lbApp.Location = new System.Drawing.Point(6, 21);
+            this.lbApp.ItemHeight = 31;
+            this.lbApp.Location = new System.Drawing.Point(12, 40);
+            this.lbApp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lbApp.Name = "lbApp";
-            this.lbApp.Size = new System.Drawing.Size(145, 160);
+            this.lbApp.Size = new System.Drawing.Size(290, 279);
             this.lbApp.TabIndex = 3;
             this.lbApp.DoubleClick += new System.EventHandler(this.lbApp_DoubleClick);
             // 
             // btnDelApp
             // 
             this.btnDelApp.ForeColor = System.Drawing.Color.Black;
-            this.btnDelApp.Location = new System.Drawing.Point(157, 40);
+            this.btnDelApp.Location = new System.Drawing.Point(314, 77);
+            this.btnDelApp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDelApp.Name = "btnDelApp";
-            this.btnDelApp.Size = new System.Drawing.Size(31, 24);
+            this.btnDelApp.Size = new System.Drawing.Size(62, 46);
             this.btnDelApp.TabIndex = 6;
             this.btnDelApp.Text = "-";
             this.btnDelApp.UseVisualStyleBackColor = true;
@@ -231,9 +273,10 @@ namespace PA5
             // 
             this.btnAddApp.BackColor = System.Drawing.Color.Transparent;
             this.btnAddApp.ForeColor = System.Drawing.Color.Black;
-            this.btnAddApp.Location = new System.Drawing.Point(157, 10);
+            this.btnAddApp.Location = new System.Drawing.Point(314, 19);
+            this.btnAddApp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAddApp.Name = "btnAddApp";
-            this.btnAddApp.Size = new System.Drawing.Size(31, 24);
+            this.btnAddApp.Size = new System.Drawing.Size(62, 46);
             this.btnAddApp.TabIndex = 5;
             this.btnAddApp.Text = "+";
             this.btnAddApp.UseVisualStyleBackColor = false;
@@ -244,9 +287,10 @@ namespace PA5
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Bodoni MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbTime.Location = new System.Drawing.Point(13, 9);
+            this.lbTime.Location = new System.Drawing.Point(26, 17);
+            this.lbTime.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(0, 38);
+            this.lbTime.Size = new System.Drawing.Size(0, 77);
             this.lbTime.TabIndex = 10;
             // 
             // timer_Time
@@ -269,18 +313,7 @@ namespace PA5
             // 
             this.timer_Appointment.Enabled = true;
             this.timer_Appointment.Interval = 1000;
-            this.timer_Appointment.Tick += new System.EventHandler(this.timer_Appointment_Tick);
-            // 
-            // picRemind
-            // 
-            this.picRemind.Image = global::PA5.Properties.Resources.pleaseno;
-            this.picRemind.Location = new System.Drawing.Point(6, 207);
-            this.picRemind.Name = "picRemind";
-            this.picRemind.Size = new System.Drawing.Size(182, 113);
-            this.picRemind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRemind.TabIndex = 10;
-            this.picRemind.TabStop = false;
-            this.picRemind.Visible = false;
+            //this.timer_Appointment.Tick += new System.EventHandler(this.timer_Appointment_Tick);
             // 
             // timer_Reminder
             // 
@@ -288,31 +321,23 @@ namespace PA5
             this.timer_Reminder.Interval = 1000;
             this.timer_Reminder.Tick += new System.EventHandler(this.timer_Reminder_Tick);
             // 
-            // lbReminder
-            // 
-            this.lbReminder.AutoSize = true;
-            this.lbReminder.LinkColor = System.Drawing.Color.Red;
-            this.lbReminder.Location = new System.Drawing.Point(7, 188);
-            this.lbReminder.Name = "lbReminder";
-            this.lbReminder.Size = new System.Drawing.Size(140, 16);
-            this.lbReminder.TabIndex = 10;
-            this.lbReminder.TabStop = true;
-            this.lbReminder.Text = "Appointment Reminder";
-            this.lbReminder.Visible = false;
-            this.lbReminder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbAppointment_Clicked);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(424, 391);
+            this.ClientSize = new System.Drawing.Size(848, 752);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.gbApp);
             this.Controls.Add(this.gbAlarm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.HelpButton = true;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Program Assignment 5";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Form1_HelpButtonClicked);
             this.gbAlarm.ResumeLayout(false);
             this.gbAlarm.PerformLayout();
             this.gbApp.ResumeLayout(false);

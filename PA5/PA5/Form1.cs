@@ -19,7 +19,7 @@ namespace PA5
     public partial class Form1 : Form
     {
         private int _counter;
-
+        SoundPlayer ring = new SoundPlayer(Properties.Resources.my_name_jeff);
         public Form1()
         {
             InitializeComponent();
@@ -188,37 +188,37 @@ namespace PA5
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timer_Appointment_Tick(object sender, EventArgs e)
-        {
-            int t = 0;
-            
-            //checks every item in the appointment list
-            while (t < lbApp.Items.Count)
-            {
-                List<object> compareType = new List<object>();
-
-                //gets the properties of each item
-                Type parseType = lbApp.Items[t].GetType();
-                IList<PropertyInfo> props = new List<PropertyInfo>(parseType.GetProperties());
-                foreach (PropertyInfo item in props)
-                {
-                    object propValue = item.GetValue(lbApp.Items[t], null); //stores the data in the List
-                    compareType.Add(propValue);
-                }
-
-                //I know that the index #1 dt is a datetime based on how i stored my data, so i
-                //compared it to the current time.  this will play the sound.
-                if (compareType[1].ToString().Equals(DateTime.Now.ToString()))
-                {
-                    SoundPlayer ring = new SoundPlayer(Properties.Resources.yeet);
-                    ring.PlayLooping();
-                    string msgStr = $"{compareType[0]} Due Now!\nNote: {compareType[3]}";
-                    MessageBox.Show(msgStr);
-                    ring.Stop();
-                }
-                t++;
-            }
-        }
+//        private void timer_Appointment_Tick(object sender, EventArgs e)
+//        {
+//            int t = 0;
+//            
+//            //checks every item in the appointment list
+//            while (t < lbApp.Items.Count)
+//            {
+//                List<object> compareType = new List<object>();
+//
+//                //gets the properties of each item
+//                Type parseType = lbApp.Items[t].GetType();
+//                IList<PropertyInfo> props = new List<PropertyInfo>(parseType.GetProperties());
+//                foreach (PropertyInfo item in props)
+//                {
+//                    object propValue = item.GetValue(lbApp.Items[t], null); //stores the data in the List
+//                    compareType.Add(propValue);
+//                }
+//
+//                //I know that the index #1 dt is a datetime based on how i stored my data, so i
+//                //compared it to the current time.  this will play the sound.
+//                if (compareType[1].ToString().Equals(DateTime.Now.ToString()))
+//                {
+//                    SoundPlayer ring = new SoundPlayer(Properties.Resources.yeet);
+//                    ring.PlayLooping();
+//                    string msgStr = $"{compareType[0]} Due Now!\nNote: {compareType[3]}";
+//                    MessageBox.Show(msgStr);
+//                    ring.Stop();
+//                }
+//                t++;
+//            }
+//        }
 
         /// <summary>
         /// Timer for appointment reminder. same functionality as the appointment timer
@@ -241,6 +241,7 @@ namespace PA5
                 }
                 if (compareType[2].ToString().Equals(DateTime.Now.ToString()))
                 {
+                    ring.Play();
                     picRemind.Visible = true;
                     lbReminder.Visible = true;
 
@@ -251,8 +252,14 @@ namespace PA5
 
         private void lbAppointment_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ring.Stop();
             picRemind.Visible = false;
             lbReminder.Visible = false;
+        }
+
+        private void Form1_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("Tip: Click on the Date/Time Picker and type to change the desired time for Alarm.\n        Double click or check the box to enable the alarm.\nTip: Double click the appointment to modify it.");
         }
     }
 }
