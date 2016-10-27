@@ -191,7 +191,7 @@ namespace PA5
 //        private void timer_Appointment_Tick(object sender, EventArgs e)
 //        {
 //            int t = 0;
-//            
+//
 //            //checks every item in the appointment list
 //            while (t < lbApp.Items.Count)
 //            {
@@ -259,7 +259,7 @@ namespace PA5
 
         private void Form1_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("Tip: Click on the Date/Time Picker and type to change the desired time for Alarm.\n        Double click or check the box to enable the alarm.\nTip: Double click the appointment to modify it.");
+            MessageBox.Show("Welcome to our alarm clock and appointment book!\n\n--------------------------------Alarm Clock Manual--------------------------------\n1.) To change date, click on the calendar icon and click on the desired day. \n2.) To change time, click on the number to change the hour, minute, second, and meridian. \n3.) To add alarm, click the ‘+’ button. \n4.) To remove alarm, click the ‘-’ button while the desired alarm is selected. \n5.) Check mark the alarm to make it active. \n6.) You may change the snooze time by clicking the box and typing in desired time, or click the -/+ buttons.\n7.) When alarm activates, click ‘ok’ to turn off alarm with the annoying sound. \n8.) If you would like to snooze, click the snooze button after the alarm has goes off.\n\n----------------------------Appointment Book Manual----------------------------\n1.) To add an appointment, click the ‘+’ button. \n2.) Type in the appointment title, then choose the appointment date/time with a reminder date/time. \n3.) You may add in notes about the appointment. \n4.) Click “Appointment Reminder” to clear the reminder. \n5.) Click ‘ok’ to turn off alarm with annoying sound. \n6.) To delete an appointment, click the ‘-‘ button while the desired appointment is selected.\n\n                                                          Enjoy!");
         }
     }
 }
