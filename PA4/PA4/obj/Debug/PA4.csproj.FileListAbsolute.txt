@@ -6,3 +6,6 @@ C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.Properties.Resour
 C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.csproj.GenerateResource.Cache
 C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.exe
 C:\Users\Brian\Documents\GitHub\COMPE361\PA4\PA4\obj\Debug\PA4.pdb
+C:\Users\Brye\Desktop\COMPE361\PA4\PA4\bin\Debug\PA4.exe.config
+C:\Users\Brye\Desktop\COMPE361\PA4\PA4\obj\Debug\PA4.exe
+C:\Users\Brye\Desktop\COMPE361\PA4\PA4\obj\Debug\PA4.pdb

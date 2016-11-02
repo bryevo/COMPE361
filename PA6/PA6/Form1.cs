@@ -40,6 +40,15 @@ namespace PA6
                 g.DrawLine(pen, cellWidth * i, 0, cellWidth * i, ClientSize.Height);
         }
 
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.Cursor = new Cursor(Cursor.Current.Handle);
+            int r = (int)Math.Ceiling((double) Cursor.Position.Y/cellHeight) -11;
+            int c = (int)Math.Ceiling((double)Cursor.Position.X/cellWidth) -7;
+            textBox1.Text = String.Format("{0}, {1}", r, c);
+
+        }
+
         private void Form1_Resize(object sender, EventArgs e)
         {
             SetCell();
