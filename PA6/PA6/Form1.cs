@@ -25,7 +25,7 @@ namespace PA6
 
         private void SetCell()
         {
-            cellHeight = ClientSize.Height / (float)row;
+            cellHeight = (ClientSize.Height) / (float)row;
             cellWidth = ClientSize.Width / (float)col;
         }
 
@@ -42,10 +42,11 @@ namespace PA6
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-            this.Cursor = new Cursor(Cursor.Current.Handle);
-            int r = (int)Math.Ceiling((double) Cursor.Position.Y/cellHeight) -11;
-            int c = (int)Math.Ceiling((double)Cursor.Position.X/cellWidth) -7;
-            textBox1.Text = String.Format("{0}, {1}", r, c);
+            int x = e.X;
+            int y = e.Y;
+            int r = (int)Math.Ceiling((double) y/cellHeight);
+            int c = (int)Math.Ceiling((double)x/cellWidth);
+            textBox1.Text = String.Format("{0}, {1}", c, r);
 
         }
 

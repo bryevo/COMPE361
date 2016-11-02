@@ -16,3 +16,12 @@ C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csprojR
 C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Form1.resources
 C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Properties.Resources.resources
 C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\bin\Debug\PA6.exe.config
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\bin\Debug\PA6.exe
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\bin\Debug\PA6.pdb
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Form1.resources
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Properties.Resources.resources
+C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
