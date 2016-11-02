@@ -12,7 +12,7 @@ namespace PA6
 {
     public partial class Form1 : Form
     {
-        int row = 40;
+        int row = 42;   //Put 2 more than actual length to fix offset in the grid (1-40)
         int col = 50;
         float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
@@ -25,7 +25,7 @@ namespace PA6
 
         private void SetCell()
         {
-            cellHeight = (ClientSize.Height) / (float)row;
+            cellHeight = ClientSize.Height/ (float)row;
             cellWidth = ClientSize.Width / (float)col;
         }
 
@@ -34,16 +34,21 @@ namespace PA6
             Graphics g = e.Graphics;
 
             for (int i = 1; i < row; i++)
-                g.DrawLine(pen, 0, cellHeight * i, ClientSize.Width, cellHeight * i);
-
+                //Offset Drawing row lines to start at the base of the menuStrip
+                g.DrawLine(pen, 0, menuStrip1.Height + cellHeight*i, ClientSize.Width, menuStrip1.Height + cellHeight*i);
             for (int i = 1; i < col; i++)
                 g.DrawLine(pen, cellWidth * i, 0, cellWidth * i, ClientSize.Height);
         }
 
+        /// <summary>
+        /// Mouse event that gets the coordinate of the mouse click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             int x = e.X;
-            int y = e.Y;
+            int y = e.Y - menuStrip1.Height;
             int r = (int)Math.Ceiling((double) y/cellHeight);
             int c = (int)Math.Ceiling((double)x/cellWidth);
             textBox1.Text = String.Format("{0}, {1}", c, r);
