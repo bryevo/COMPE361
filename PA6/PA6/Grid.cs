@@ -37,6 +37,28 @@ namespace PA6
             this.cellArray = cellArray;
         }
 
+        public Grid randomGrid (Grid grid)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < grid.cellArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < grid.cellArray.GetLength(1); j++)
+                {
+
+                    if (rand.Next(0, 2) == 0) {
+                        grid.cellArray[i, j].IsAlive = false;
+                        Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
+                    }
+
+                    else
+                        grid.cellArray[i, j].IsAlive = true;
+                        Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
+                }
+            }
+            return grid;
+        }
+
+
         public Cell[,] getCellArray
         {
             get { return this.cellArray; }

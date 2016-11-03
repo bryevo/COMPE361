@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="EvolutionParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvolutionParameters.Designer.cs">
+      <DependentUpon>EvolutionParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="StartupForm.Designer.cs">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EvolutionParameters.resx">
+      <DependentUpon>EvolutionParameters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

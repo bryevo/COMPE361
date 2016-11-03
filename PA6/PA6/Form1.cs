@@ -22,6 +22,8 @@ namespace PA6
         public int col;
         public static float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
+        SolidBrush sb = new SolidBrush(Color.Yellow);
+
         Grid grid;
         public Form1()
         {
@@ -85,7 +87,7 @@ namespace PA6
             int r = (int)Math.Floor((double)x/cellWidth);
             grid.LoadCell(cellArray);
             cellArray[r,c].Paint = CreateGraphics();
-            cellArray[r,c].Paint.FillRectangle(new SolidBrush(Color.Green), r * cellWidth, ((c * cellHeight) + menuStrip1.Height), cellWidth, cellHeight);
+            cellArray[r,c].Paint.FillRectangle(sb, r * cellWidth, ((c * cellHeight) + menuStrip1.Height), cellWidth, cellHeight);
             cellArray[r, c].IsAlive = true;
             textBox1.Text = String.Format("x: {0}, y: {1}", r+1, c+1);
         }
@@ -123,12 +125,56 @@ namespace PA6
                 SMIN = ep.SMIN;
                 SMAX = ep.SMAX;
 
-                label1.Text = String.Format("Bmin is {0}, Bmax is {1}, Smin is {2}, Smax is {3}", BMIN, BMAX, SMIN, SMAX);
+               // label1.Text = String.Format("Bmin is {0}, Bmax is {1}, Smin is {2}, Smax is {3}", BMIN, BMAX, SMIN, SMAX);
             }
             //do nothing. dont really need this
             else if (dr == System.Windows.Forms.DialogResult.Cancel)
             {
 
+            }
+        }
+
+        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = cd.Color;
+            }
+            
+
+        }
+
+        private void creatureColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                sb = new SolidBrush(cd.Color);
+                
+            }
+/*
+            for (int i = 0; i < cellArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < cellArray.GetLength(1); j++)
+                {
+                    if (cellArray[i, j].IsAlive == true)
+                        cellArray[i, j].Paint.FillRectangle(sb, i * cellWidth, ((j * cellHeight) + menuStrip1.Height), cellWidth, cellHeight);
+
+
+                }
+            }*/
+            Invalidate();
+        }
+
+        private void gridColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                pen = new Pen(cd.Color);
+                // SetCell();
+                Invalidate();
             }
         }
 
@@ -145,5 +191,12 @@ namespace PA6
             }
 
         }
+
+        private void generateRandomStateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grid = grid.randomGrid(grid);
+        }
+
+     
     }
 }

@@ -13,6 +13,7 @@ namespace PA6
         private bool isAlive;
         private float startX, startY, cellHeight, CellWidth;
         private Graphics g;
+        SolidBrush sb;
 
         public bool IsAlive
         {
@@ -26,6 +27,12 @@ namespace PA6
             set { g = value; }
         }
 
+        public Color AliveColor
+        {
+            get { return this.sb.Color; }
+            set { this.sb.Color = value; }
+        }
+       
         public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
         {
             this.startX = startX;
@@ -34,10 +41,12 @@ namespace PA6
             this.CellWidth = CellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
+
             if (this.isAlive)
                 g.FillRectangle(new SolidBrush(Color.Green), startX, startY, this.CellWidth, this.cellHeight);
-            else
-                g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
+          //  else
+            //    g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
         }
+
     }
 }

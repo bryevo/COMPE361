@@ -34,9 +34,13 @@
             this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.evolutionParametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.generateRandomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creatureColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateRandomStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +63,9 @@
             this.pauseToolStripMenuItem,
             this.stopToolStripMenuItem,
             this.resetToolStripMenuItem,
-            this.evolutionParametersToolStripMenuItem});
+            this.evolutionParametersToolStripMenuItem,
+            this.generateRandomToolStripMenuItem,
+            this.generateRandomStateToolStripMenuItem});
             this.menuItem1.Name = "menuItem1";
             this.menuItem1.Size = new System.Drawing.Size(61, 22);
             this.menuItem1.Text = "Options";
@@ -89,14 +95,6 @@
             this.resetToolStripMenuItem.Text = "Clear";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.clear_Grid);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 27);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // evolutionParametersToolStripMenuItem
             // 
             this.evolutionParametersToolStripMenuItem.Name = "evolutionParametersToolStripMenuItem";
@@ -104,26 +102,62 @@
             this.evolutionParametersToolStripMenuItem.Text = "Evolution Parameters";
             this.evolutionParametersToolStripMenuItem.Click += new System.EventHandler(this.evolutionParametersToolStripMenuItem_Click);
             // 
-            // label1
+            // generateRandomToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.generateRandomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundColorToolStripMenuItem,
+            this.creatureColorToolStripMenuItem,
+            this.gridColorToolStripMenuItem});
+            this.generateRandomToolStripMenuItem.Name = "generateRandomToolStripMenuItem";
+            this.generateRandomToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.generateRandomToolStripMenuItem.Text = "Color";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 27);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(87, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.backgroundColorToolStripMenuItem.Text = "Background Color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
+            // 
+            // creatureColorToolStripMenuItem
+            // 
+            this.creatureColorToolStripMenuItem.Name = "creatureColorToolStripMenuItem";
+            this.creatureColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.creatureColorToolStripMenuItem.Text = "Creature Color";
+            this.creatureColorToolStripMenuItem.Click += new System.EventHandler(this.creatureColorToolStripMenuItem_Click);
+            // 
+            // gridColorToolStripMenuItem
+            // 
+            this.gridColorToolStripMenuItem.Name = "gridColorToolStripMenuItem";
+            this.gridColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.gridColorToolStripMenuItem.Text = "Grid Color";
+            this.gridColorToolStripMenuItem.Click += new System.EventHandler(this.gridColorToolStripMenuItem_Click);
+            // 
+            // generateRandomStateToolStripMenuItem
+            // 
+            this.generateRandomStateToolStripMenuItem.Name = "generateRandomStateToolStripMenuItem";
+            this.generateRandomStateToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.generateRandomStateToolStripMenuItem.Text = "Generate Random State";
+            this.generateRandomStateToolStripMenuItem.Click += new System.EventHandler(this.generateRandomStateToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 454);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
@@ -146,7 +180,11 @@
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem evolutionParametersToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem generateRandomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creatureColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateRandomStateToolStripMenuItem;
     }
 }
 
