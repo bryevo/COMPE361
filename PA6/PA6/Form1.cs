@@ -12,13 +12,14 @@ namespace PA6
 {
     public partial class Form1 : Form
     {
-        public int row = 20;
-        public int col = 20;
+        public int row;
+        public int col;
         public static float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
         Grid grid;
         public Form1()
         {
+            ShowStartupForm();
             InitializeComponent();
             SetCell();
             LoadGrid();
@@ -71,16 +72,23 @@ namespace PA6
 
         }
 
-        private void resizeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ResizeGrid newGrid = new ResizeGrid(this, grid);
-            newGrid.Show();
-        }
-
+       
         private void Form1_Resize(object sender, EventArgs e)
         {
             SetCell();
             Invalidate();
+        }
+        public void ShowStartupForm()
+        {
+            StartupForm StartupDialog = new StartupForm();
+            var result = StartupDialog.ShowDialog();
+            
+            if (result == DialogResult.OK)
+            {
+                this.col = StartupDialog.StartupColumns;
+                this.row = StartupDialog.StartupRows;   
+            }
+
         }
     }
 }
