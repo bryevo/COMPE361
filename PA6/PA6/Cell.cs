@@ -13,6 +13,7 @@ namespace PA6
         private Point p;
         private bool isAlive = false;
         private float cellHeight, CellWidth;
+
         Brush brush = new SolidBrush(Color.Green);
 
 
@@ -25,6 +26,12 @@ namespace PA6
             this.isAlive = isAlive;
             Graphics g = e.Graphics;
             g.FillRectangle(brush, p.X, p.Y, this.CellWidth, this.cellHeight);
+        }
+
+        public bool IsAlive
+        {
+            get { return isAlive; }
+            set { isAlive = value; }
         }
 
     }

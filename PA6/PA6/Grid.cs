@@ -13,6 +13,7 @@ namespace PA6
         private int row, col;
         private Cell c;
         private float cellHeight, CellWidth;
+        private Cell[,] cellArray;
 
         public Grid(float cellHeight, float CellWidth)
         {
@@ -20,20 +21,26 @@ namespace PA6
             this.CellWidth = CellWidth;
         }
 
-        public Grid(int row, int col, float cellHeight, float CellWidth, PaintEventArgs e)
+        public Grid(Cell [,] cellArray, float cellHeight, float CellWidth, PaintEventArgs e)
         {
-            this.row = row;
-            this.col = col;
+
             this.cellHeight = cellHeight;
             this.CellWidth = CellWidth;
-            for (int i = 0; i < row; i++)
+            for (int i = 0; i < cellArray.GetLength(0); i++)
             {
-                for (int j = 0; j < col; j++)
+                for (int j = 0; j < cellArray.GetLength(1); j++)
                 {
-                    c = new Cell(new Point((int)Math.Round(i * this.CellWidth), (int)Math.Round(j * this.cellHeight)), this.cellHeight, this.CellWidth, false, e);
+                    cellArray[i,j] = new Cell(new Point((int)Math.Round(i * this.CellWidth), (int)Math.Round(j * this.cellHeight)), this.cellHeight, this.CellWidth, false, e);           
                 }
             }
+            this.cellArray = cellArray;
         }
+
+        public Cell[,] getCellArray
+        {
+            get { return this.cellArray; }
+        }
+
         public void ResizeGrid(int row, int col)
         {
             this.row = row;

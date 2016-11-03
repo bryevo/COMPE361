@@ -12,10 +12,13 @@ namespace PA6
 {
     public partial class Form1 : Form
     {
+        public Cell[,] cellArray;
+
         public int row;
         public int col;
         public static float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
+        SolidBrush sb = new SolidBrush(Color.Yellow);
         Grid grid;
         public Form1()
         {
@@ -37,7 +40,10 @@ namespace PA6
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
-            grid = new Grid(row, col, cellHeight, cellWidth, e);
+            this.label1.Text = "cell height: " + cellHeight;
+            this.label2.Text = "cell width: " + cellWidth;
+
+            grid = new Grid(cellArray, cellHeight + menuStrip1.Height, cellWidth, e);
             Graphics g = e.Graphics;
             float x = 0;
             float y = menuStrip1.Height;
@@ -54,6 +60,8 @@ namespace PA6
                 g.DrawLine(pen, x, y, ClientSize.Width, y);
                 y += cellHeight;
             }
+
+            
         }
 
         /// <summary>
@@ -65,10 +73,15 @@ namespace PA6
         {
             int x = e.X;
             int y = e.Y - menuStrip1.Height;
-            int r = (int)Math.Ceiling((double) y/cellHeight);
-            int c = (int)Math.Ceiling((double)x/cellWidth);
+            int r = (int)Math.Floor((double) y/cellHeight);
+            int c = (int)Math.Floor((double)x/cellWidth);
             textBox1.Text = String.Format("{0}, {1}", x, y);
-    
+
+            this.cellArray = grid.getCellArray;
+            Graphics g = CreateGraphics();
+            cellArray[r,c].Paint = CreateGraphics();
+            //g.FillRectangle(sb, (r * cellHeight), (cellHeight * cellWidth), cellWidth, cellHeight);
+            cellArray[r,c].Paint.FillRectangle(new SolidBrush(Color.Blue), ((c) * cellWidth), ((r * cellHeight) + menuStrip1.Height), cellWidth, cellHeight);
 
         }
 
@@ -86,7 +99,8 @@ namespace PA6
             if (result == DialogResult.OK)
             {
                 this.col = StartupDialog.StartupColumns;
-                this.row = StartupDialog.StartupRows;   
+                this.row = StartupDialog.StartupRows;
+                cellArray = new Cell[row, col];
             }
 
         }

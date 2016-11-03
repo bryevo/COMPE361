@@ -37,3 +37,4 @@ C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.Properties.Resources.
 C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resources
 C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
 C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resources
+C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resources
