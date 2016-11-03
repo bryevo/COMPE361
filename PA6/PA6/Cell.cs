@@ -35,8 +35,10 @@ namespace PA6
             this.CellWidth = CellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
+            ToggleAlive(isAlive, g);
         }
 
+        public void ToggleAlive(bool check, Graphics x)
         {
             g = x;
             IsAlive = check;
