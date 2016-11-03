@@ -26,3 +26,4 @@ C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Form1.resources
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.Properties.Resources.resources
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.ResizeGrid.resources
+C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.ResizeGrid.resources

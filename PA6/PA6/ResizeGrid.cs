@@ -13,14 +13,16 @@ namespace PA6
     public partial class ResizeGrid : Form
     {
         private Form1 _form;
+        private Grid grid;
         public ResizeGrid()
         {
             InitializeComponent();
         }
-        public ResizeGrid(Form1 form1)
+        public ResizeGrid(Form1 form1, Grid grid)
         {
             InitializeComponent();
             this._form = form1;
+            this.grid = grid;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace PA6
             {
                 _form.row = Int32.Parse(txtRow.Text);
                 _form.col = Int32.Parse(txtCol.Text);
+                grid.ResizeGrid(Int32.Parse(txtRow.Text), Int32.Parse(txtRow.Text));    //resize grid
                 _form.SetCell();
                 _form.Invalidate();
                 Close();
