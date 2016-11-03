@@ -10,29 +10,34 @@ namespace PA6
 {
     public class Cell
     {
-        private Point p;
-        private bool isAlive = false;
-        private float cellHeight, CellWidth;
-
-        Brush brush = new SolidBrush(Color.Green);
-
-
-        public Graphics Paint { get; set; }
-        public Cell(Point p, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
-        {
-            this.p = p;
-            this.cellHeight = cellHeight;
-            this.CellWidth = CellWidth;
-            this.isAlive = isAlive;
-            Graphics g = e.Graphics;
-            g.FillRectangle(brush, p.X, p.Y, this.CellWidth, this.cellHeight);
-        }
+        private bool isAlive;
+        private float startX, startY, cellHeight, CellWidth;
+        private Graphics g;
 
         public bool IsAlive
         {
             get { return isAlive; }
-            set { isAlive = value; }
+            set {isAlive = value; }
         }
 
+        public Graphics Paint
+        {
+            get { return g; }
+            set { g = value; }
+        }
+
+        public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
+        {
+            this.startX = startX;
+            this.startY = startY;
+            this.cellHeight = cellHeight;
+            this.CellWidth = CellWidth;
+            this.isAlive = isAlive;
+            g = e.Graphics;
+            if (this.isAlive)
+                g.FillRectangle(new SolidBrush(Color.Green), startX, startY, this.CellWidth, this.cellHeight);
+            else
+                g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
+        }
     }
 }

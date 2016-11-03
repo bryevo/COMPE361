@@ -11,7 +11,6 @@ namespace PA6
     public class Grid
     {
         private int row, col;
-        private Cell c;
         private float cellHeight, CellWidth;
         private Cell[,] cellArray;
 
@@ -21,16 +20,18 @@ namespace PA6
             this.CellWidth = CellWidth;
         }
 
-        public Grid(Cell [,] cellArray, float cellHeight, float CellWidth, PaintEventArgs e)
+        public Grid(Cell [,] cellArray, float cellHeight, float CellWidth, float menuHeight, PaintEventArgs e)
         {
-
             this.cellHeight = cellHeight;
             this.CellWidth = CellWidth;
             for (int i = 0; i < cellArray.GetLength(0); i++)
             {
                 for (int j = 0; j < cellArray.GetLength(1); j++)
                 {
-                    cellArray[i,j] = new Cell(new Point((int)Math.Round(i * this.CellWidth), (int)Math.Round(j * this.cellHeight)), this.cellHeight, this.CellWidth, false, e);           
+                    if (cellArray[i, j] == null || cellArray[i, j].IsAlive == false)
+                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, false, e);
+                    else
+                        cellArray[i,j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e);
                 }
             }
             this.cellArray = cellArray;
@@ -46,5 +47,11 @@ namespace PA6
             this.row = row;
             this.col = col;
         }
+
+        public void LoadCell(Cell[,] cellArray)
+        {
+            this.cellArray = cellArray;
+        }
+
     }
 }
