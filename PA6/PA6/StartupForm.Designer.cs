@@ -133,6 +133,7 @@
             // 
             // StartupForm
             // 
+            this.AcceptButton = this.buttonSetStartupDimensions;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 136);
@@ -145,6 +146,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StartupForm";
             this.Text = "StartupForm";
+            this.Load += new System.EventHandler(this.StartupForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumns)).EndInit();
             this.ResumeLayout(false);

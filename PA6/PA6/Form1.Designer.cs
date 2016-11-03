@@ -36,11 +36,11 @@
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evolutionParametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateRandomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creatureColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateRandomStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,32 +73,32 @@
             // populateToolStripMenuItem
             // 
             this.populateToolStripMenuItem.Name = "populateToolStripMenuItem";
-            this.populateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.populateToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.populateToolStripMenuItem.Text = "Populate";
             // 
             // pauseToolStripMenuItem
             // 
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.pauseToolStripMenuItem.Text = "Start";
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.resetToolStripMenuItem.Text = "Clear";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.clear_Grid);
             // 
             // evolutionParametersToolStripMenuItem
             // 
             this.evolutionParametersToolStripMenuItem.Name = "evolutionParametersToolStripMenuItem";
-            this.evolutionParametersToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.evolutionParametersToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.evolutionParametersToolStripMenuItem.Text = "Evolution Parameters";
             this.evolutionParametersToolStripMenuItem.Click += new System.EventHandler(this.evolutionParametersToolStripMenuItem_Click);
             // 
@@ -109,16 +109,8 @@
             this.creatureColorToolStripMenuItem,
             this.gridColorToolStripMenuItem});
             this.generateRandomToolStripMenuItem.Name = "generateRandomToolStripMenuItem";
-            this.generateRandomToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.generateRandomToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.generateRandomToolStripMenuItem.Text = "Color";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 27);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // backgroundColorToolStripMenuItem
             // 
@@ -147,6 +139,14 @@
             this.generateRandomStateToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.generateRandomStateToolStripMenuItem.Text = "Generate Random State";
             this.generateRandomStateToolStripMenuItem.Click += new System.EventHandler(this.generateRandomStateToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 27);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(87, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // Form1
             // 

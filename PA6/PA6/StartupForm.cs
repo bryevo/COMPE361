@@ -24,5 +24,10 @@ namespace PA6
             StartupColumns = (int) numericUpDownColumns.Value;
             StartupRows = (int)numericUpDownRows.Value;
         }
+
+        private void StartupForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

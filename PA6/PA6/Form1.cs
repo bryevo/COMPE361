@@ -27,16 +27,21 @@ namespace PA6
         Grid grid;
         public Form1()
         {
-            ShowStartupForm();
-            InitializeComponent();
-            SetCell();
-            //LoadGrid();
-
-            //Default evolution parameters
-            BMIN = 3;
-            BMAX = 3;
-            SMIN = 2;
-            SMAX = 3;
+            bool startGrid = ShowStartupForm();
+            if (startGrid)
+            {
+                SetCell();
+                //LoadGrid();
+                //Default evolution parameters
+                BMIN = 3;
+                BMAX = 3;
+                SMIN = 2;
+                SMAX = 3;
+            } else {
+                Application.Exit();
+            }
+                
+            
         }
 
         public void SetCell()
@@ -177,7 +182,7 @@ namespace PA6
             }
         }
 
-        public void ShowStartupForm()
+        public bool ShowStartupForm()
         {
             StartupForm StartupDialog = new StartupForm();
             var result = StartupDialog.ShowDialog();
@@ -187,7 +192,12 @@ namespace PA6
                 this.col = StartupDialog.StartupColumns;
                 this.row = StartupDialog.StartupRows;
                 cellArray = new Cell[row, col];
+                return true;
+            } else
+            {
+                return false;
             }
+            
 
         }
 
