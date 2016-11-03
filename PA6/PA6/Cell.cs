@@ -17,12 +17,14 @@ namespace PA6
 
 
         public Graphics Paint { get; set; }
-        public Cell(Point p, float cellHeight, float CellWidth, bool isAlive)
+        public Cell(Point p, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
         {
             this.p = p;
             this.cellHeight = cellHeight;
             this.CellWidth = CellWidth;
             this.isAlive = isAlive;
+            Graphics g = e.Graphics;
+            g.FillRectangle(brush, p.X, p.Y, this.CellWidth, this.cellHeight);
         }
 
     }

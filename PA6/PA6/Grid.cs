@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PA6
 {
@@ -19,7 +20,7 @@ namespace PA6
             this.CellWidth = CellWidth;
         }
 
-        public Grid(int row, int col, float cellHeight, float CellWidth)
+        public Grid(int row, int col, float cellHeight, float CellWidth, PaintEventArgs e)
         {
             this.row = row;
             this.col = col;
@@ -29,7 +30,7 @@ namespace PA6
             {
                 for (int j = 0; j < col; j++)
                 {
-                    c = new Cell(new Point((int)(i * this.CellWidth), (int)(j * this.cellHeight)), this.cellHeight, this.CellWidth, false);
+                    c = new Cell(new Point((int)Math.Round(i * this.CellWidth), (int)Math.Round(j * this.cellHeight)), this.cellHeight, this.CellWidth, false, e);
                 }
             }
         }

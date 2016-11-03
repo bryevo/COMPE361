@@ -22,7 +22,6 @@ namespace PA6
             ShowStartupForm();
             InitializeComponent();
             SetCell();
-            LoadGrid();
         }
 
         public void SetCell()
@@ -31,13 +30,14 @@ namespace PA6
             cellWidth = ClientSize.Width / (float)col;
         }
 
-        public void LoadGrid()
-        {
-            grid = new Grid(row, col, cellHeight, cellWidth);
-        }
+//        public void LoadGrid()
+//        {
+//            grid = new Grid(row, col, cellHeight, cellWidth);
+//        }
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
+            grid = new Grid(row, col, cellHeight, cellWidth, e);
             Graphics g = e.Graphics;
             float x = 0;
             float y = menuStrip1.Height;
