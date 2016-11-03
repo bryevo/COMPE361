@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PA6
 {
-    public class Cell
+    public class Cell : Form
     {
         private bool isAlive;
         private float startX, startY, cellHeight, CellWidth;
@@ -19,12 +19,6 @@ namespace PA6
         {
             get { return isAlive; }
             set {isAlive = value; }
-        }
-
-        public Graphics Paint
-        {
-            get { return g; }
-            set { g = value; }
         }
 
         public Color AliveColor
@@ -41,12 +35,21 @@ namespace PA6
             this.CellWidth = CellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
-
-            if (this.isAlive)
-                g.FillRectangle(new SolidBrush(Color.Green), startX, startY, this.CellWidth, this.cellHeight);
-          //  else
-            //    g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
         }
 
+        {
+            g = x;
+            IsAlive = check;
+            if (IsAlive)
+            {
+                g.FillRectangle(new SolidBrush(Color.Green), startX, startY, this.CellWidth, this.cellHeight);
+                isAlive = true;
+            }
+            else
+            {
+                g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
+                isAlive = false;
+            }
+        }
     }
 }

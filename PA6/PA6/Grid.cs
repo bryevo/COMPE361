@@ -64,16 +64,5 @@ namespace PA6
             get { return this.cellArray; }
         }
 
-        public void ResizeGrid(int row, int col)
-        {
-            this.row = row;
-            this.col = col;
-        }
-
-        public void LoadCell(Cell[,] cellArray)
-        {
-            this.cellArray = cellArray;
-        }
-
     }
 }

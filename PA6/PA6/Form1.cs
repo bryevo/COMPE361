@@ -81,14 +81,13 @@ namespace PA6
         /// <param name="e"></param>
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
+            Graphics g = CreateGraphics();
             int x = e.X;
             int y = e.Y - menuStrip1.Height;
             int c = (int)Math.Floor((double) y/cellHeight);
             int r = (int)Math.Floor((double)x/cellWidth);
-            grid.LoadCell(cellArray);
-            cellArray[r,c].Paint = CreateGraphics();
-            cellArray[r,c].Paint.FillRectangle(sb, r * cellWidth, ((c * cellHeight) + menuStrip1.Height), cellWidth, cellHeight);
-            cellArray[r, c].IsAlive = true;
+            cellArray = grid.getCellArray;
+            cellArray[r, c].ToggleAlive(true, g);
             textBox1.Text = String.Format("x: {0}, y: {1}", r+1, c+1);
         }
 
