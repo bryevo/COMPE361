@@ -88,15 +88,32 @@ namespace PA6
         /// <param name="e"></param>
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
-            Graphics g = CreateGraphics();
-            int x = e.X;
-            int y = e.Y - menuStrip1.Height;
-            int c = (int)Math.Floor((double) y/cellHeight);
-            int r = (int)Math.Floor((double) x/cellWidth);
-            cellArray = grid.getCellArray;
-            cellArray[r, c].ToggleAlive(true, g);
-            Console.WriteLine("Element {0},{1},{2}", r, c, cellArray[r,c].IsAlive);
-            textBox1.Text = String.Format("x: {0}, y: {1}", r, c);
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    Graphics g = CreateGraphics();
+                    int x = e.X;
+                    int y = e.Y - menuStrip1.Height;
+                    int c = (int)Math.Floor((double)y / cellHeight);
+                    int r = (int)Math.Floor((double)x / cellWidth);
+                    cellArray = grid.getCellArray;
+                    cellArray[r, c].ToggleAlive(true, g);
+                    Console.WriteLine("Element {0},{1},{2}", r, c, cellArray[r, c].IsAlive);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c, r].ElementRow, cellArray[c, r].ElementColumn);
+                    break;
+                case MouseButtons.Right:
+                    Graphics g1 = CreateGraphics();
+                    int x1 = e.X;
+                    int y1 = e.Y - menuStrip1.Height;
+                    int c1 = (int)Math.Floor((double)y1 / cellHeight);
+                    int r1 = (int)Math.Floor((double)x1 / cellWidth);
+                    cellArray = grid.getCellArray;
+                    cellArray[r1, c1].ToggleAlive(false, g1);
+                    Console.WriteLine("Element {0},{1},{2}", r1, c1, cellArray[r1, c1].IsAlive);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c1, r1].ElementRow, cellArray[c1, r1].ElementColumn);
+                    break;
+            }
+            
         }
 
        
