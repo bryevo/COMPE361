@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PA6
 {
-    public class Grid
+    public class Grid : Form 
     {
         private int row, col;
         private float cellHeight, CellWidth;
@@ -47,22 +47,26 @@ namespace PA6
 
         public Grid randomGrid (Grid grid)
         {
+            Graphics g = CreateGraphics();
             Random rand = new Random();
             for (int i = 0; i < grid.cellArray.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.cellArray.GetLength(1); j++)
                 {
 
-                    if (rand.Next(0, 2) == 0) {
-                        grid.cellArray[i, j].IsAlive = false;
-                        Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
+                    if (rand.Next(0, 2) == 0)
+                    {
+                        grid.cellArray[i, j].ToggleAlive(true, g);
+                        //Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
                     }
 
                     else
-                        grid.cellArray[i, j].IsAlive = true;
-                        Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
+                        grid.cellArray[i, j].ToggleAlive(false, g);
+                        //Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
                 }
+
             }
+            
             return grid;
         }
 

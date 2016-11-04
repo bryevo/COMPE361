@@ -100,6 +100,7 @@ namespace PA6
                     cellArray[r, c].ToggleAlive(true, g);
                     Console.WriteLine("Element {0},{1},{2}", r, c, cellArray[r, c].IsAlive);
                     textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c, r].ElementRow, cellArray[c, r].ElementColumn);
+                    Invalidate();
                     break;
                 case MouseButtons.Right:
                     Graphics g1 = CreateGraphics();
@@ -111,6 +112,7 @@ namespace PA6
                     cellArray[r1, c1].ToggleAlive(false, g1);
                     Console.WriteLine("Element {0},{1},{2}", r1, c1, cellArray[r1, c1].IsAlive);
                     textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c1, r1].ElementRow, cellArray[c1, r1].ElementColumn);
+                    Invalidate();
                     break;
             }
             
@@ -214,6 +216,7 @@ namespace PA6
         private void generateRandomStateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             grid = grid.randomGrid(grid);
+            Invalidate();
         }
         List<Cell> cellsToActivate = new List<Cell>();
         List<Cell> cellsToKill = new List<Cell>();
@@ -225,43 +228,43 @@ namespace PA6
             int[] temp = new int[12];
             //neighbor 1
             temp[0] = mod((c - 1), col);
-            Console.WriteLine("Checking element {0}, {1}", r, temp[0]);
+            //Console.WriteLine("Checking element {0}, {1}", r, temp[0]);
             if (cellArray[r, mod((c - 1), col)].IsAlive) { activeNeighbors++; }
             //n2
             temp[1] = mod((r - 1), col);
             temp[2] = mod((c - 1), col);
-            Console.WriteLine("Checking element {0}, {1}", temp[1], temp[2]);
+            //Console.WriteLine("Checking element {0}, {1}", temp[1], temp[2]);
             if (cellArray[mod((r - 1), row), mod((c - 1), col)].IsAlive) { activeNeighbors++; }
             //n3
             temp[3] = mod((r - 1), row);
-            Console.WriteLine("Checking element {0}, {1}", temp[3], c);
+           // Console.WriteLine("Checking element {0}, {1}", temp[3], c);
             if (cellArray[mod((r - 1), row), c].IsAlive) { activeNeighbors++; }
             //n4
             temp[4] = mod((r - 1), row);
             temp[5] = mod((c + 1), col);
-            Console.WriteLine("Checking element {0}, {1}", temp[4], temp[5]);
+           // Console.WriteLine("Checking element {0}, {1}", temp[4], temp[5]);
             if (cellArray[mod((r - 1), row), mod((c + 1), col)].IsAlive) { activeNeighbors++; }
             //n5
             temp[6] = mod((c + 1), col);
-            Console.WriteLine("Checking element {0}, {1}", r, temp[6]);
+           // Console.WriteLine("Checking element {0}, {1}", r, temp[6]);
             if (cellArray[r, mod((c + 1), col)].IsAlive) { activeNeighbors++; }
             //n6
             temp[7] = mod((r + 1), row);
             temp[8] = mod((c + 1), col);
-            Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
+            ///Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
             if (cellArray[mod((r + 1), row), mod((c + 1), col)].IsAlive) { activeNeighbors++; }
             //n7
             temp[9] = mod((r + 1), row);
-            Console.WriteLine("Checking element {0}, {1}", temp[9], c);
+            //Console.WriteLine("Checking element {0}, {1}", temp[9], c);
             if (cellArray[mod((r + 1), row), c].IsAlive) { activeNeighbors++; }
             //n8
             temp[10] = mod((r + 1), row);
             temp[11] = mod((c - 1), col);
-            Console.WriteLine("Checking element {0}, {1}", temp[10], temp[11]);
+            //Console.WriteLine("Checking element {0}, {1}", temp[10], temp[11]);
             if (cellArray[mod((r + 1), row), mod((c - 1), col)].IsAlive) { activeNeighbors++; }
 
             //this checks alive cell with neighbors
-            Console.WriteLine("Element: {0},{1} Neighboors {2}", r,c,activeNeighbors);
+            //Console.WriteLine("Element: {0},{1} Neighboors {2}", r,c,activeNeighbors);
             Graphics g = CreateGraphics();
             //survival
             if (activeNeighbors >= SMIN && activeNeighbors <= SMAX)
@@ -312,7 +315,7 @@ namespace PA6
         {
             Graphics g = CreateGraphics();
             foreach (Cell c in temp){
-                Console.WriteLine("Killing {0},{1}", c.ElementRow, c.ElementColumn);
+                //Console.WriteLine("Killing {0},{1}", c.ElementRow, c.ElementColumn);
                 c.ToggleAlive(false, g);
             }
         }
@@ -321,10 +324,11 @@ namespace PA6
             Graphics g = CreateGraphics();
             foreach (Cell c in temp1)
             {
-                Console.WriteLine("Activating {0},{1}", c.ElementRow, c.ElementColumn);
+                //Console.WriteLine("Activating {0},{1}", c.ElementRow, c.ElementColumn);
                 c.ToggleAlive(true, g);
             }
         }
+        
 
 
     }
