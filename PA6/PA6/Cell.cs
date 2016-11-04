@@ -23,12 +23,6 @@ namespace PA6
             get { return isAlive; }
             set {isAlive = value; }
         }
-
-        public Color AliveColor
-        {
-            get { return this.sb.Color; }
-            set { this.sb.Color = value; }
-        }
        
         public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
         {

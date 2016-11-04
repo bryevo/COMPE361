@@ -18,7 +18,8 @@ namespace PA6
         int BMAX = 3;   //Birth Law max
         int SMIN = 2;   //Survival Law min
         int SMAX = 3;   //Survival Law max
-        //int Generations = 10; //Generations to iterate when "Start" is pushed
+        int Generations = 10; //Generations to iterate when "Start" is pushed
+        int generationCounter = 0;
 
         public Cell[,] cellArray;
         public int row;
@@ -30,6 +31,7 @@ namespace PA6
         Grid grid;
         public Form1()
         {
+            
             bool startGrid = ShowStartupForm();
             if (startGrid)
             {
@@ -56,7 +58,15 @@ namespace PA6
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e);
+            if (toggleGridToolStripMenuItem.Checked)
+            {
+                LoadGrid(e);
+            }
+            
+        }
 
+        public void LoadGrid(PaintEventArgs e)
+        {
             Graphics g = e.Graphics;
             float x = 0;
             float y = menuStrip1.Height;
@@ -73,10 +83,7 @@ namespace PA6
                 g.DrawLine(pen, x, y, ClientSize.Width, y);
                 y += cellHeight;
             }
-
-            
         }
-
         /// <summary>
         /// Mouse event that gets the coordinate of the mouse click
         /// </summary>
@@ -95,7 +102,6 @@ namespace PA6
                     cellArray = grid.getCellArray;
                     cellArray[r, c].ToggleAlive(true, g);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r,c].ElementX, cellArray[r,c].ElementY, cellArray[r, c].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[r, c].ElementX, cellArray[r, c].ElementY);
                     Invalidate();
                     break;
                 case MouseButtons.Right:
@@ -106,7 +112,6 @@ namespace PA6
                     cellArray = grid.getCellArray;
                     cellArray[r1, c1].ToggleAlive(false, g);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY, cellArray[r1, c1].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY);
                     Invalidate();
                     break;
             }
@@ -120,19 +125,6 @@ namespace PA6
             Invalidate();
         }
 
-        private void clear_Grid(object sender, EventArgs e)
-        {
-            for (int i = 0; i < cellArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < cellArray.GetLength(1); j++)
-                {
-                    cellArray[i, j].IsAlive = false;
-
-                }
-            }
-            Invalidate();
-        }
-
         private void evolutionParametersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvolutionParameters ep = new EvolutionParameters();
@@ -141,7 +133,7 @@ namespace PA6
             ep.SMAX = this.SMAX;
             ep.BMAX = this.BMAX;
             ep.BMIN = this.BMIN;
-            //ep.Generations = this.Generations;
+            ep.Generations = this.Generations;
             DialogResult dr = ep.ShowDialog();
 
             //retrieve the user set evolution paramters
@@ -151,7 +143,7 @@ namespace PA6
                 this.BMAX = ep.BMAX;
                 this.SMIN = ep.SMIN;
                 this.SMAX = ep.SMAX;
-                //this.Generations = ep.Generations;
+                this.Generations = ep.Generations;
                 //Console.WriteLine("BMIN: {0}, BMAX: {1}, SMIN: {2}, SMAX: {3}, Generations: {4}", BMIN, BMAX, SMIN, SMAX, Generations);
 
                // label1.Text = String.Format("Bmin is {0}, Bmax is {1}, Smin is {2}, Smax is {3}", BMIN, BMAX, SMIN, SMAX);
@@ -166,9 +158,18 @@ namespace PA6
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
+            Graphics g = CreateGraphics();
             if (cd.ShowDialog() == DialogResult.OK)
             {
-                this.BackColor = cd.Color;
+                this.sb = new SolidBrush(cd.Color);
+                for(int i = 0; i < cellArray.GetLength(0); i++)
+                {
+                    for(int j = 0; i < cellArray.GetLength(1); j++)
+                    {
+                        if (cellArray[i, j].IsAlive == false)
+                            cellArray[i, j].ToggleAlive(false, g);
+                    }
+                }
             }
             
 
@@ -282,18 +283,11 @@ namespace PA6
             }
         }
 
-        private void StartMenuItem_Click(object sender, EventArgs e)
-        {
-            //for(int i=0; i<Generations; i++)
-            //{
-                oneGeneration();
-                Invalidate();
-            //}
-            
-        }
+       
 
         private void oneGeneration()
         {
+            generationTimer.Interval = (int) (1000 / numEvoRate.Value);
             for (int i = 0; i < cellArray.GetLength(0); i++)
             {
                 for (int j = 0; j < cellArray.GetLength(1); j++)
@@ -305,7 +299,7 @@ namespace PA6
             killCellList(cellsToKill);
             cellsToActivate.Clear();
             cellsToKill.Clear();
-
+            generationLabel.Text = String.Format("Successful Generation: {0}", ++this.generationCounter);
         }
         int mod(int a, int n)
         {
@@ -322,6 +316,79 @@ namespace PA6
                 c.ToggleAlive(false, g);
             }
         }
+        int index = 0;
+        private void generationTimer_Tick(object sender, EventArgs e)
+        {
+            if (index < Generations)
+            {
+                oneGeneration();
+                Invalidate();
+                index++;
+            }
+        /*
+            for (int i = 0; i < Generations; i++)
+            {
+                oneGeneration();
+
+                Invalidate();
+            }
+            */
+        }
+
+        private void singleStepEvolutionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            oneGeneration();
+            Invalidate();
+        }
+
+        private void playToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.index == Generations)                            //if game has already started, continue with the last gen by setting index to counter
+            {
+                this.index = 0;
+            }
+            //generationTimer.Enabled = true;
+            generationTimer.Start();
+        }
+
+        private void clear_Grid(object sender, EventArgs e)
+        {
+            Graphics g = CreateGraphics();
+            // this.generationTimer.Enabled = false;
+            for (int i = 0; i < cellArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < cellArray.GetLength(1); j++)
+                {
+                    cellArray[i, j].IsAlive = false;
+                    //cellArray[i, j].ToggleAlive(false, g);
+                }
+            }
+            //this.generationCounter = 0;
+            Invalidate();
+        }
+
+        private void pauseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.index = generationCounter;
+            this.generationTimer.Stop();
+        }
+
+        private void toggleGridToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            if (toggleGridToolStripMenuItem.Checked)
+            {
+                toggleGridToolStripMenuItem.Text = "Grid Toggle: OFF";
+                toggleGridToolStripMenuItem.Checked = false;
+                Invalidate();
+            }
+            else if (!toggleGridToolStripMenuItem.Checked)
+            {
+                toggleGridToolStripMenuItem.Text = "Grid Toggle: ON";
+                toggleGridToolStripMenuItem.Checked = true;
+                Invalidate();
+            }
+        }
+
         private void activateCellList(List<Cell> temp1)
         {
             Graphics g = CreateGraphics();

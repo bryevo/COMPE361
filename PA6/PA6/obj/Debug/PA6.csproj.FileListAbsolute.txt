@@ -39,3 +39,14 @@ C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resources
 C:\Users\Steven\OneDrive\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resources
 C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.EvolutionParameters.resources
 C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.EvolutionParameters.resources
+C:\Users\Steven\Desktop\PA6\PA6\PA6\bin\Debug\PA6.exe.config
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.exe
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.pdb
+C:\Users\Steven\Desktop\PA6\PA6\PA6\bin\Debug\PA6.exe
+C:\Users\Steven\Desktop\PA6\PA6\PA6\bin\Debug\PA6.pdb
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.EvolutionParameters.resources
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.Form1.resources
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.Properties.Resources.resources
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.StartupForm.resources
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
+C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.csprojResolveAssemblyReference.cache
