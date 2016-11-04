@@ -58,7 +58,7 @@
             0,
             0});
             this.numericUpDownRows.Minimum = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
@@ -66,7 +66,7 @@
             this.numericUpDownRows.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownRows.TabIndex = 1;
             this.numericUpDownRows.Value = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
@@ -80,7 +80,7 @@
             0,
             0});
             this.numericUpDownColumns.Minimum = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
@@ -88,7 +88,7 @@
             this.numericUpDownColumns.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownColumns.TabIndex = 2;
             this.numericUpDownColumns.Value = new decimal(new int[] {
-            10,
+            5,
             0,
             0,
             0});
@@ -144,6 +144,8 @@
             this.Controls.Add(this.numericUpDownColumns);
             this.Controls.Add(this.numericUpDownRows);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StartupForm";
             this.Text = "StartupForm";
             this.Load += new System.EventHandler(this.StartupForm_Load);

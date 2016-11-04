@@ -29,9 +29,17 @@ namespace PA6
                 for (int j = 0; j < cellArray.GetLength(1); j++)
                 {
                     if (cellArray[i, j] == null || cellArray[i, j].IsAlive == false)
+                    {
                         cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, false, e);
+                        cellArray[i, j].ElementRow = i;
+                        cellArray[i, j].ElementColumn = j;
+                    }
                     else
-                        cellArray[i,j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e);
+                    {
+                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e);
+                        cellArray[i, j].ElementRow = i;
+                        cellArray[i, j].ElementColumn = j;
+                    }
                 }
             }
             this.cellArray = cellArray;
