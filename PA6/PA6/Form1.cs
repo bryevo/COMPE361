@@ -17,8 +17,8 @@ namespace PA6
         int BMIN = 3;   //Birth Law min
         int BMAX = 3;   //Birth Law max
         int SMIN = 2;   //Survival Law min
-        int SMAX = 2;   //Survival Law max
-        int Generations = 10; //Generations to iterate when "Start" is pushed
+        int SMAX = 3;   //Survival Law max
+        //int Generations = 10; //Generations to iterate when "Start" is pushed
 
         public Cell[,] cellArray;
         public int row;
@@ -84,10 +84,10 @@ namespace PA6
         /// <param name="e"></param>
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
+            Graphics g = CreateGraphics();
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    Graphics g = CreateGraphics();
                     int x = e.X;
                     int y = e.Y - menuStrip1.Height;
                     int c = (int)Math.Floor((double)y / cellHeight);
@@ -95,19 +95,18 @@ namespace PA6
                     cellArray = grid.getCellArray;
                     cellArray[r, c].ToggleAlive(true, g);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r,c].ElementX, cellArray[r,c].ElementY, cellArray[r, c].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c, r].ElementX, cellArray[c, r].ElementY);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[r, c].ElementX, cellArray[r, c].ElementY);
                     Invalidate();
                     break;
                 case MouseButtons.Right:
-                    Graphics g1 = CreateGraphics();
                     int x1 = e.X;
                     int y1 = e.Y - menuStrip1.Height;
                     int c1 = (int)Math.Floor((double)y1 / cellHeight);
                     int r1 = (int)Math.Floor((double)x1 / cellWidth);
                     cellArray = grid.getCellArray;
-                    cellArray[r1, c1].ToggleAlive(false, g1);
+                    cellArray[r1, c1].ToggleAlive(false, g);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY, cellArray[r1, c1].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c1, r1].ElementX, cellArray[c1, r1].ElementY);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY);
                     Invalidate();
                     break;
             }
@@ -142,7 +141,7 @@ namespace PA6
             ep.SMAX = this.SMAX;
             ep.BMAX = this.BMAX;
             ep.BMIN = this.BMIN;
-            ep.Generations = this.Generations;
+            //ep.Generations = this.Generations;
             DialogResult dr = ep.ShowDialog();
 
             //retrieve the user set evolution paramters
@@ -152,8 +151,8 @@ namespace PA6
                 this.BMAX = ep.BMAX;
                 this.SMIN = ep.SMIN;
                 this.SMAX = ep.SMAX;
-                this.Generations = ep.Generations;
-                Console.WriteLine("BMIN: {0}, BMAX: {1}, SMIN: {2}, SMAX: {3}, Generations: {4}", BMIN, BMAX, SMIN, SMAX, Generations);
+                //this.Generations = ep.Generations;
+                //Console.WriteLine("BMIN: {0}, BMAX: {1}, SMIN: {2}, SMAX: {3}, Generations: {4}", BMIN, BMAX, SMIN, SMAX, Generations);
 
                // label1.Text = String.Format("Bmin is {0}, Bmax is {1}, Smin is {2}, Smax is {3}", BMIN, BMAX, SMIN, SMAX);
             }
@@ -181,7 +180,6 @@ namespace PA6
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 sb = new SolidBrush(cd.Color);
-                
             }
 
             Invalidate();
@@ -226,8 +224,6 @@ namespace PA6
         List<Cell> cellsToKill = new List<Cell>();
         private void checkNeighbors(Cell[,] cellArray, int r, int c)
         {
-
-
             int activeNeighbors = 0;
             int[] temp = new int[12];
             //neighbor 1
@@ -269,9 +265,8 @@ namespace PA6
 
             //this checks alive cell with neighbors
             //Console.WriteLine("Element: {0},{1} Neighboors {2}", r,c,activeNeighbors);
-            Graphics g = CreateGraphics();
             //survival
-            if (activeNeighbors >= SMIN && activeNeighbors <= SMAX)
+            if (cellArray[r,c].IsAlive && activeNeighbors >= SMIN && activeNeighbors <= SMAX)
             {
                 //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
@@ -287,13 +282,13 @@ namespace PA6
             }
         }
 
-        private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
+        private void StartMenuItem_Click(object sender, EventArgs e)
         {
-            for(int i=0; i<Generations; i++)
-            {
+            //for(int i=0; i<Generations; i++)
+            //{
                 oneGeneration();
                 Invalidate();
-            }
+            //}
             
         }
 

@@ -81,7 +81,7 @@
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
             this.pauseToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.pauseToolStripMenuItem.Text = "Start";
-            this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
+            this.pauseToolStripMenuItem.Click += new System.EventHandler(this.StartMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
