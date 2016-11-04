@@ -31,14 +31,14 @@ namespace PA6
                     if (cellArray[i, j] == null || cellArray[i, j].IsAlive == false)
                     {
                         cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, false, e);
-                        cellArray[i, j].ElementRow = i;
-                        cellArray[i, j].ElementColumn = j;
+                        cellArray[i, j].ElementX = i;
+                        cellArray[i, j].ElementY = j;
                     }
                     else
                     {
                         cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e);
-                        cellArray[i, j].ElementRow = i;
-                        cellArray[i, j].ElementColumn = j;
+                        cellArray[i, j].ElementX = i;
+                        cellArray[i, j].ElementY = j;
                     }
                 }
             }

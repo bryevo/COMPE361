@@ -38,10 +38,13 @@
             this.numSMAX = new System.Windows.Forms.NumericUpDown();
             this.numBMAX = new System.Windows.Forms.NumericUpDown();
             this.btnDone = new System.Windows.Forms.Button();
+            this.labelGenerations = new System.Windows.Forms.Label();
+            this.numericUpDownGenerations = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numBMIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSMIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSMAX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMAX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGenerations)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBMIN
@@ -95,44 +98,63 @@
             this.numBMIN.Location = new System.Drawing.Point(102, 45);
             this.numBMIN.Name = "numBMIN";
             this.numBMIN.Size = new System.Drawing.Size(120, 20);
-            this.numBMIN.TabIndex = 5;
+            this.numBMIN.TabIndex = 1;
             // 
             // numSMIN
             // 
             this.numSMIN.Location = new System.Drawing.Point(102, 115);
             this.numSMIN.Name = "numSMIN";
             this.numSMIN.Size = new System.Drawing.Size(120, 20);
-            this.numSMIN.TabIndex = 6;
+            this.numSMIN.TabIndex = 3;
             // 
             // numSMAX
             // 
             this.numSMAX.Location = new System.Drawing.Point(102, 149);
             this.numSMAX.Name = "numSMAX";
             this.numSMAX.Size = new System.Drawing.Size(120, 20);
-            this.numSMAX.TabIndex = 7;
+            this.numSMAX.TabIndex = 4;
             // 
             // numBMAX
             // 
             this.numBMAX.Location = new System.Drawing.Point(102, 79);
             this.numBMAX.Name = "numBMAX";
             this.numBMAX.Size = new System.Drawing.Size(120, 20);
-            this.numBMAX.TabIndex = 8;
+            this.numBMAX.TabIndex = 2;
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(146, 205);
+            this.btnDone.Location = new System.Drawing.Point(182, 222);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(75, 23);
-            this.btnDone.TabIndex = 9;
+            this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // labelGenerations
+            // 
+            this.labelGenerations.AutoSize = true;
+            this.labelGenerations.Location = new System.Drawing.Point(16, 182);
+            this.labelGenerations.Name = "labelGenerations";
+            this.labelGenerations.Size = new System.Drawing.Size(67, 13);
+            this.labelGenerations.TabIndex = 10;
+            this.labelGenerations.Text = "Generations:";
+            // 
+            // numericUpDownGenerations
+            // 
+            this.numericUpDownGenerations.Location = new System.Drawing.Point(102, 180);
+            this.numericUpDownGenerations.Name = "numericUpDownGenerations";
+            this.numericUpDownGenerations.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownGenerations.TabIndex = 6;
+            // 
             // EvolutionParameters
             // 
+            this.AcceptButton = this.btnDone;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.numericUpDownGenerations);
+            this.Controls.Add(this.labelGenerations);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.numBMAX);
             this.Controls.Add(this.numSMAX);
@@ -149,6 +171,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSMIN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSMAX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMAX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGenerations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +189,7 @@
         private System.Windows.Forms.NumericUpDown numSMAX;
         private System.Windows.Forms.NumericUpDown numBMAX;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.Label labelGenerations;
+        private System.Windows.Forms.NumericUpDown numericUpDownGenerations;
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,10 +13,12 @@ namespace PA6
 {
     public partial class Form1 : Form
     {
-        int BMIN;   //Birth Law min
-        int BMAX;   //Birth Law max
-        int SMIN;   //Survival Law min
-        int SMAX;   //Survival Law max
+
+        int BMIN = 3;   //Birth Law min
+        int BMAX = 3;   //Birth Law max
+        int SMIN = 2;   //Survival Law min
+        int SMAX = 2;   //Survival Law max
+        int Generations = 10; //Generations to iterate when "Start" is pushed
 
         public Cell[,] cellArray;
         public int row;
@@ -32,13 +35,6 @@ namespace PA6
             {
                 InitializeComponent();
                 SetCell();
-                //LoadGrid();
-                //Default evolution parameters
-                BMIN = 3;
-                BMAX = 3;
-                SMIN = 2;
-                SMAX = 3;
-
             } else {
                 Application.Exit();
             }
@@ -98,8 +94,8 @@ namespace PA6
                     int r = (int)Math.Floor((double)x / cellWidth);
                     cellArray = grid.getCellArray;
                     cellArray[r, c].ToggleAlive(true, g);
-                    Console.WriteLine("Element {0},{1},{2}", r, c, cellArray[r, c].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c, r].ElementRow, cellArray[c, r].ElementColumn);
+                    Console.WriteLine("Element {0},{1},{2}", cellArray[r,c].ElementX, cellArray[r,c].ElementY, cellArray[r, c].IsAlive);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c, r].ElementX, cellArray[c, r].ElementY);
                     Invalidate();
                     break;
                 case MouseButtons.Right:
@@ -110,8 +106,8 @@ namespace PA6
                     int r1 = (int)Math.Floor((double)x1 / cellWidth);
                     cellArray = grid.getCellArray;
                     cellArray[r1, c1].ToggleAlive(false, g1);
-                    Console.WriteLine("Element {0},{1},{2}", r1, c1, cellArray[r1, c1].IsAlive);
-                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c1, r1].ElementRow, cellArray[c1, r1].ElementColumn);
+                    Console.WriteLine("Element {0},{1},{2}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY, cellArray[r1, c1].IsAlive);
+                    textBox1.Text = String.Format("Row:{0}, Col:{1}", cellArray[c1, r1].ElementX, cellArray[c1, r1].ElementY);
                     Invalidate();
                     break;
             }
@@ -141,20 +137,28 @@ namespace PA6
         private void evolutionParametersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvolutionParameters ep = new EvolutionParameters();
+            
+            ep.SMIN = this.SMIN;
+            ep.SMAX = this.SMAX;
+            ep.BMAX = this.BMAX;
+            ep.BMIN = this.BMIN;
+            ep.Generations = this.Generations;
             DialogResult dr = ep.ShowDialog();
 
             //retrieve the user set evolution paramters
-            if (dr == System.Windows.Forms.DialogResult.OK)
+            if (dr == DialogResult.OK)
             {
-                BMIN = ep.BMIN;
-                BMAX = ep.BMAX;
-                SMIN = ep.SMIN;
-                SMAX = ep.SMAX;
+                this.BMIN = ep.BMIN;
+                this.BMAX = ep.BMAX;
+                this.SMIN = ep.SMIN;
+                this.SMAX = ep.SMAX;
+                this.Generations = ep.Generations;
+                Console.WriteLine("BMIN: {0}, BMAX: {1}, SMIN: {2}, SMAX: {3}, Generations: {4}", BMIN, BMAX, SMIN, SMAX, Generations);
 
                // label1.Text = String.Format("Bmin is {0}, Bmax is {1}, Smin is {2}, Smax is {3}", BMIN, BMAX, SMIN, SMAX);
             }
             //do nothing. dont really need this
-            else if (dr == System.Windows.Forms.DialogResult.Cancel)
+            else if (dr == DialogResult.Cancel)
             {
 
             }
@@ -285,8 +289,12 @@ namespace PA6
 
         private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            oneGeneration();
-            Invalidate();
+            for(int i=0; i<Generations; i++)
+            {
+                oneGeneration();
+                Invalidate();
+            }
+            
         }
 
         private void oneGeneration()

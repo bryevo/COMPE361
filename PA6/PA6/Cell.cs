@@ -15,8 +15,8 @@ namespace PA6
         private Graphics g;
         SolidBrush sb;
 
-        public int ElementRow { get; set; }
-        public int ElementColumn { get; set; }
+        public int ElementX { get; set; }
+        public int ElementY { get; set; }
 
         public bool IsAlive
         {
