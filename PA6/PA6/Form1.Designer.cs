@@ -42,6 +42,7 @@ namespace PA6
             this.gridColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.singleStepEvolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,8 +91,9 @@ namespace PA6
             this.menuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.evolutionParametersToolStripMenuItem,
             this.generateRandomToolStripMenuItem,
+            this.resetToolStripMenuItem,
             this.toggleGridToolStripMenuItem,
-            this.resetToolStripMenuItem});
+            this.helpToolStripMenuItem});
             this.menuItem1.Name = "menuItem1";
             this.menuItem1.Size = new System.Drawing.Size(61, 22);
             this.menuItem1.Text = "Options";
@@ -149,6 +151,12 @@ namespace PA6
             this.resetToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.resetToolStripMenuItem.Text = "Clear Grid";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.clear_Grid);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // playToolStripMenuItem
             // 
@@ -242,6 +250,7 @@ namespace PA6
         private System.Windows.Forms.ToolStripMenuItem evolutionRateToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generateRandomStateToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 

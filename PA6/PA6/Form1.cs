@@ -20,6 +20,7 @@ namespace PA6
         int SMAX = 3; //Survival Law max
         int Generations = 10; //Generations to iterate when "Start" is pushed
         int index, generationCounter;
+
         List<Cell> cellsToActivate = new List<Cell>();
         List<Cell> cellsToKill = new List<Cell>();
         public Cell[,] cellArray;
@@ -39,12 +40,9 @@ namespace PA6
             {
                 InitializeComponent();
                 SetCell();
-                BackColor = pen.Color;
             }
             else
-            {
                 Application.Exit();
-            }
         }
 
         public void SetCell()
@@ -63,6 +61,7 @@ namespace PA6
         public void LoadGrid(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            BackColor = pen.Color;
             float x = 0;
             float y = menuStrip1.Height;
             for (int i = 1; i < col + 1; i++)
@@ -97,7 +96,7 @@ namespace PA6
                         int y = e.Y - menuStrip1.Height;
                         int c = (int) Math.Floor((double) y/cellHeight);
                         int r = (int) Math.Floor((double) x/cellWidth);
-                        cellArray = grid.getCellArray;
+                        cellArray = grid.GetCellArray;
                         cellArray[r, c].ToggleAlive(true, g, sbAlive);
                         break;
                     case MouseButtons.Right:
@@ -105,14 +104,14 @@ namespace PA6
                         int y1 = e.Y - menuStrip1.Height;
                         int c1 = (int) Math.Floor((double) y1/cellHeight);
                         int r1 = (int) Math.Floor((double) x1/cellWidth);
-                        cellArray = grid.getCellArray;
+                        cellArray = grid.GetCellArray;
                         cellArray[r1, c1].ToggleAlive(false, g, sbDead);
                         break;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Something went Wrong.  Please enter valid values.");
+                MessageBox.Show("Something went wrong. Please enter valid values.");
                 Dispose();
             }
         }
@@ -143,9 +142,7 @@ namespace PA6
                 Generations = ep.Generations;
             }
             //do nothing. dont really need this
-            else if (dr == DialogResult.Cancel)
-            {
-            }
+            else if (dr == DialogResult.Cancel){}
         }
 
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,13 +153,9 @@ namespace PA6
             {
                 sbDead = new SolidBrush(cd.Color);
                 for (int i = 0; i < cellArray.GetLength(0); i++)
-                {
                     for (int j = 0; j < cellArray.GetLength(1); j++)
-                    {
                         if (cellArray[i, j].IsAlive == false)
                             cellArray[i, j].ToggleAlive(false, g, sbDead);
-                    }
-                }
             }
         }
 
@@ -174,13 +167,9 @@ namespace PA6
             {
                 sbAlive = new SolidBrush(cd.Color);
                 for (int i = 0; i < cellArray.GetLength(0); i++)
-                {
                     for (int j = 0; j < cellArray.GetLength(1); j++)
-                    {
                         if (cellArray[i, j].IsAlive)
                             cellArray[i, j].ToggleAlive(true, g, sbAlive);
-                    }
-                }
             }
         }
 
@@ -190,7 +179,6 @@ namespace PA6
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 pen = new Pen(cd.Color);
-                // SetCell();
                 Invalidate();
             }
         }
@@ -199,7 +187,6 @@ namespace PA6
         {
             StartupForm StartupDialog = new StartupForm();
             var result = StartupDialog.ShowDialog();
-
             if (result == DialogResult.OK)
             {
                 col = StartupDialog.StartupColumns;
@@ -209,108 +196,85 @@ namespace PA6
             }
             return false;
         }
-        private void checkNeighbors(Cell[,] cellArray, int r, int c)
+        private void CheckNeighbors(Cell[,] cellArray, int r, int c)
         {
             int activeNeighbors = 0;
             int[] temp = new int[12];
             //neighbor 1
-            temp[0] = mod((c - 1), col);
+            temp[0] = Mod((c - 1), col);
             //Console.WriteLine("Checking element {0}, {1}", r, temp[0]);
-            if (cellArray[r, mod((c - 1), col)].IsAlive)
-            {
+            if (cellArray[r, Mod((c - 1), col)].IsAlive)
                 activeNeighbors++;
-            }
             //n2
-            temp[1] = mod((r - 1), col);
-            temp[2] = mod((c - 1), col);
+            temp[1] = Mod((r - 1), col);
+            temp[2] = Mod((c - 1), col);
             //Console.WriteLine("Checking element {0}, {1}", temp[1], temp[2]);
-            if (cellArray[mod((r - 1), row), mod((c - 1), col)].IsAlive)
-            {
+            if (cellArray[Mod((r - 1), row), Mod((c - 1), col)].IsAlive)
                 activeNeighbors++;
-            }
             //n3
-            temp[3] = mod((r - 1), row);
+            temp[3] = Mod((r - 1), row);
             // Console.WriteLine("Checking element {0}, {1}", temp[3], c);
-            if (cellArray[mod((r - 1), row), c].IsAlive)
-            {
+            if (cellArray[Mod((r - 1), row), c].IsAlive)
                 activeNeighbors++;
-            }
-            //n4
-            temp[4] = mod((r - 1), row);
-            temp[5] = mod((c + 1), col);
+           //n4
+            temp[4] = Mod((r - 1), row);
+            temp[5] = Mod((c + 1), col);
             // Console.WriteLine("Checking element {0}, {1}", temp[4], temp[5]);
-            if (cellArray[mod((r - 1), row), mod((c + 1), col)].IsAlive)
-            {
+            if (cellArray[Mod((r - 1), row), Mod((c + 1), col)].IsAlive)
                 activeNeighbors++;
-            }
             //n5
-            temp[6] = mod((c + 1), col);
+            temp[6] = Mod((c + 1), col);
             // Console.WriteLine("Checking element {0}, {1}", r, temp[6]);
-            if (cellArray[r, mod((c + 1), col)].IsAlive)
-            {
+            if (cellArray[r, Mod((c + 1), col)].IsAlive)
                 activeNeighbors++;
-            }
             //n6
-            temp[7] = mod((r + 1), row);
-            temp[8] = mod((c + 1), col);
-            ///Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
-            if (cellArray[mod((r + 1), row), mod((c + 1), col)].IsAlive)
-            {
+            temp[7] = Mod((r + 1), row);
+            temp[8] = Mod((c + 1), col);
+            //Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
+            if (cellArray[Mod((r + 1), row), Mod((c + 1), col)].IsAlive)
                 activeNeighbors++;
-            }
             //n7
-            temp[9] = mod((r + 1), row);
+            temp[9] = Mod((r + 1), row);
             //Console.WriteLine("Checking element {0}, {1}", temp[9], c);
-            if (cellArray[mod((r + 1), row), c].IsAlive)
-            {
+            if (cellArray[Mod((r + 1), row), c].IsAlive)
                 activeNeighbors++;
-            }
             //n8
-            temp[10] = mod((r + 1), row);
-            temp[11] = mod((c - 1), col);
+            temp[10] = Mod((r + 1), row);
+            temp[11] = Mod((c - 1), col);
             //Console.WriteLine("Checking element {0}, {1}", temp[10], temp[11]);
-            if (cellArray[mod((r + 1), row), mod((c - 1), col)].IsAlive)
-            {
+            if (cellArray[Mod((r + 1), row), Mod((c - 1), col)].IsAlive)
                 activeNeighbors++;
-            }
 
             //this checks alive cell with neighbors
             //Survival
             if (cellArray[r, c].IsAlive && activeNeighbors >= SMIN && activeNeighbors <= SMAX)
-            {
                 //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
-            }
             //Birth
             else if (!cellArray[r, c].IsAlive && (activeNeighbors >= BMIN && activeNeighbors <= BMAX))
-            {
                 //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
-            }
             //Death
             else
-            {
                 cellsToKill.Add(cellArray[r, c]);
                 //cellArray[r, c].ToggleAlive(false, g);
-            }
         }
-
-
+        
         private void OneGeneration()
         {
             for (int i = 0; i < cellArray.GetLength(0); i++)
                 for (int j = 0; j < cellArray.GetLength(1); j++)
-                    checkNeighbors(cellArray, i, j);
+                    CheckNeighbors(cellArray, i, j);
             ActivateCellList(cellsToActivate);
             KillCellList(cellsToKill);
             cellsToActivate.Clear();
             cellsToKill.Clear();
-            generationLabel.Text = String.Format("Generation Count: {0}", ++generationCounter);
+            generationLabel.Text = String.Format("Generation Count: {0}", ++generationCounter);;
         }
 
-        int mod(int a, int n)
+        public int Mod(int a, int n)
         {
-            return ((a%n) + n)%n;
+            return ((a % n) + n) % n;
         }
 
         private void ActivateCellList(List<Cell> temp)
@@ -327,21 +291,27 @@ namespace PA6
                 c.ToggleAlive(false, g, sbDead);
         }
 
+        /// <summary>
+        /// Timer event that handles the the generations from the Play button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void generationTimer_Tick(object sender, EventArgs e)
         {
             generationTimer.Interval = (int)(1000 / numEvoRate.Value);
+            //index used to handle how many iterations of OneGeneration has been counted.
             if (index < Generations)
             {
-                OneGeneration();
                 index++;
+                OneGeneration();
             }
         }
 
-        private void singleStepEvolutionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OneGeneration();
-        }
-
+        /// <summary>
+        /// Play button event that triggers the Timer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (index == Generations)   //if game has already started, continue with the last gen by setting index to counter
@@ -349,6 +319,32 @@ namespace PA6
             generationTimer.Start();
         }
 
+        /// <summary>
+        /// Button event that handles one generation of evolution.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void singleStepEvolutionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OneGeneration();
+            index = Generations;  //Set index to Generations to let Timer be unaffected.
+        }
+
+        /// <summary>
+        /// Pause button to handle pausing the evolution.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pauseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            generationTimer.Stop();
+        }
+
+        /// <summary>
+        /// Clears everything off the grid by setting the Cell to be dead.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clear_Grid(object sender, EventArgs e)
         {
             for (int i = 0; i < cellArray.GetLength(0); i++)
@@ -357,18 +353,22 @@ namespace PA6
             Invalidate();
         }
 
+        /// <summary>
+        /// Button event that generates random cells dead or alive on the grid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void generateRandomStateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            grid = grid.randomGrid(grid, sbAlive, sbDead);
+            grid = grid.RandomGrid(grid, sbAlive, sbDead);
             Invalidate();
         }
 
-        private void pauseToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            index = generationCounter;
-            generationTimer.Stop();
-        }
-
+        /// <summary>
+        /// Toggles the grid on or off.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toggleGridToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (toggleGridToolStripMenuItem.Checked)

@@ -16,15 +16,29 @@ namespace PA6
         SolidBrush sbDead = new SolidBrush(Color.DarkGray);
         SolidBrush sbAlive = new SolidBrush(Color.Green);
 
+        //I think we should get rid of these properties; not doing anything useful atm
         public int ElementX { get; set; }
         public int ElementY { get; set; }
 
+        /// <summary>
+        /// Returns or sets the current state of the Cell
+        /// </summary>
         public bool IsAlive
         {
             get { return isAlive; }
             set {isAlive = value; }
         }
        
+        /// <summary>
+        /// Constructor for the Alive Cells
+        /// </summary>
+        /// <param name="startX"></param>
+        /// <param name="startY"></param>
+        /// <param name="cellWidth"></param>
+        /// <param name="cellHeight"></param>
+        /// <param name="isAlive"></param>
+        /// <param name="e"></param>
+        /// <param name="sb"></param>
         public Cell(double startX, double startY, double cellWidth, double cellHeight, bool isAlive, PaintEventArgs e, SolidBrush sb)
         {
             this.startX = (float)startX;
@@ -33,9 +47,20 @@ namespace PA6
             this.cellWidth = (float)cellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
-            this.sbAlive = sb;
+            sbAlive = sb;
             ToggleAlive(isAlive, g, sbAlive);
         }
+
+        /// <summary>
+        /// Constructor for Dead Cells
+        /// </summary>
+        /// <param name="startX"></param>
+        /// <param name="startY"></param>
+        /// <param name="cellWidth"></param>
+        /// <param name="cellHeight"></param>
+        /// <param name="e"></param>
+        /// <param name="isAlive"></param>
+        /// <param name="sb"></param>
         public Cell(double startX, double startY, double cellWidth, double cellHeight, PaintEventArgs e, bool isAlive,  SolidBrush sb)
         {
             this.startX = (float)startX;
@@ -44,24 +69,24 @@ namespace PA6
             this.cellWidth = (float)cellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
-            this.sbDead = sb;
+            sbDead = sb;
             ToggleAlive(isAlive, g, sbDead);
         }
 
-        public void ToggleAlive(bool check, Graphics x, SolidBrush sb)
+        /// <summary>
+        /// Repaints the cell based on its current State.
+        /// </summary>
+        /// <param name="checkAlive"></param>
+        /// <param name="x"></param>
+        /// <param name="sb"></param>
+        public void ToggleAlive(bool checkAlive, Graphics x, SolidBrush sb)
         {
             g = x;
-            IsAlive = check;
+            IsAlive = checkAlive;
             if (IsAlive)
-            {
-                g.FillRectangle(sb, startX, startY, this.cellWidth, this.cellHeight);
-                isAlive = true;
-            }
+                g.FillRectangle(sb, startX, startY, cellWidth, cellHeight);
             else
-            {
-                g.FillRectangle(sb, startX, startY, this.cellWidth, this.cellHeight);
-                isAlive = false;
-            }
+                g.FillRectangle(sb, startX, startY, cellWidth, cellHeight);
         }
     }
 }
