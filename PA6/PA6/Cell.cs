@@ -13,7 +13,8 @@ namespace PA6
         private bool isAlive;
         private float startX, startY, cellHeight, CellWidth;
         private Graphics g;
-        SolidBrush sb;
+        SolidBrush sbDead = new SolidBrush(Color.DarkGray);
+        SolidBrush sbAlive = new SolidBrush(Color.Green);
 
         public int ElementX { get; set; }
         public int ElementY { get; set; }
@@ -24,7 +25,7 @@ namespace PA6
             set {isAlive = value; }
         }
        
-        public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e)
+        public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e, SolidBrush sb)
         {
             this.startX = startX;
             this.startY = startY;
@@ -32,21 +33,30 @@ namespace PA6
             this.CellWidth = CellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
-            ToggleAlive(isAlive, g);
+            if (isAlive)
+            {
+                this.sbAlive = sb;
+                ToggleAlive(isAlive, g, sbAlive);
+            }
+            else
+            {
+                this.sbDead = sb;
+                ToggleAlive(isAlive, g, sbDead);
+            }
         }
 
-        public void ToggleAlive(bool check, Graphics x)
+        public void ToggleAlive(bool check, Graphics x, SolidBrush sb)
         {
             g = x;
             IsAlive = check;
             if (IsAlive)
             {
-                g.FillRectangle(new SolidBrush(Color.Green), startX, startY, this.CellWidth, this.cellHeight);
+                g.FillRectangle(sb, startX, startY, this.CellWidth, this.cellHeight);
                 isAlive = true;
             }
             else
             {
-                g.FillRectangle(new SolidBrush(Color.DarkGray), startX, startY, this.CellWidth, this.cellHeight);
+                g.FillRectangle(sb, startX, startY, this.CellWidth, this.cellHeight);
                 isAlive = false;
             }
         }

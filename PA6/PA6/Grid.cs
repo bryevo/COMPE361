@@ -20,7 +20,7 @@ namespace PA6
             this.CellWidth = CellWidth;
         }
 
-        public Grid(Cell [,] cellArray, float cellHeight, float CellWidth, float menuHeight, PaintEventArgs e)
+        public Grid(Cell [,] cellArray, float cellHeight, float CellWidth, float menuHeight, PaintEventArgs e, SolidBrush sbAlive, SolidBrush sbDead)
         {
             this.cellHeight = cellHeight;
             this.CellWidth = CellWidth;
@@ -30,13 +30,13 @@ namespace PA6
                 {
                     if (cellArray[i, j] == null || cellArray[i, j].IsAlive == false)
                     {
-                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, false, e);
+                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, false, e, sbDead);
                         cellArray[i, j].ElementX = j;
                         cellArray[i, j].ElementY = i;
                     }
                     else
                     {
-                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e);
+                        cellArray[i, j] = new Cell(i * this.CellWidth, (j * this.cellHeight) + menuHeight, this.cellHeight, this.CellWidth, true, e, sbAlive);
                         cellArray[i, j].ElementX = j;
                         cellArray[i, j].ElementY = i;
                     }
@@ -45,7 +45,7 @@ namespace PA6
             this.cellArray = cellArray;
         }
 
-        public Grid randomGrid (Grid grid)
+        public Grid randomGrid (Grid grid, SolidBrush sbAlive, SolidBrush sbDead)
         {
             Graphics g = CreateGraphics();
             Random rand = new Random();
@@ -56,12 +56,12 @@ namespace PA6
 
                     if (rand.Next(0, 2) == 0)
                     {
-                        grid.cellArray[i, j].ToggleAlive(true, g);
+                        grid.cellArray[i, j].ToggleAlive(true, g, sbAlive);
                         //Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
                     }
 
                     else
-                        grid.cellArray[i, j].ToggleAlive(false, g);
+                        grid.cellArray[i, j].ToggleAlive(false, g, sbDead);
                         //Console.WriteLine("Element {0}, {1} is {2}", i, j, cellArray[i, j].IsAlive);
                 }
 

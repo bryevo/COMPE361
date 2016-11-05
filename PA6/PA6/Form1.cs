@@ -26,7 +26,8 @@ namespace PA6
         public int col;
         public static float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
-        SolidBrush sb = new SolidBrush(Color.Yellow);
+        SolidBrush sbAlive = new SolidBrush(Color.Green);
+        SolidBrush sbDead = new SolidBrush(Color.DarkGray);
 
         Grid grid;
         public Form1()
@@ -57,7 +58,7 @@ namespace PA6
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
-            grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e);
+            grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e, sbAlive, sbDead);
             if (toggleGridToolStripMenuItem.Checked)
             {
                 LoadGrid(e);
@@ -100,7 +101,7 @@ namespace PA6
                     int c = (int)Math.Floor((double)y / cellHeight);
                     int r = (int)Math.Floor((double)x / cellWidth);
                     cellArray = grid.getCellArray;
-                    cellArray[r, c].ToggleAlive(true, g);
+                    cellArray[r, c].ToggleAlive(true, g, sbAlive);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r,c].ElementX, cellArray[r,c].ElementY, cellArray[r, c].IsAlive);
                     Invalidate();
                     break;
@@ -110,7 +111,7 @@ namespace PA6
                     int c1 = (int)Math.Floor((double)y1 / cellHeight);
                     int r1 = (int)Math.Floor((double)x1 / cellWidth);
                     cellArray = grid.getCellArray;
-                    cellArray[r1, c1].ToggleAlive(false, g);
+                    cellArray[r1, c1].ToggleAlive(false, g, sbDead);
                     Console.WriteLine("Element {0},{1},{2}", cellArray[r1, c1].ElementX, cellArray[r1, c1].ElementY, cellArray[r1, c1].IsAlive);
                     Invalidate();
                     break;
@@ -161,28 +162,36 @@ namespace PA6
             Graphics g = CreateGraphics();
             if (cd.ShowDialog() == DialogResult.OK)
             {
-                this.sb = new SolidBrush(cd.Color);
+                this.sbDead = new SolidBrush(cd.Color);
                 for(int i = 0; i < cellArray.GetLength(0); i++)
                 {
-                    for(int j = 0; i < cellArray.GetLength(1); j++)
+                    for(int j = 0; j < cellArray.GetLength(1); j++)
                     {
                         if (cellArray[i, j].IsAlive == false)
-                            cellArray[i, j].ToggleAlive(false, g);
+                            cellArray[i, j].ToggleAlive(false, g, sbDead);
                     }
                 }
             }
-            
+            Invalidate();
 
         }
 
         private void creatureColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Graphics g = CreateGraphics();
             ColorDialog cd = new ColorDialog();
             if (cd.ShowDialog() == DialogResult.OK)
             {
-                sb = new SolidBrush(cd.Color);
+                this.sbAlive = new SolidBrush(cd.Color);
+                for (int i = 0; i < cellArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < cellArray.GetLength(1); j++)
+                    {
+                        if (cellArray[i, j].IsAlive == true)
+                            cellArray[i, j].ToggleAlive(true, g, sbAlive);
+                    }
+                }
             }
-
             Invalidate();
         }
 
@@ -218,7 +227,7 @@ namespace PA6
 
         private void generateRandomStateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grid = grid.randomGrid(grid);
+            grid = grid.randomGrid(grid, sbAlive, sbDead);
             Invalidate();
         }
         List<Cell> cellsToActivate = new List<Cell>();
@@ -313,7 +322,7 @@ namespace PA6
             Graphics g = CreateGraphics();
             foreach (Cell c in temp){
                 //Console.WriteLine("Killing {0},{1}", c.ElementRow, c.ElementColumn);
-                c.ToggleAlive(false, g);
+                c.ToggleAlive(false, g, sbDead);
             }
         }
         int index = 0;
@@ -395,7 +404,7 @@ namespace PA6
             foreach (Cell c in temp1)
             {
                 //Console.WriteLine("Activating {0},{1}", c.ElementRow, c.ElementColumn);
-                c.ToggleAlive(true, g);
+                c.ToggleAlive(true, g, sbAlive);
             }
         }
         
