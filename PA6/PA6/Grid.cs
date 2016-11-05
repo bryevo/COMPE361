@@ -10,7 +10,6 @@ namespace PA6
 {
     public class Grid : Form 
     {
-        private float cellHeight, cellWidth;
         private Cell[,] cellArray;
 
         /// <summary>
@@ -25,17 +24,14 @@ namespace PA6
         /// <param name="sbDead"></param>
         public Grid(Cell [,] cellArray, float cellHeight, float cellWidth, float menuHeight, PaintEventArgs e, SolidBrush sbAlive, SolidBrush sbDead)
         {
-            this.cellHeight = cellHeight;
-            this.cellWidth = cellWidth;
-
             //Iteration to create a new cell in for every block in the grid
             for (int i = 0; i < cellArray.GetLength(0); i++)
                 for (int j = 0; j < cellArray.GetLength(1); j++)
                 {
-                    double x1 = (i * this.cellWidth) + 0.5;
-                    double x2 = this.cellWidth - 1;
-                    double y1 = ((j*this.cellHeight) + menuHeight) + 0.5;
-                    double y2 = this.cellHeight-1;
+                    double x1 = (i * cellWidth) + 0.5;
+                    double x2 = cellWidth - 1;
+                    double y1 = ((j*cellHeight) + menuHeight) + 0.5;
+                    double y2 = cellHeight - 1;
 
                     //Conditional statements to check the state of the grid.
                     if (cellArray[i, j] == null || cellArray[i, j].IsAlive == false)
@@ -78,6 +74,5 @@ namespace PA6
             get { return cellArray; }
             set { cellArray = value; }
         }
-
     }
 }

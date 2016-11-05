@@ -368,6 +368,7 @@ namespace PA6
             {
                 toggleGridToolStripMenuItem.Text = "Grid Toggle: OFF";
                 toggleGridToolStripMenuItem.Checked = false;
+                BackColor = sbDead.Color;
                 Invalidate();
             }
             else if (!toggleGridToolStripMenuItem.Checked)

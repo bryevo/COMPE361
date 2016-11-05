@@ -16,9 +16,9 @@ namespace PA6
         SolidBrush sbDead = new SolidBrush(Color.DarkGray);
         SolidBrush sbAlive = new SolidBrush(Color.Green);
 
-        //I think we should get rid of these properties; not doing anything useful atm
-        public int ElementX { get; set; }
-        public int ElementY { get; set; }
+//        //I think we should get rid of these properties; not doing anything useful atm
+//        public int ElementX { get; set; }
+//        public int ElementY { get; set; }
 
         /// <summary>
         /// Returns or sets the current state of the Cell
@@ -82,8 +82,8 @@ namespace PA6
         public void ToggleAlive(bool checkAlive, Graphics x, SolidBrush sb)
         {
             g = x;
-            IsAlive = checkAlive;
-            if (IsAlive)
+            isAlive = checkAlive;
+            if (isAlive)
                 g.FillRectangle(sb, startX, startY, cellWidth, cellHeight);
             else
                 g.FillRectangle(sb, startX, startY, cellWidth, cellHeight);
