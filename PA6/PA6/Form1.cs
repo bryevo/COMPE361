@@ -20,7 +20,6 @@ namespace PA6
         int SMAX = 3; //Survival Law max
         int Generations = 10; //Generations to iterate when "Start" is pushed
         int index, generationCounter;
-
         List<Cell> cellsToActivate = new List<Cell>();
         List<Cell> cellsToKill = new List<Cell>();
         public Cell[,] cellArray;
@@ -30,7 +29,6 @@ namespace PA6
         Pen pen = new Pen(Color.Black, 1);
         SolidBrush sbAlive = new SolidBrush(Color.Green);
         SolidBrush sbDead = new SolidBrush(Color.DarkGray);
-
         Grid grid;
 
         public Form1()
@@ -53,9 +51,9 @@ namespace PA6
 
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
-            grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e, sbAlive, sbDead);
             if (toggleGridToolStripMenuItem.Checked)
                 LoadGrid(e);
+            grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e, sbAlive, sbDead);
         }
 
         public void LoadGrid(PaintEventArgs e)
@@ -255,7 +253,7 @@ namespace PA6
                 //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
             //Death
-            else
+            else if (cellArray[r,c].IsAlive)
                 cellsToKill.Add(cellArray[r, c]);
                 //cellArray[r, c].ToggleAlive(false, g);
         }
@@ -265,8 +263,7 @@ namespace PA6
             for (int i = 0; i < cellArray.GetLength(0); i++)
                 for (int j = 0; j < cellArray.GetLength(1); j++)
                     CheckNeighbors(cellArray, i, j);
-            ActivateCellList(cellsToActivate);
-            KillCellList(cellsToKill);
+            CellList(cellsToActivate, cellsToKill);
             cellsToActivate.Clear();
             cellsToKill.Clear();
             generationLabel.Text = String.Format("Generation Count: {0}", ++generationCounter);;
@@ -277,17 +274,13 @@ namespace PA6
             return ((a % n) + n) % n;
         }
 
-        private void ActivateCellList(List<Cell> temp)
-        {
-            Graphics g = CreateGraphics();
-            foreach (Cell c in temp)
-                c.ToggleAlive(true, g, sbAlive);
-        }
 
-        private void KillCellList(List<Cell> temp)
+        private void CellList(List<Cell> aliveCells, List<Cell> deadCells )
         {
             Graphics g = CreateGraphics();
-            foreach (Cell c in temp)
+            foreach (Cell c in aliveCells)
+                c.ToggleAlive(true, g, sbAlive);
+            foreach (Cell c in deadCells)
                 c.ToggleAlive(false, g, sbDead);
         }
 
