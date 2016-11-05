@@ -72,11 +72,17 @@
     <Compile Include="StartupForm.Designer.cs">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cell.resx">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EvolutionParameters.resx">
       <DependentUpon>EvolutionParameters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid.resx">
+      <DependentUpon>Grid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

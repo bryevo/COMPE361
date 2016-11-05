@@ -11,7 +11,7 @@ namespace PA6
     public class Cell : Form
     {
         private bool isAlive;
-        private float startX, startY, cellHeight, CellWidth;
+        private float startX, startY, cellHeight, cellWidth;
         private Graphics g;
         SolidBrush sbDead = new SolidBrush(Color.DarkGray);
         SolidBrush sbAlive = new SolidBrush(Color.Green);
@@ -25,24 +25,27 @@ namespace PA6
             set {isAlive = value; }
         }
        
-        public Cell(float startX, float startY, float cellHeight, float CellWidth, bool isAlive, PaintEventArgs e, SolidBrush sb)
+        public Cell(double startX, double startY, double cellWidth, double cellHeight, bool isAlive, PaintEventArgs e, SolidBrush sb)
         {
-            this.startX = startX;
-            this.startY = startY;
-            this.cellHeight = cellHeight;
-            this.CellWidth = CellWidth;
+            this.startX = (float)startX;
+            this.startY = (float)startY;
+            this.cellHeight = (float)cellHeight;
+            this.cellWidth = (float)cellWidth;
             this.isAlive = isAlive;
             g = e.Graphics;
-            if (isAlive)
-            {
-                this.sbAlive = sb;
-                ToggleAlive(isAlive, g, sbAlive);
-            }
-            else
-            {
-                this.sbDead = sb;
-                ToggleAlive(isAlive, g, sbDead);
-            }
+            this.sbAlive = sb;
+            ToggleAlive(isAlive, g, sbAlive);
+        }
+        public Cell(double startX, double startY, double cellWidth, double cellHeight, PaintEventArgs e, bool isAlive,  SolidBrush sb)
+        {
+            this.startX = (float)startX;
+            this.startY = (float)startY;
+            this.cellHeight = (float)cellHeight;
+            this.cellWidth = (float)cellWidth;
+            this.isAlive = isAlive;
+            g = e.Graphics;
+            this.sbDead = sb;
+            ToggleAlive(isAlive, g, sbDead);
         }
 
         public void ToggleAlive(bool check, Graphics x, SolidBrush sb)
@@ -51,12 +54,12 @@ namespace PA6
             IsAlive = check;
             if (IsAlive)
             {
-                g.FillRectangle(sb, startX, startY, this.CellWidth, this.cellHeight);
+                g.FillRectangle(sb, startX, startY, this.cellWidth, this.cellHeight);
                 isAlive = true;
             }
             else
             {
-                g.FillRectangle(sb, startX, startY, this.CellWidth, this.cellHeight);
+                g.FillRectangle(sb, startX, startY, this.cellWidth, this.cellHeight);
                 isAlive = false;
             }
         }
