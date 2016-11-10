@@ -19,7 +19,7 @@ namespace PA6
         int SMIN = 2; //Survival Law min
         int SMAX = 3; //Survival Law max
         int Generations = 10; //Generations to iterate when "Start" is pushed
-        int index, generationCounter;
+        int index, generationCounter, evolutionRate;
         List<Cell> cellsToActivate = new List<Cell>();
         List<Cell> cellsToKill = new List<Cell>();
         public Cell[,] cellArray;
@@ -291,7 +291,9 @@ namespace PA6
         /// <param name="e"></param>
         private void generationTimer_Tick(object sender, EventArgs e)
         {
-            generationTimer.Interval = (int)(1000 / numEvoRate.Value);
+            //generationTimer.Interval = (int)(1000 / numEvoRate.Value);
+            if (evolutionRate > 0)
+                generationTimer.Interval = (int)(1000 / evolutionRate);
             //index used to handle how many iterations of OneGeneration has been counted.
             if (index < Generations)
             {
@@ -345,6 +347,72 @@ namespace PA6
                     cellArray[i, j].IsAlive = false; 
             Invalidate();
         }
+
+        private void evolutionRateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EvolutionRate evoRate = new EvolutionRate();
+            var result = evoRate.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                evolutionRate = evoRate.EvoRate;
+                this.label1.Text = evolutionRate.ToString();
+            }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Keyboard Commands: ");
+        }
+
+        private void gridDimensionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StartupForm StartupDialog = new StartupForm();
+            var result = StartupDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                col = StartupDialog.StartupColumns;
+                row = StartupDialog.StartupRows;
+                cellArray = new Cell[col, row];  
+            }
+            SetCell();
+            Invalidate();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)        //single step evolution
+                OneGeneration();
+            if (e.KeyCode == Keys.Enter)        //start
+            {
+                if (index == Generations)   //if game has already started, continue with the last gen by setting index to counter
+                    index = 0;
+                generationTimer.Start();
+            }
+            if (e.KeyCode == Keys.Space)        //pause 
+                generationTimer.Stop();
+            if (e.KeyCode == Keys.Up)           //increase evolution rate
+            {      
+                if (evolutionRate <= 100)
+                {
+                    evolutionRate++;
+                    label1.Text = evolutionRate.ToString();
+                }
+                    
+            }
+            if (e.KeyCode == Keys.Down)         //decrease evolution rate
+            {
+                if (evolutionRate > 1)
+                {
+                    evolutionRate--;
+                    label1.Text = evolutionRate.ToString();
+                }
+                    
+            }
+                
+       
+        }
+ 
 
         /// <summary>
         /// Button event that generates random cells dead or alive on the grid.

@@ -55,6 +55,12 @@
     <Compile Include="EvolutionParameters.Designer.cs">
       <DependentUpon>EvolutionParameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="EvolutionRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvolutionRate.Designer.cs">
+      <DependentUpon>EvolutionRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EvolutionParameters.resx">
       <DependentUpon>EvolutionParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvolutionRate.resx">
+      <DependentUpon>EvolutionRate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -33,15 +33,14 @@ namespace PA6
             this.components = new System.ComponentModel.Container();
             this.generationTimer = new System.Windows.Forms.Timer(this.components);
             this.generationLabel = new System.Windows.Forms.Label();
-            this.numEvoRate = new System.Windows.Forms.NumericUpDown();
             this.menuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.evolutionParametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateRandomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creatureColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +48,8 @@ namespace PA6
             this.evolutionRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generateRandomStateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.numEvoRate)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gridDimensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,26 +69,10 @@ namespace PA6
             this.generationLabel.TabIndex = 2;
             this.generationLabel.Text = "Generation Count: 0";
             // 
-            // numEvoRate
-            // 
-            this.numEvoRate.Location = new System.Drawing.Point(523, 2);
-            this.numEvoRate.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numEvoRate.Name = "numEvoRate";
-            this.numEvoRate.Size = new System.Drawing.Size(120, 20);
-            this.numEvoRate.TabIndex = 5;
-            this.numEvoRate.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // menuItem1
             // 
             this.menuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gridDimensionsToolStripMenuItem,
             this.evolutionParametersToolStripMenuItem,
             this.generateRandomToolStripMenuItem,
             this.resetToolStripMenuItem,
@@ -136,6 +120,13 @@ namespace PA6
             this.gridColorToolStripMenuItem.Text = "Grid Color";
             this.gridColorToolStripMenuItem.Click += new System.EventHandler(this.gridColorToolStripMenuItem_Click);
             // 
+            // resetToolStripMenuItem
+            // 
+            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.resetToolStripMenuItem.Text = "Clear Grid";
+            this.resetToolStripMenuItem.Click += new System.EventHandler(this.clear_Grid);
+            // 
             // toggleGridToolStripMenuItem
             // 
             this.toggleGridToolStripMenuItem.Checked = true;
@@ -145,18 +136,12 @@ namespace PA6
             this.toggleGridToolStripMenuItem.Text = "Toggle Grid: ON";
             this.toggleGridToolStripMenuItem.Click += new System.EventHandler(this.toggleGridToolStripMenuItem_Click);
             // 
-            // resetToolStripMenuItem
-            // 
-            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.resetToolStripMenuItem.Text = "Clear Grid";
-            this.resetToolStripMenuItem.Click += new System.EventHandler(this.clear_Grid);
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
@@ -184,6 +169,7 @@ namespace PA6
             this.evolutionRateToolStripMenuItem.Name = "evolutionRateToolStripMenuItem";
             this.evolutionRateToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.evolutionRateToolStripMenuItem.Text = "Evolution Rate";
+            this.evolutionRateToolStripMenuItem.Click += new System.EventHandler(this.evolutionRateToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -208,12 +194,30 @@ namespace PA6
             this.generateRandomStateToolStripMenuItem1.Text = "Generate Random State";
             this.generateRandomStateToolStripMenuItem1.Click += new System.EventHandler(this.generateRandomStateToolStripMenuItem1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(540, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "0";
+            // 
+            // gridDimensionsToolStripMenuItem
+            // 
+            this.gridDimensionsToolStripMenuItem.Name = "gridDimensionsToolStripMenuItem";
+            this.gridDimensionsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.gridDimensionsToolStripMenuItem.Text = "Grid Dimensions";
+            this.gridDimensionsToolStripMenuItem.Click += new System.EventHandler(this.gridDimensionsToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.numEvoRate);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.generationLabel);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -222,9 +226,9 @@ namespace PA6
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.Resize += new System.EventHandler(this.Form1_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.numEvoRate)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,7 +239,6 @@ namespace PA6
         #endregion
         private System.Windows.Forms.Timer generationTimer;
         private System.Windows.Forms.Label generationLabel;
-        private System.Windows.Forms.NumericUpDown numEvoRate;
         private System.Windows.Forms.ToolStripMenuItem menuItem1;
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem evolutionParametersToolStripMenuItem;
@@ -251,6 +254,8 @@ namespace PA6
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generateRandomStateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem gridDimensionsToolStripMenuItem;
     }
 }
 
