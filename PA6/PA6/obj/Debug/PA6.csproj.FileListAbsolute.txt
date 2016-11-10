@@ -58,3 +58,6 @@ C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.Grid.resources
 C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.Cell.resources
 C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.EvolutionRate.resources
 C:\Users\Steven\Desktop\PA6\PA6\PA6\obj\Debug\PA6.Grid.resources
+C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.Cell.resources
+C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.EvolutionRate.resources
+C:\Users\Edwin\Source\Repos\COMPE361\PA6\PA6\obj\Debug\PA6.Grid.resources

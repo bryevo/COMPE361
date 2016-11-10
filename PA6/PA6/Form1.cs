@@ -362,7 +362,13 @@ namespace PA6
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Keyboard Commands: ");
+            MessageBox.Show("'Options' menu allows you to performs things like set the evolution parameters"
+                            +"change the color of the background or the grid, clear the grid, or hide the grid lines."
+                            +"\n'Generate Random State' fills the grid with a random state. 'Play' starts evolution to the desired number of generations that can be set in the evolution parameters."
+                            +"\n'Pause' pauses the evolution process. 'Single Step Evolution' makes the grid evolve only once."
+                            +"\n'Evolution Rate' constantly shows the evolution rate that can be set by pressing the up arrow of the keyboard."
+                            +"\n'Generation Count' can also be increased by pressing the right arrow in the keyboard."
+                            +"\nPressing the enter button will start the evolution process.Pressing the spacebar will stop the evolution process."); 
         }
 
         private void gridDimensionsToolStripMenuItem_Click(object sender, EventArgs e)
