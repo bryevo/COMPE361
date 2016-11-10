@@ -109,7 +109,7 @@ namespace PA6
             }
             catch (Exception)
             {
-                MessageBox.Show("Something went wrong. Please enter valid values.");
+                MessageBox.Show(@"Something went wrong. Please enter valid values.");
                 Dispose();
             }
         }
@@ -189,58 +189,58 @@ namespace PA6
             {
                 col = StartupDialog.StartupColumns;
                 row = StartupDialog.StartupRows;
-                cellArray = new Cell[row, col];
+                cellArray = new Cell[col, row];
                 return true;
             }
             return false;
         }
-        private void CheckNeighbors(Cell[,] cellArray, int r, int c)
+        private void CheckNeighbors(Cell[,] cellArray, int c, int r)
         {
             int activeNeighbors = 0;
             int[] temp = new int[12];
             //neighbor 1
-            temp[0] = Mod((c - 1), col);
+            temp[0] = Mod((c - 1), row);
             //Console.WriteLine("Checking element {0}, {1}", r, temp[0]);
-            if (cellArray[r, Mod((c - 1), col)].IsAlive)
+            if (cellArray[r, Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
             //n2
-            temp[1] = Mod((r - 1), col);
-            temp[2] = Mod((c - 1), col);
+            temp[1] = Mod((r - 1), row);
+            temp[2] = Mod((c - 1), row);
             //Console.WriteLine("Checking element {0}, {1}", temp[1], temp[2]);
-            if (cellArray[Mod((r - 1), row), Mod((c - 1), col)].IsAlive)
+            if (cellArray[Mod((r - 1), col), Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
             //n3
-            temp[3] = Mod((r - 1), row);
+            temp[3] = Mod((r - 1), col);
             // Console.WriteLine("Checking element {0}, {1}", temp[3], c);
-            if (cellArray[Mod((r - 1), row), c].IsAlive)
+            if (cellArray[Mod((r - 1), col), c].IsAlive)
                 activeNeighbors++;
            //n4
-            temp[4] = Mod((r - 1), row);
-            temp[5] = Mod((c + 1), col);
+            temp[4] = Mod((r - 1), col);
+            temp[5] = Mod((c + 1), row);
             // Console.WriteLine("Checking element {0}, {1}", temp[4], temp[5]);
-            if (cellArray[Mod((r - 1), row), Mod((c + 1), col)].IsAlive)
+            if (cellArray[Mod((r - 1), col), Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n5
-            temp[6] = Mod((c + 1), col);
+            temp[6] = Mod((c + 1), row);
             // Console.WriteLine("Checking element {0}, {1}", r, temp[6]);
-            if (cellArray[r, Mod((c + 1), col)].IsAlive)
+            if (cellArray[r, Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n6
-            temp[7] = Mod((r + 1), row);
-            temp[8] = Mod((c + 1), col);
+            temp[7] = Mod((r + 1), col);
+            temp[8] = Mod((c + 1), row);
             //Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
-            if (cellArray[Mod((r + 1), row), Mod((c + 1), col)].IsAlive)
+            if (cellArray[Mod((r + 1), col), Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n7
-            temp[9] = Mod((r + 1), row);
+            temp[9] = Mod((r + 1), col);
             //Console.WriteLine("Checking element {0}, {1}", temp[9], c);
-            if (cellArray[Mod((r + 1), row), c].IsAlive)
+            if (cellArray[Mod((r + 1), col), c].IsAlive)
                 activeNeighbors++;
             //n8
-            temp[10] = Mod((r + 1), row);
-            temp[11] = Mod((c - 1), col);
+            temp[10] = Mod((r + 1), col);
+            temp[11] = Mod((c - 1), row);
             //Console.WriteLine("Checking element {0}, {1}", temp[10], temp[11]);
-            if (cellArray[Mod((r + 1), row), Mod((c - 1), col)].IsAlive)
+            if (cellArray[Mod((r + 1), col), Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
 
             //this checks alive cell with neighbors
@@ -262,7 +262,7 @@ namespace PA6
         {
             for (int i = 0; i < cellArray.GetLength(0); i++)
                 for (int j = 0; j < cellArray.GetLength(1); j++)
-                    CheckNeighbors(cellArray, i, j);
+                    CheckNeighbors(cellArray, j, i);
             CellList(cellsToActivate, cellsToKill);
             cellsToActivate.Clear();
             cellsToKill.Clear();

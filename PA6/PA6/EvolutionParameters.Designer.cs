@@ -50,36 +50,40 @@
             // labelBMIN
             // 
             this.labelBMIN.AutoSize = true;
-            this.labelBMIN.Location = new System.Drawing.Point(46, 52);
+            this.labelBMIN.Location = new System.Drawing.Point(92, 100);
+            this.labelBMIN.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelBMIN.Name = "labelBMIN";
-            this.labelBMIN.Size = new System.Drawing.Size(37, 13);
+            this.labelBMIN.Size = new System.Drawing.Size(70, 25);
             this.labelBMIN.TabIndex = 0;
             this.labelBMIN.Text = "BMIN:";
             // 
             // labelBMAX
             // 
             this.labelBMAX.AutoSize = true;
-            this.labelBMAX.Location = new System.Drawing.Point(43, 86);
+            this.labelBMAX.Location = new System.Drawing.Point(86, 165);
+            this.labelBMAX.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelBMAX.Name = "labelBMAX";
-            this.labelBMAX.Size = new System.Drawing.Size(40, 13);
+            this.labelBMAX.Size = new System.Drawing.Size(78, 25);
             this.labelBMAX.TabIndex = 1;
             this.labelBMAX.Text = "BMAX:";
             // 
             // labelSMIN
             // 
             this.labelSMIN.AutoSize = true;
-            this.labelSMIN.Location = new System.Drawing.Point(43, 122);
+            this.labelSMIN.Location = new System.Drawing.Point(86, 235);
+            this.labelSMIN.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelSMIN.Name = "labelSMIN";
-            this.labelSMIN.Size = new System.Drawing.Size(37, 13);
+            this.labelSMIN.Size = new System.Drawing.Size(70, 25);
             this.labelSMIN.TabIndex = 2;
             this.labelSMIN.Text = "SMIN:";
             // 
             // labelSMAX
             // 
             this.labelSMAX.AutoSize = true;
-            this.labelSMAX.Location = new System.Drawing.Point(43, 151);
+            this.labelSMAX.Location = new System.Drawing.Point(86, 290);
+            this.labelSMAX.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelSMAX.Name = "labelSMAX";
-            this.labelSMAX.Size = new System.Drawing.Size(40, 13);
+            this.labelSMAX.Size = new System.Drawing.Size(78, 25);
             this.labelSMAX.TabIndex = 3;
             this.labelSMAX.Text = "SMAX:";
             // 
@@ -87,45 +91,51 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 24);
+            this.label5.Location = new System.Drawing.Point(122, 46);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 13);
+            this.label5.Size = new System.Drawing.Size(394, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Please set the evolution parameters";
             // 
             // numBMIN
             // 
-            this.numBMIN.Location = new System.Drawing.Point(102, 45);
+            this.numBMIN.Location = new System.Drawing.Point(204, 87);
+            this.numBMIN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numBMIN.Name = "numBMIN";
-            this.numBMIN.Size = new System.Drawing.Size(120, 20);
+            this.numBMIN.Size = new System.Drawing.Size(240, 31);
             this.numBMIN.TabIndex = 1;
             // 
             // numSMIN
             // 
-            this.numSMIN.Location = new System.Drawing.Point(102, 115);
+            this.numSMIN.Location = new System.Drawing.Point(204, 221);
+            this.numSMIN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numSMIN.Name = "numSMIN";
-            this.numSMIN.Size = new System.Drawing.Size(120, 20);
+            this.numSMIN.Size = new System.Drawing.Size(240, 31);
             this.numSMIN.TabIndex = 3;
             // 
             // numSMAX
             // 
-            this.numSMAX.Location = new System.Drawing.Point(102, 149);
+            this.numSMAX.Location = new System.Drawing.Point(204, 287);
+            this.numSMAX.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numSMAX.Name = "numSMAX";
-            this.numSMAX.Size = new System.Drawing.Size(120, 20);
+            this.numSMAX.Size = new System.Drawing.Size(240, 31);
             this.numSMAX.TabIndex = 4;
             // 
             // numBMAX
             // 
-            this.numBMAX.Location = new System.Drawing.Point(102, 79);
+            this.numBMAX.Location = new System.Drawing.Point(204, 152);
+            this.numBMAX.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numBMAX.Name = "numBMAX";
-            this.numBMAX.Size = new System.Drawing.Size(120, 20);
+            this.numBMAX.Size = new System.Drawing.Size(240, 31);
             this.numBMAX.TabIndex = 2;
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(182, 222);
+            this.btnDone.Location = new System.Drawing.Point(364, 427);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(75, 23);
+            this.btnDone.Size = new System.Drawing.Size(150, 44);
             this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
@@ -134,25 +144,37 @@
             // labelGenerations
             // 
             this.labelGenerations.AutoSize = true;
-            this.labelGenerations.Location = new System.Drawing.Point(16, 182);
+            this.labelGenerations.Location = new System.Drawing.Point(32, 350);
+            this.labelGenerations.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelGenerations.Name = "labelGenerations";
-            this.labelGenerations.Size = new System.Drawing.Size(67, 13);
+            this.labelGenerations.Size = new System.Drawing.Size(135, 25);
             this.labelGenerations.TabIndex = 10;
             this.labelGenerations.Text = "Generations:";
             // 
             // numericUpDownGenerations
             // 
-            this.numericUpDownGenerations.Location = new System.Drawing.Point(102, 180);
+            this.numericUpDownGenerations.Location = new System.Drawing.Point(204, 346);
+            this.numericUpDownGenerations.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.numericUpDownGenerations.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownGenerations.Name = "numericUpDownGenerations";
-            this.numericUpDownGenerations.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownGenerations.Size = new System.Drawing.Size(240, 31);
             this.numericUpDownGenerations.TabIndex = 6;
+            this.numericUpDownGenerations.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // EvolutionParameters
             // 
             this.AcceptButton = this.btnDone;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(568, 502);
             this.Controls.Add(this.numericUpDownGenerations);
             this.Controls.Add(this.labelGenerations);
             this.Controls.Add(this.btnDone);
@@ -165,6 +187,7 @@
             this.Controls.Add(this.labelSMIN);
             this.Controls.Add(this.labelBMAX);
             this.Controls.Add(this.labelBMIN);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "EvolutionParameters";
             this.Text = "EvolutionParameters";
             ((System.ComponentModel.ISupportInitialize)(this.numBMIN)).EndInit();

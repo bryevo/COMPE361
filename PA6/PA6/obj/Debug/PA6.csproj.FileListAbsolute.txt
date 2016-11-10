@@ -53,3 +53,6 @@ C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.StartupForm.resou
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.Cache
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.exe
 C:\Users\Brian\Documents\GitHub\COMPE361\PA6\PA6\obj\Debug\PA6.pdb
+C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.csprojResolveAssemblyReference.cache
+C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.Cell.resources
+C:\Users\Brye\Desktop\COMPE361\PA6\PA6\obj\Debug\PA6.Grid.resources
