@@ -16,13 +16,19 @@ namespace PA6
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// This is the click event that sends back the "OK" dialog result
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDone_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.OK;
             
         }
-
+        /// <summary>
+        /// All of these are properties from the class so that the form can comunicate with other forms  
+        /// </summary>
         public int BMIN
         {
             get { return (int)numBMIN.Value; }

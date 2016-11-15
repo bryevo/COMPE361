@@ -142,7 +142,11 @@ namespace PA6
             //do nothing. dont really need this
             else if (dr == DialogResult.Cancel){}
         }
-
+        /// <summary>
+        /// This function sets a different background color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
@@ -156,7 +160,11 @@ namespace PA6
                             cellArray[i, j].ToggleAlive(false, g, sbDead);
             }
         }
-
+        /// <summary>
+        /// This function changes the color of the cells
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void creatureColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Graphics g = CreateGraphics();
@@ -170,7 +178,11 @@ namespace PA6
                             cellArray[i, j].ToggleAlive(true, g, sbAlive);
             }
         }
-
+        /// <summary>
+        /// This function changes the color of the grid lines
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
@@ -180,7 +192,10 @@ namespace PA6
                 Invalidate();
             }
         }
-
+        /// <summary>
+        /// This function shows the "StartUp" form that allows the user to select the starting dimensions
+        /// </summary>
+        /// <returns></returns>
         public bool ShowStartupForm()
         {
             StartupForm StartupDialog = new StartupForm();
@@ -194,70 +209,69 @@ namespace PA6
             }
             return false;
         }
+        /// <summary>
+        /// This function goes through each cell and checks its neighbors to determine if it has to be killed/survived/born. Adds it to a "Kill" list or
+        /// a "Activate" list that is later iterated to kill/activate cells
+        /// </summary>
+        /// <param name="cellArray"></param>
+        /// <param name="c"></param>
+        /// <param name="r"></param>
         private void CheckNeighbors(Cell[,] cellArray, int c, int r)
         {
             int activeNeighbors = 0;
             int[] temp = new int[12];
             //neighbor 1
             temp[0] = Mod((c - 1), row);
-            //Console.WriteLine("Checking element {0}, {1}", r, temp[0]);
             if (cellArray[r, Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
             //n2
             temp[1] = Mod((r - 1), row);
             temp[2] = Mod((c - 1), row);
-            //Console.WriteLine("Checking element {0}, {1}", temp[1], temp[2]);
             if (cellArray[Mod((r - 1), col), Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
             //n3
             temp[3] = Mod((r - 1), col);
-            // Console.WriteLine("Checking element {0}, {1}", temp[3], c);
             if (cellArray[Mod((r - 1), col), c].IsAlive)
                 activeNeighbors++;
            //n4
             temp[4] = Mod((r - 1), col);
             temp[5] = Mod((c + 1), row);
-            // Console.WriteLine("Checking element {0}, {1}", temp[4], temp[5]);
             if (cellArray[Mod((r - 1), col), Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n5
             temp[6] = Mod((c + 1), row);
-            // Console.WriteLine("Checking element {0}, {1}", r, temp[6]);
             if (cellArray[r, Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n6
             temp[7] = Mod((r + 1), col);
             temp[8] = Mod((c + 1), row);
-            //Console.WriteLine("Checking element {0}, {1}", temp[7], temp[8]);
             if (cellArray[Mod((r + 1), col), Mod((c + 1), row)].IsAlive)
                 activeNeighbors++;
             //n7
             temp[9] = Mod((r + 1), col);
-            //Console.WriteLine("Checking element {0}, {1}", temp[9], c);
             if (cellArray[Mod((r + 1), col), c].IsAlive)
                 activeNeighbors++;
             //n8
             temp[10] = Mod((r + 1), col);
             temp[11] = Mod((c - 1), row);
-            //Console.WriteLine("Checking element {0}, {1}", temp[10], temp[11]);
             if (cellArray[Mod((r + 1), col), Mod((c - 1), row)].IsAlive)
                 activeNeighbors++;
 
             //this checks alive cell with neighbors
             //Survival
             if (cellArray[r, c].IsAlive && activeNeighbors >= SMIN && activeNeighbors <= SMAX)
-                //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
             //Birth
             else if (!cellArray[r, c].IsAlive && (activeNeighbors >= BMIN && activeNeighbors <= BMAX))
-                //cellArray[r, c].ToggleAlive(true, g);
                 cellsToActivate.Add(cellArray[r, c]);
             //Death
             else if (cellArray[r,c].IsAlive)
                 cellsToKill.Add(cellArray[r, c]);
-                //cellArray[r, c].ToggleAlive(false, g);
         }
-        
+
+        /// <summary>
+        /// This function steps one single generation by calling the "Cell List" function and then clears the "Activate" and "Kill list"
+        /// </summary>
         private void OneGeneration()
         {
             for (int i = 0; i < cellArray.GetLength(0); i++)
@@ -268,13 +282,22 @@ namespace PA6
             cellsToKill.Clear();
             generationLabel.Text = String.Format("Generation Count: {0}", ++generationCounter);;
         }
-
+        /// <summary>
+        /// This is a Modulo function because C#'s native "%" returns negatives. This doesn't. 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public int Mod(int a, int n)
         {
             return ((a % n) + n) % n;
         }
 
-
+        /// <summary>
+        /// This function goes through the "kill" and "activate" lists and kills/activates accordingly.
+        /// </summary>
+        /// <param name="aliveCells"></param>
+        /// <param name="deadCells"></param>
         private void CellList(List<Cell> aliveCells, List<Cell> deadCells )
         {
             Graphics g = CreateGraphics();

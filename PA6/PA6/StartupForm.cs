@@ -16,9 +16,16 @@ namespace PA6
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// StartupRows and StartupColumns are properties so that other forms can communicate with the data from this form
+        /// </summary>
         public int StartupRows { get; set; }
         public int StartupColumns { get; set; }
-
+        /// <summary>
+        /// This is the click event that gets the values from the form elements and stores them in the class's properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSetStartupDimensions_Click(object sender, EventArgs e)
         {
             StartupColumns = (int) numericUpDownColumns.Value;
