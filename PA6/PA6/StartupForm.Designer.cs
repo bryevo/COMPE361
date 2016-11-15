@@ -148,7 +148,6 @@
             this.MaximizeBox = false;
             this.Name = "StartupForm";
             this.Text = "StartupForm";
-            this.Load += new System.EventHandler(this.StartupForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumns)).EndInit();
             this.ResumeLayout(false);

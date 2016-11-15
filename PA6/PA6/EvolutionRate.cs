@@ -33,8 +33,6 @@ namespace PA6
         {
             EvoRate = (int) numericUpDown1.Value;
             DialogResult = DialogResult.OK;
-        }
-
-       
+        }   
     }
 }

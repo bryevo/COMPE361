@@ -20,17 +20,20 @@ namespace PA6
         int SMAX = 3; //Survival Law max
         int Generations = 10; //Generations to iterate when "Start" is pushed
         int index, generationCounter, evolutionRate;
-        List<Cell> cellsToActivate = new List<Cell>();
-        List<Cell> cellsToKill = new List<Cell>();
-        public Cell[,] cellArray;
+        List<Cell> cellsToActivate = new List<Cell>();  //holds cells to be activated
+        List<Cell> cellsToKill = new List<Cell>();      //holds cells to be killed
+        public Cell[,] cellArray;                       //2 dimensional cell array
         public int row;
         public int col;
         public static float cellWidth, cellHeight;
         Pen pen = new Pen(Color.Black, 1);
         SolidBrush sbAlive = new SolidBrush(Color.Green);
         SolidBrush sbDead = new SolidBrush(Color.DarkGray);
-        Grid grid;
+        Grid grid;  //creating a grid object that is going to hold the cells
 
+        /// <summary>
+        /// When the program starts, the start up form pops up. User sets the grid dimensions in this form.
+        /// </summary>
         public Form1()
         {
             bool startGrid = ShowStartupForm();
@@ -43,12 +46,22 @@ namespace PA6
                 Application.Exit();
         }
 
+        /// <summary>
+        /// Sets the cell width and cell height.
+        /// The Clientsize height needs to be subtracted by the menustrip to offset the height of the menustrip
+        /// </summary>
         public void SetCell()
         {
             cellHeight = (ClientSize.Height - menuStrip1.Height)/(float) row;
             cellWidth = ClientSize.Width/(float) col;
         }
 
+        /// <summary>
+        /// If user clicks on the grid toggle option, load the grid.
+        /// If grid has not been created yet, create a new grid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Form1_Paint(object sender, PaintEventArgs e)
         {
             if (toggleGridToolStripMenuItem.Checked)
@@ -56,6 +69,10 @@ namespace PA6
             grid = new Grid(cellArray, cellHeight, cellWidth, menuStrip1.Height, e, sbAlive, sbDead);
         }
 
+        /// <summary>
+        /// Draw grid lines based on the grid dimensions the user set on the start up form
+        /// </summary>
+        /// <param name="e"></param>
         public void LoadGrid(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -79,6 +96,8 @@ namespace PA6
 
         /// <summary>
         /// Mouse event that gets the coordinate of the mouse click
+        /// Left click activate cells to alive
+        /// Right click deactive cells to dead
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -114,12 +133,24 @@ namespace PA6
             }
         }
 
+        /// <summary>
+        /// Whenever the form is resized, program gets the new cell width and height.
+        /// Then redraw the grid based on the cell dimensions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Resize(object sender, EventArgs e)
         {
             SetCell();
             Invalidate();
         }
 
+        /// <summary>
+        /// When user clicks on the evolution parameters option, a new form pops up where the user
+        /// can set the values for SMIN, SMAX, BMAX, BMIN, and generations.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void evolutionParametersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvolutionParameters ep = new EvolutionParameters();
@@ -139,7 +170,6 @@ namespace PA6
                 SMAX = ep.SMAX;
                 Generations = ep.Generations;
             }
-            //do nothing. dont really need this
             else if (dr == DialogResult.Cancel){}
         }
         /// <summary>
@@ -371,6 +401,11 @@ namespace PA6
             Invalidate();
         }
 
+        /// <summary>
+        /// When the evolution rate option menu is clicked, a new form pops up where the user can set the evolution rate.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void evolutionRateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvolutionRate evoRate = new EvolutionRate();
@@ -383,6 +418,12 @@ namespace PA6
             }
         }
 
+        /// <summary>
+        /// When the help option menu button is clicked, a message box pops up displaying the instructions
+        /// on how to play the game and what each keyboard shortcut does
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("'Options' menu allows you to performs things like set the evolution parameters"
@@ -394,6 +435,12 @@ namespace PA6
                             +"\nPressing the enter button will start the evolution process.Pressing the spacebar will stop the evolution process."); 
         }
 
+        /// <summary>
+        /// When user clicks on the grid dimensions option, a form pops up. In this form, the user sets the 
+        /// new grid dimensions.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridDimensionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StartupForm StartupDialog = new StartupForm();
@@ -411,6 +458,16 @@ namespace PA6
             Invalidate();
         }
 
+        /// <summary>
+        /// Keyboard events that interacts with the program's generations when key is pressed
+        /// Right Arrow Key: single step evolution
+        /// Enter Key: Start game
+        /// Space Key: Pause game
+        /// Up Arrow Key: Increase evolution rate
+        /// Down Arrow Key: Decrease evolution rate
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)        //single step evolution
@@ -441,8 +498,6 @@ namespace PA6
                 }
                     
             }
-                
-       
         }
  
 
@@ -458,7 +513,8 @@ namespace PA6
         }
 
         /// <summary>
-        /// Toggles the grid on or off.
+        /// If user clicks on the toggle grid option button, toggle the grid on and off.
+        /// If off, set the grid line color to the background color
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
