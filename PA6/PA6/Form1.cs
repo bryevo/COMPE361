@@ -382,6 +382,9 @@ namespace PA6
                 cellArray = new Cell[col, row];  
             }
             SetCell();
+            this.generationCounter = 0;
+            this.generationLabel.Text = "Generation Label: 0";
+            this.generationTimer.Stop();
             Invalidate();
         }
 
