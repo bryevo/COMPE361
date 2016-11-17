@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,11 +12,19 @@ namespace Lab_6___Move_the_Bears
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+		public const int WindowHeight = 800;
+		public const int WindowWidth = 600;
+		TeddyBear bear0;
+		TeddyBear bear1;
+		TeddyBear bear2;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+			Content.RootDirectory = "Content";
+			graphics.IsFullScreen = false;
+			graphics.PreferredBackBufferHeight = WindowHeight;
+			graphics.PreferredBackBufferWidth = WindowWidth;
         }
 
         /// <summary>
@@ -26,9 +35,9 @@ namespace Lab_6___Move_the_Bears
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+			// TODO: Add your initialization logic here
 
-            base.Initialize();
+			base.Initialize();
         }
 
         /// <summary>
@@ -39,9 +48,10 @@ namespace Lab_6___Move_the_Bears
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
-        }
+			bear0 = new TeddyBear(Content, @"graphics\teddybear0", graphics.PreferredBackBufferWidth / 4, graphics.PreferredBackBufferHeight / 4, WindowWidth, WindowHeight);
+			bear1 = new TeddyBear(Content, @"graphics\teddybear1", graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2, WindowWidth, WindowHeight);
+			bear2 = new TeddyBear(Content, @"graphics\teddybear2", graphics.PreferredBackBufferWidth *  3/4, graphics.PreferredBackBufferHeight * 3/4, WindowWidth, WindowHeight);
+		}
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -62,7 +72,9 @@ namespace Lab_6___Move_the_Bears
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+    		bear0.Update();
+			bear1.Update();
+			bear2.Update();
 
             base.Update(gameTime);
         }
@@ -73,10 +85,12 @@ namespace Lab_6___Move_the_Bears
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+			GraphicsDevice.Clear(Color.CornflowerBlue);
+			spriteBatch.Begin();
+			bear0.Draw(spriteBatch);
+			bear1.Draw(spriteBatch);
+			bear2.Draw(spriteBatch);
+			spriteBatch.End();
             base.Draw(gameTime);
         }
     }
