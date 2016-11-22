@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,11 +14,25 @@ namespace MiningTeddies
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private Texture2D explosionSprite, mineSprite;
+        private List<Texture2D> textureList;
+        private List<TeddyBear> bearList;
+        private List<Mine> mineList;
+        private Random rand;
+        private int timer, randText, randX, randY;
+        public const int WindowHeight = 2000;
+        public const int WindowWidth = 1600;
+
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferHeight = WindowHeight;
+            graphics.PreferredBackBufferWidth = WindowWidth;
+
         }
 
         /// <summary>
@@ -27,7 +44,10 @@ namespace MiningTeddies
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            rand = new Random();
+            textureList = new List<Texture2D>();
+            bearList = new List<TeddyBear>();
+            mineList = new List<Mine>();
             base.Initialize();
         }
 
@@ -41,6 +61,11 @@ namespace MiningTeddies
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            textureList.Add(Content.Load<Texture2D>(@"graphics\teddybear0"));
+            textureList.Add(Content.Load<Texture2D>(@"graphics\teddybear1"));
+            textureList.Add(Content.Load<Texture2D>(@"graphics\teddybear2"));
+            mineSprite = Content.Load<Texture2D>(@"graphics\mine");
+            explosionSprite = Content.Load<Texture2D>(@"graphics\explosion");
         }
 
         /// <summary>
@@ -59,11 +84,39 @@ namespace MiningTeddies
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+                Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                Mine mine = new Mine(mineSprite, Mouse.GetState().X*2, Mouse.GetState().Y*2);
+                mine.Active = true;
+                mineList.Add(mine);
+            }
 
+            int randtime = rand.Next(1000,3001);
+            timer += gameTime.ElapsedGameTime.Milliseconds; // Increment the timer by the elapsed game time.
+
+            Vector2 randVect = new Vector2();
+            randText = rand.Next(0, textureList.Count);
+            randVect.X = (float)rand.Next(-5, 5) / 10;
+            randVect.Y = (float) rand.Next(-5, 5) / 10;
+            randX = rand.Next(0,graphics.PreferredBackBufferWidth-1);    //random pixel in the windowWidth
+            randY = rand.Next(0, graphics.PreferredBackBufferHeight-1);    //random pixel in the windowHeight
+
+            if (timer >= randtime) // Check to see if X amount of seconds has passed.
+            {
+                while (randVect.X.Equals(0) && randVect.Y.Equals(0))
+                {
+                    randVect.X = (float)rand.Next(-5, 5) / 10;
+                    randVect.Y = (float) rand.Next(-5, 5) / 10;
+                }
+                bearList.Add(new TeddyBear(textureList[randText], randVect, randX, randY));
+                timer = 0; // Reset the timer.
+            }
+            foreach (TeddyBear bear in bearList)
+                bear.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -76,7 +129,12 @@ namespace MiningTeddies
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            foreach (Mine mine in mineList)
+                   mine.Draw(spriteBatch);
+            foreach (TeddyBear bear in bearList)
+                bear.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
