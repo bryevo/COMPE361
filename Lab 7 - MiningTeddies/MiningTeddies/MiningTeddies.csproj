@@ -64,8 +64,13 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Content\graphics" />
+    <Content Include="Content\graphics\explosion.xnb" />
+    <Content Include="Content\graphics\mine.xnb" />
+    <Content Include="Content\graphics\teddybear0.xnb" />
+    <Content Include="Content\graphics\teddybear1.xnb" />
+    <Content Include="Content\graphics\teddybear2.xnb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
