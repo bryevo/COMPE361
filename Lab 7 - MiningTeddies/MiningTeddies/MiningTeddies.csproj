@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D04652A8-AE53-4A77-9883-4DFB4FB2ECFB}</ProjectGuid>
+    <ProjectGuid>{D5024BB6-9BB2-47CA-9AB1-0215C5FCD418}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lab_7___Bear_Destruction</RootNamespace>
-    <AssemblyName>Lab 7 - Bear Destruction</AssemblyName>
+    <RootNamespace>MiningTeddies</RootNamespace>
+    <AssemblyName>MiningTeddies</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

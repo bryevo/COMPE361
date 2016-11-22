@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Lab_7___Bear_Destruction
+namespace MiningTeddies
 {
     /// <summary>
     /// This is the main type for your game.

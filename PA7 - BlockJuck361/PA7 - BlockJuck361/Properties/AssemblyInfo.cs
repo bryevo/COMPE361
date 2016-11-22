@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Lab 7 - Bear Destruction")]
-[assembly: AssemblyProduct("Lab 7 - Bear Destruction")]
+[assembly: AssemblyTitle("PA7 - BlockJuck361")]
+[assembly: AssemblyProduct("PA7 - BlockJuck361")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0705f9ea-0fb3-4dcf-869e-db008afb0768")]
+[assembly: Guid("61b3a586-062d-4d74-bb7d-c675c38f730c")]
 
 // Version information for an assembly consists of the following four values:
 //

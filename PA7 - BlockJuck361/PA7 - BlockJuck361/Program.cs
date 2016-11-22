@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab_7___Bear_Destruction
+namespace PA7___BlockJuck361
 {
     /// <summary>
     /// The main class.
