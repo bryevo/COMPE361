@@ -18,10 +18,11 @@ namespace MiningTeddies
         private List<Texture2D> textureList;
         private List<TeddyBear> bearList;
         private List<Mine> mineList;
+        private List<Explosion> explosionList;
         private Random rand;
         private int timer, randText, randX, randY;
-        public const int WindowHeight = 2000;
-        public const int WindowWidth = 1600;
+        public const int WindowHeight = 600;
+        public const int WindowWidth = 800;
 
 
         public Game1()
@@ -48,6 +49,7 @@ namespace MiningTeddies
             textureList = new List<Texture2D>();
             bearList = new List<TeddyBear>();
             mineList = new List<Mine>();
+            explosionList = new List<Explosion>();
             base.Initialize();
         }
 
@@ -115,8 +117,26 @@ namespace MiningTeddies
                 bearList.Add(new TeddyBear(textureList[randText], randVect, randX, randY));
                 timer = 0; // Reset the timer.
             }
+
             foreach (TeddyBear bear in bearList)
+            {
+                foreach (Mine mine in mineList)
+                {
+                        if (bear.CollisionRectangle.Intersects(mine.CollisionRectangle) && mine.Active && bear.Active)
+                        {
+                            explosionList.Add(new Explosion(explosionSprite, mine.Location.X, mine.Location.Y));
+                            bear.Active = false;
+                            mine.Active = false;
+                            foreach (Explosion explosion in explosionList)
+                                explosion.Play(mine.Location.X, mine.Location.Y);
+                        }
+                }
                 bear.Update(gameTime);
+            }
+            foreach (Explosion explosion in explosionList)
+                if(explosion.Playing)
+                    explosion.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -130,11 +150,15 @@ namespace MiningTeddies
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            foreach (Explosion explosion in explosionList)
+                explosion.Draw(spriteBatch);
             foreach (Mine mine in mineList)
                    mine.Draw(spriteBatch);
             foreach (TeddyBear bear in bearList)
                 bear.Draw(spriteBatch);
             spriteBatch.End();
+
+
             base.Draw(gameTime);
         }
     }

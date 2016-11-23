@@ -20,7 +20,6 @@ namespace MiningTeddies
         Rectangle drawRectangle;
 
         // animation strip info
-        private const string StripName = @"graphics\explosion";
         Texture2D strip;
         int frameWidth;
         int frameHeight;

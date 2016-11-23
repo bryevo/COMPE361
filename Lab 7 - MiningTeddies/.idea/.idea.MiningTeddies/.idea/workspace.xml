@@ -23,24 +23,24 @@
       <file leaf-file-name="Game1.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="92" column="91" selection-start-line="92" selection-start-column="91" selection-end-line="92" selection-end-column="91" />
+            <state relative-caret-position="765">
+              <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
               <folding>
-                <marker date="1479855376000" expanded="true" signature="6:179" ph="..." />
-                <marker date="1479855376000" expanded="true" signature="204:5518" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
-                <marker date="1479855376000" expanded="true" signature="318:5516" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="772:1098" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="1108:1461" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
-                <marker date="1479855376000" expanded="true" signature="1506:1782" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="1792:1939" ph="/// LoadContent will be called once per game and is the place to load ... " />
-                <marker date="1479855376000" expanded="true" signature="1985:2591" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="2601:2754" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
-                <marker date="1479855376000" expanded="true" signature="2802:2886" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="2896:3155" ph="/// Allows the game to run logic such as updating the world, ... " />
-                <marker date="1479855376000" expanded="true" signature="3213:4868" ph="{...}" />
-                <marker date="1479855376000" expanded="true" signature="4878:5056" ph="/// This is called when the game should draw itself. ... " />
-                <marker date="1479855376000" expanded="true" signature="5112:5510" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+                <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+                <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+                <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+                <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+                <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+                <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+                <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+                <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,8 +49,8 @@
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <marker date="1479835472000" expanded="true" signature="38:384" ph="{...}" />
                 <marker date="1479835472000" expanded="true" signature="45:101" ph="/// The main class. ... " />
@@ -65,30 +65,29 @@
       <file leaf-file-name="Explosion.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Explosion.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1740">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="585">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
-                <marker date="1479838823000" expanded="true" signature="6:196" ph="..." />
-                <marker date="1479838823000" expanded="true" signature="221:5095" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
-                <marker date="1479838823000" expanded="true" signature="317:5093" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="332:1084" ph="Fields" />
-                <marker date="1479838823000" expanded="true" signature="588:704" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
-                <marker date="1479838823000" expanded="true" signature="1094:2065" ph="Constructors" />
-                <marker date="1479838823000" expanded="true" signature="1124:1438" ph="/// Constructs a new explosion object ... " />
-                <marker date="1479838823000" expanded="true" signature="1494:2045" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="2075:2320" ph="Properties" />
-                <marker date="1479838823000" expanded="true" signature="2103:2216" ph="/// Gets whether or not the explosion animation is currently playing ... " />
-                <marker date="1479838823000" expanded="true" signature="2330:4552" ph="Public methods" />
-                <marker date="1479838823000" expanded="true" signature="2362:2552" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
-                <marker date="1479838823000" expanded="true" signature="2598:3427" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="3437:3630" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
-                <marker date="1479838823000" expanded="true" signature="3680:3839" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="3849:4108" ph="/// Starts playing the animation for the explosion ... " />
-                <marker date="1479838823000" expanded="true" signature="4147:4532" ph="{...}" />
-                <marker date="1479838823000" expanded="true" signature="4562:5087" ph="Private methods" />
-                <marker date="1479838823000" expanded="true" signature="4595:4776" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
-                <marker date="1479838823000" expanded="true" signature="4841:5067" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="6:196" ph="..." />
+                <marker date="1479871540000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
+                <marker date="1479871540000" expanded="true" signature="317:5029" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="332:1020" ph="Fields" />
+                <marker date="1479871540000" expanded="true" signature="524:640" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
+                <marker date="1479871540000" expanded="true" signature="1030:2001" ph="Constructors" />
+                <marker date="1479871540000" expanded="true" signature="1060:1374" ph="/// Constructs a new explosion object ... " />
+                <marker date="1479871540000" expanded="true" signature="1430:1981" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="2011:2256" ph="Properties" />
+                <marker date="1479871540000" expanded="true" signature="2039:2152" ph="/// Gets whether or not the explosion animation is currently playing ... " />
+                <marker date="1479871540000" expanded="true" signature="2266:4488" ph="Public methods" />
+                <marker date="1479871540000" expanded="true" signature="2298:2488" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
+                <marker date="1479871540000" expanded="true" signature="2534:3363" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="3373:3566" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
+                <marker date="1479871540000" expanded="true" signature="3616:3775" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="3785:4044" ph="/// Starts playing the animation for the explosion ... " />
+                <marker date="1479871540000" expanded="true" signature="4083:4468" ph="{...}" />
+                <marker date="1479871540000" expanded="true" signature="4498:5023" ph="Private methods" />
+                <marker date="1479871540000" expanded="true" signature="4531:4712" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
+                <marker date="1479871540000" expanded="true" signature="4777:5003" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -100,23 +99,23 @@
             <state relative-caret-position="915">
               <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
               <folding>
-                <marker date="1479838842000" expanded="true" signature="6:263" ph="..." />
-                <marker date="1479838842000" expanded="true" signature="288:3532" ph="{...}" />
-                <marker date="1479838842000" expanded="true" signature="305:3530" ph="{...}" />
-                <marker date="1479838842000" expanded="true" signature="320:524" ph="Fields" />
-                <marker date="1479838842000" expanded="true" signature="534:1208" ph="Constructors" />
-                <marker date="1479838842000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
-                <marker date="1479838842000" expanded="true" signature="902:1188" ph="{...}" />
-                <marker date="1479838842000" expanded="true" signature="1218:1873" ph="Properties" />
-                <marker date="1479838842000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
-                <marker date="1479838842000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
-                <marker date="1479838842000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
-                <marker date="1479838842000" expanded="true" signature="1883:3137" ph="Private properties" />
-                <marker date="1479838842000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
-                <marker date="1479838842000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
-                <marker date="1479838842000" expanded="true" signature="3147:3524" ph="Public methods" />
-                <marker date="1479838842000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
-                <marker date="1479838842000" expanded="true" signature="3362:3504" ph="{...}" />
+                <marker date="1479870112000" expanded="true" signature="6:263" ph="..." />
+                <marker date="1479870112000" expanded="true" signature="288:3532" ph="{...}" />
+                <marker date="1479870112000" expanded="true" signature="305:3530" ph="{...}" />
+                <marker date="1479870112000" expanded="true" signature="320:524" ph="Fields" />
+                <marker date="1479870112000" expanded="true" signature="534:1208" ph="Constructors" />
+                <marker date="1479870112000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
+                <marker date="1479870112000" expanded="true" signature="902:1188" ph="{...}" />
+                <marker date="1479870112000" expanded="true" signature="1218:1873" ph="Properties" />
+                <marker date="1479870112000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
+                <marker date="1479870112000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
+                <marker date="1479870112000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
+                <marker date="1479870112000" expanded="true" signature="1883:3137" ph="Private properties" />
+                <marker date="1479870112000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
+                <marker date="1479870112000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
+                <marker date="1479870112000" expanded="true" signature="3147:3524" ph="Public methods" />
+                <marker date="1479870112000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
+                <marker date="1479870112000" expanded="true" signature="3362:3504" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -130,10 +129,10 @@
         <option value="$PROJECT_DIR$/../../../../../Day_25_MiningBears/Explosion.cs" />
         <option value="$PROJECT_DIR$/../../../../../Day_25_MiningBears/TeddyBear.cs" />
         <option value="$PROJECT_DIR$/../../MiningTeddies/TeddyBear.cs" />
-        <option value="$PROJECT_DIR$/../../MiningTeddies/Explosion.cs" />
         <option value="$PROJECT_DIR$/../../MiningTeddies/Mine.cs" />
         <option value="$PROJECT_DIR$/../../MiningTeddies/MiningTeddies.csproj" />
         <option value="$PROJECT_DIR$/../../MiningTeddies/Program.cs" />
+        <option value="$PROJECT_DIR$/../../MiningTeddies/Explosion.cs" />
         <option value="$PROJECT_DIR$/../../MiningTeddies/Game1.cs" />
       </list>
     </option>
@@ -177,50 +176,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MiningTeddies (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiningTeddies" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiningTeddies (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiningTeddies" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Content" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiningTeddies (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiningTeddies" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Content" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphics" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,27 +231,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20421393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.284041" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39970717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.284041" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21231766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39970717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -304,158 +259,74 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479855376000" expanded="true" signature="6:179" ph="..." />
-            <marker date="1479855376000" expanded="true" signature="204:5518" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
-            <marker date="1479855376000" expanded="true" signature="318:5516" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="772:1098" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="1108:1461" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
-            <marker date="1479855376000" expanded="true" signature="1506:1782" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="1792:1939" ph="/// LoadContent will be called once per game and is the place to load ... " />
-            <marker date="1479855376000" expanded="true" signature="1985:2591" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="2601:2754" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
-            <marker date="1479855376000" expanded="true" signature="2802:2886" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="2896:3155" ph="/// Allows the game to run logic such as updating the world, ... " />
-            <marker date="1479855376000" expanded="true" signature="3213:4868" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="4878:5056" ph="/// This is called when the game should draw itself. ... " />
-            <marker date="1479855376000" expanded="true" signature="5112:5510" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+            <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+            <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/TeddyBear.cs">
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Explosion.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Mine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Content/Content.mgcb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/TeddyBear.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Explosion.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="164" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Mine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/MiningTeddies.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="111" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/TeddyBear.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <marker date="1479838800000" expanded="true" signature="6:233" ph="..." />
-            <marker date="1479838800000" expanded="true" signature="258:5594" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="265:318" ph="/// A teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="338:5592" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="353:622" ph="Fields" />
-            <marker date="1479838800000" expanded="true" signature="632:1433" ph="Constructors" />
-            <marker date="1479838800000" expanded="true" signature="662:972" ph="///  Constructs a teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="1047:1413" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="1443:2116" ph="Properties" />
-            <marker date="1479838800000" expanded="true" signature="1471:1555" ph="/// Gets the location of the teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="1664:1760" ph="/// Gets the collision rectangle for the teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="1876:1978" ph="/// Gets and sets whether or not the teddy bear is active ... " />
-            <marker date="1479838800000" expanded="true" signature="2126:3392" ph="Private properties" />
-            <marker date="1479838800000" expanded="true" signature="2162:2262" ph="/// Sets the x location of the center of the teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="2770:2870" ph="/// Sets the y location of the center of the teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="3402:4331" ph="Public methods" />
-            <marker date="1479838800000" expanded="true" signature="3433:3591" ph="/// Updates the teddy bear's location, bouncing if necessary ... " />
-            <marker date="1479838800000" expanded="true" signature="3637:3970" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="3980:4119" ph="/// Draws the teddy bear ... " />
-            <marker date="1479838800000" expanded="true" signature="4169:4311" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="4341:5586" ph="Private methods" />
-            <marker date="1479838800000" expanded="true" signature="4374:4496" ph="/// Bounces the teddy bear off the top and bottom window borders if necessary ... " />
-            <marker date="1479838800000" expanded="true" signature="4535:4967" ph="{...}" />
-            <marker date="1479838800000" expanded="true" signature="4976:5098" ph="/// Bounces the teddy bear off the left and right window borders if necessary ... " />
-            <marker date="1479838800000" expanded="true" signature="5137:5566" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="38:384" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="45:101" ph="/// The main class. ... " />
+            <marker date="1479835472000" expanded="true" signature="133:382" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="148:238" ph="/// The main entry point for the application. ... " />
+            <marker date="1479835472000" expanded="true" signature="285:376" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Explosion.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1740">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="585">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
           <folding>
-            <marker date="1479838823000" expanded="true" signature="6:196" ph="..." />
-            <marker date="1479838823000" expanded="true" signature="221:5095" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
-            <marker date="1479838823000" expanded="true" signature="317:5093" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="332:1084" ph="Fields" />
-            <marker date="1479838823000" expanded="true" signature="588:704" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
-            <marker date="1479838823000" expanded="true" signature="1094:2065" ph="Constructors" />
-            <marker date="1479838823000" expanded="true" signature="1124:1438" ph="/// Constructs a new explosion object ... " />
-            <marker date="1479838823000" expanded="true" signature="1494:2045" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="2075:2320" ph="Properties" />
-            <marker date="1479838823000" expanded="true" signature="2103:2216" ph="/// Gets whether or not the explosion animation is currently playing ... " />
-            <marker date="1479838823000" expanded="true" signature="2330:4552" ph="Public methods" />
-            <marker date="1479838823000" expanded="true" signature="2362:2552" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
-            <marker date="1479838823000" expanded="true" signature="2598:3427" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="3437:3630" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
-            <marker date="1479838823000" expanded="true" signature="3680:3839" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="3849:4108" ph="/// Starts playing the animation for the explosion ... " />
-            <marker date="1479838823000" expanded="true" signature="4147:4532" ph="{...}" />
-            <marker date="1479838823000" expanded="true" signature="4562:5087" ph="Private methods" />
-            <marker date="1479838823000" expanded="true" signature="4595:4776" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
-            <marker date="1479838823000" expanded="true" signature="4841:5067" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="6:196" ph="..." />
+            <marker date="1479871540000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="317:5029" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="332:1020" ph="Fields" />
+            <marker date="1479871540000" expanded="true" signature="524:640" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
+            <marker date="1479871540000" expanded="true" signature="1030:2001" ph="Constructors" />
+            <marker date="1479871540000" expanded="true" signature="1060:1374" ph="/// Constructs a new explosion object ... " />
+            <marker date="1479871540000" expanded="true" signature="1430:1981" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="2011:2256" ph="Properties" />
+            <marker date="1479871540000" expanded="true" signature="2039:2152" ph="/// Gets whether or not the explosion animation is currently playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2266:4488" ph="Public methods" />
+            <marker date="1479871540000" expanded="true" signature="2298:2488" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2534:3363" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3373:3566" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="3616:3775" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3785:4044" ph="/// Starts playing the animation for the explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="4083:4468" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="4498:5023" ph="Private methods" />
+            <marker date="1479871540000" expanded="true" signature="4531:4712" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
+            <marker date="1479871540000" expanded="true" signature="4777:5003" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -465,23 +336,140 @@
         <state relative-caret-position="915">
           <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
           <folding>
-            <marker date="1479838842000" expanded="true" signature="6:263" ph="..." />
-            <marker date="1479838842000" expanded="true" signature="288:3532" ph="{...}" />
-            <marker date="1479838842000" expanded="true" signature="305:3530" ph="{...}" />
-            <marker date="1479838842000" expanded="true" signature="320:524" ph="Fields" />
-            <marker date="1479838842000" expanded="true" signature="534:1208" ph="Constructors" />
-            <marker date="1479838842000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
-            <marker date="1479838842000" expanded="true" signature="902:1188" ph="{...}" />
-            <marker date="1479838842000" expanded="true" signature="1218:1873" ph="Properties" />
-            <marker date="1479838842000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
-            <marker date="1479838842000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
-            <marker date="1479838842000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
-            <marker date="1479838842000" expanded="true" signature="1883:3137" ph="Private properties" />
-            <marker date="1479838842000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
-            <marker date="1479838842000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
-            <marker date="1479838842000" expanded="true" signature="3147:3524" ph="Public methods" />
-            <marker date="1479838842000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
-            <marker date="1479838842000" expanded="true" signature="3362:3504" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="6:263" ph="..." />
+            <marker date="1479870112000" expanded="true" signature="288:3532" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="305:3530" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="320:524" ph="Fields" />
+            <marker date="1479870112000" expanded="true" signature="534:1208" ph="Constructors" />
+            <marker date="1479870112000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
+            <marker date="1479870112000" expanded="true" signature="902:1188" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="1218:1873" ph="Properties" />
+            <marker date="1479870112000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
+            <marker date="1479870112000" expanded="true" signature="1883:3137" ph="Private properties" />
+            <marker date="1479870112000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3147:3524" ph="Public methods" />
+            <marker date="1479870112000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3362:3504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+            <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+            <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1479835472000" expanded="true" signature="38:384" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="45:101" ph="/// The main class. ... " />
+            <marker date="1479835472000" expanded="true" signature="133:382" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="148:238" ph="/// The main entry point for the application. ... " />
+            <marker date="1479835472000" expanded="true" signature="285:376" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Explosion.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <marker date="1479871540000" expanded="true" signature="6:196" ph="..." />
+            <marker date="1479871540000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="317:5029" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="332:1020" ph="Fields" />
+            <marker date="1479871540000" expanded="true" signature="524:640" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
+            <marker date="1479871540000" expanded="true" signature="1030:2001" ph="Constructors" />
+            <marker date="1479871540000" expanded="true" signature="1060:1374" ph="/// Constructs a new explosion object ... " />
+            <marker date="1479871540000" expanded="true" signature="1430:1981" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="2011:2256" ph="Properties" />
+            <marker date="1479871540000" expanded="true" signature="2039:2152" ph="/// Gets whether or not the explosion animation is currently playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2266:4488" ph="Public methods" />
+            <marker date="1479871540000" expanded="true" signature="2298:2488" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2534:3363" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3373:3566" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="3616:3775" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3785:4044" ph="/// Starts playing the animation for the explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="4083:4468" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="4498:5023" ph="Private methods" />
+            <marker date="1479871540000" expanded="true" signature="4531:4712" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
+            <marker date="1479871540000" expanded="true" signature="4777:5003" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Mine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+          <folding>
+            <marker date="1479870112000" expanded="true" signature="6:263" ph="..." />
+            <marker date="1479870112000" expanded="true" signature="288:3532" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="305:3530" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="320:524" ph="Fields" />
+            <marker date="1479870112000" expanded="true" signature="534:1208" ph="Constructors" />
+            <marker date="1479870112000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
+            <marker date="1479870112000" expanded="true" signature="902:1188" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="1218:1873" ph="Properties" />
+            <marker date="1479870112000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
+            <marker date="1479870112000" expanded="true" signature="1883:3137" ph="Private properties" />
+            <marker date="1479870112000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3147:3524" ph="Public methods" />
+            <marker date="1479870112000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3362:3504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+            <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+            <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -500,26 +488,201 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Explosion.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1479871540000" expanded="true" signature="6:196" ph="..." />
+            <marker date="1479871540000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="317:5029" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="332:1020" ph="Fields" />
+            <marker date="1479871540000" expanded="true" signature="524:640" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
+            <marker date="1479871540000" expanded="true" signature="1030:2001" ph="Constructors" />
+            <marker date="1479871540000" expanded="true" signature="1060:1374" ph="/// Constructs a new explosion object ... " />
+            <marker date="1479871540000" expanded="true" signature="1430:1981" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="2011:2256" ph="Properties" />
+            <marker date="1479871540000" expanded="true" signature="2039:2152" ph="/// Gets whether or not the explosion animation is currently playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2266:4488" ph="Public methods" />
+            <marker date="1479871540000" expanded="true" signature="2298:2488" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2534:3363" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3373:3566" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="3616:3775" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3785:4044" ph="/// Starts playing the animation for the explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="4083:4468" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="4498:5023" ph="Private methods" />
+            <marker date="1479871540000" expanded="true" signature="4531:4712" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
+            <marker date="1479871540000" expanded="true" signature="4777:5003" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Mine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+          <folding>
+            <marker date="1479870112000" expanded="true" signature="6:263" ph="..." />
+            <marker date="1479870112000" expanded="true" signature="288:3532" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="305:3530" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="320:524" ph="Fields" />
+            <marker date="1479870112000" expanded="true" signature="534:1208" ph="Constructors" />
+            <marker date="1479870112000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
+            <marker date="1479870112000" expanded="true" signature="902:1188" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="1218:1873" ph="Properties" />
+            <marker date="1479870112000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
+            <marker date="1479870112000" expanded="true" signature="1883:3137" ph="Private properties" />
+            <marker date="1479870112000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3147:3524" ph="Public methods" />
+            <marker date="1479870112000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3362:3504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="92" column="91" selection-start-line="92" selection-start-column="91" selection-end-line="92" selection-end-column="91" />
+        <state relative-caret-position="735">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <marker date="1479855376000" expanded="true" signature="6:179" ph="..." />
-            <marker date="1479855376000" expanded="true" signature="204:5518" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
-            <marker date="1479855376000" expanded="true" signature="318:5516" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="772:1098" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="1108:1461" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
-            <marker date="1479855376000" expanded="true" signature="1506:1782" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="1792:1939" ph="/// LoadContent will be called once per game and is the place to load ... " />
-            <marker date="1479855376000" expanded="true" signature="1985:2591" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="2601:2754" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
-            <marker date="1479855376000" expanded="true" signature="2802:2886" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="2896:3155" ph="/// Allows the game to run logic such as updating the world, ... " />
-            <marker date="1479855376000" expanded="true" signature="3213:4868" ph="{...}" />
-            <marker date="1479855376000" expanded="true" signature="4878:5056" ph="/// This is called when the game should draw itself. ... " />
-            <marker date="1479855376000" expanded="true" signature="5112:5510" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+            <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+            <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/TeddyBear.cs" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Explosion.cs" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Mine.cs" />
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Content/Content.mgcb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/TeddyBear.cs" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Explosion.cs" />
+    <entry file="file://$PROJECT_DIR$/../../../../../Day_25_MiningBears/Mine.cs" />
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/MiningTeddies.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="111" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/TeddyBear.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1479835472000" expanded="true" signature="38:384" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="45:101" ph="/// The main class. ... " />
+            <marker date="1479835472000" expanded="true" signature="133:382" ph="{...}" />
+            <marker date="1479835472000" expanded="true" signature="148:238" ph="/// The main entry point for the application. ... " />
+            <marker date="1479835472000" expanded="true" signature="285:376" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Mine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+          <folding>
+            <marker date="1479870112000" expanded="true" signature="6:263" ph="..." />
+            <marker date="1479870112000" expanded="true" signature="288:3532" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="305:3530" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="320:524" ph="Fields" />
+            <marker date="1479870112000" expanded="true" signature="534:1208" ph="Constructors" />
+            <marker date="1479870112000" expanded="true" signature="564:850" ph="///  Constructs a mine ... " />
+            <marker date="1479870112000" expanded="true" signature="902:1188" ph="{...}" />
+            <marker date="1479870112000" expanded="true" signature="1218:1873" ph="Properties" />
+            <marker date="1479870112000" expanded="true" signature="1246:1324" ph="/// Gets the location of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1433:1523" ph="/// Gets the collision rectangle for the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="1639:1735" ph="/// Gets and sets whether or not the mine is active ... " />
+            <marker date="1479870112000" expanded="true" signature="1883:3137" ph="Private properties" />
+            <marker date="1479870112000" expanded="true" signature="1919:2013" ph="/// Sets the x location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="2521:2615" ph="/// Sets the y location of the center of the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3147:3524" ph="Public methods" />
+            <marker date="1479870112000" expanded="true" signature="3179:3312" ph="/// Draws the mine ... " />
+            <marker date="1479870112000" expanded="true" signature="3362:3504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Explosion.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <marker date="1479871540000" expanded="true" signature="6:196" ph="..." />
+            <marker date="1479871540000" expanded="true" signature="228:290" ph="/// An animated explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="317:5029" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="332:1020" ph="Fields" />
+            <marker date="1479871540000" expanded="true" signature="524:640" ph="/* hard-coded animation info. There are better ways to do this, ... */" />
+            <marker date="1479871540000" expanded="true" signature="1030:2001" ph="Constructors" />
+            <marker date="1479871540000" expanded="true" signature="1060:1374" ph="/// Constructs a new explosion object ... " />
+            <marker date="1479871540000" expanded="true" signature="1430:1981" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="2011:2256" ph="Properties" />
+            <marker date="1479871540000" expanded="true" signature="2039:2152" ph="/// Gets whether or not the explosion animation is currently playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2266:4488" ph="Public methods" />
+            <marker date="1479871540000" expanded="true" signature="2298:2488" ph="/// Updates the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="2534:3363" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3373:3566" ph="/// Draws the explosion. This only has an effect if the explosion animation is playing ... " />
+            <marker date="1479871540000" expanded="true" signature="3616:3775" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="3785:4044" ph="/// Starts playing the animation for the explosion ... " />
+            <marker date="1479871540000" expanded="true" signature="4083:4468" ph="{...}" />
+            <marker date="1479871540000" expanded="true" signature="4498:5023" ph="Private methods" />
+            <marker date="1479871540000" expanded="true" signature="4531:4712" ph="/// Sets the source rectangle location to correspond with the given frame ... " />
+            <marker date="1479871540000" expanded="true" signature="4777:5003" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../MiningTeddies/Game1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
+          <folding>
+            <marker date="1479896593000" expanded="true" signature="6:179" ph="..." />
+            <marker date="1479896593000" expanded="true" signature="204:6518" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="211:288" ph="/// This is the main type for your game. ... " />
+            <marker date="1479896593000" expanded="true" signature="318:6516" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="817:1143" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1153:1506" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1479896593000" expanded="true" signature="1551:1878" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="1888:2035" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1479896593000" expanded="true" signature="2081:2687" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2697:2850" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1479896593000" expanded="true" signature="2898:2982" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="2992:3251" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1479896593000" expanded="true" signature="3309:5762" ph="{...}" />
+            <marker date="1479896593000" expanded="true" signature="5772:5950" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1479896593000" expanded="true" signature="6006:6510" ph="{...}" />
           </folding>
         </state>
       </provider>
