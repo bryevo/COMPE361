@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -67,6 +68,10 @@ namespace Blockjuck361
             Content.RootDirectory = "Content";
 
             // set resolution and show mouse
+            graphics.PreferredBackBufferWidth = WindowWidth;
+            graphics.PreferredBackBufferHeight = WindowHeight;
+
+            IsMouseVisible = true;
 
         }
 
@@ -93,19 +98,35 @@ namespace Blockjuck361
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // create and shuffle deck
-
+            deck = new Deck(Content, WindowHeight / 2, WindowWidth / 2);
+            deck.Shuffle();
 
             // first player card
-
+            Card card1Player = deck.TakeTopCard();
+            card1Player.FlipOver();
+            card1Player.X = HorizontalCardOffset;
+            card1Player.Y = TopCardOffset;
+            playerHand.Add(card1Player);
 
             // first dealer card
-
+            Card card1Dealer = deck.TakeTopCard();
+            card1Dealer.X = WindowWidth - HorizontalCardOffset;
+            card1Dealer.Y = TopCardOffset;
+            dealerHand.Add(card1Dealer);
 
             // second player card
-
+            Card card2Player = deck.TakeTopCard();
+            card2Player.FlipOver();
+            card2Player.X = HorizontalCardOffset;
+            card2Player.Y = TopCardOffset+VerticalCardSpacing;
+            playerHand.Add(card2Player);
 
             // second dealer card
-
+            Card card2Dealer = deck.TakeTopCard();
+            card2Dealer.FlipOver();
+            card2Dealer.X = WindowWidth - HorizontalCardOffset;
+            card2Dealer.Y = TopCardOffset + VerticalCardSpacing;
+            dealerHand.Add(card2Dealer);
 
             // load sprite font, create message for player score and add to list
             messageFont = Content.Load<SpriteFont>(@"fonts\Arial24");
@@ -118,9 +139,14 @@ namespace Blockjuck361
             quitButtonSprite = Content.Load<Texture2D>(@"graphics\quitbutton");
 
             // create hit button and add to list
-
+            Vector2 centerHit = new Vector2(HorizontalMenuButtonOffset, VeryicalMenuButtonSpacing);
+            MenuButton hitButton = new MenuButton(Content.Load<Texture2D>(@"graphics/hitbutton"), centerHit, GameState.PlayerHitting);
+            menuButtons.Add(hitButton);
 
             // create stand button and add to list
+            Vector2 centerStand = new Vector2(HorizontalMenuButtonOffset, VeryicalMenuButtonSpacing+VeryicalMenuButtonSpacing);
+            MenuButton standButton = new MenuButton(Content.Load<Texture2D>(@"graphics/standbutton"), centerStand, GameState.WaitingForDealer);
+            menuButtons.Add(standButton);
 
         }
 
@@ -145,10 +171,103 @@ namespace Blockjuck361
 
 
             // update menu buttons as appropriate
+            if (currentState == GameState.WaitingForPlayer ||
+                currentState == GameState.DisplayingHandResults)
+            {
+                foreach(MenuButton btn in menuButtons)
+                {
+                    btn.Update(Mouse.GetState());
+                }
+            }
 
 
             // game state-specific processing
 
+            switch (currentState)
+            {
+                case GameState.PlayerHitting:
+                    Card cardPlayer = deck.TakeTopCard();
+                    cardPlayer.FlipOver();
+                    cardPlayer.X = HorizontalCardOffset;
+                    cardPlayer.Y = playerHand.Count * TopCardOffset + VerticalCardSpacing;
+                    playerHand.Add(cardPlayer);
+                    playerScoreMessage.Text = ScoreMessagePrefix + GetBlockjuckScore(playerHand).ToString();
+                    currentState = GameState.WaitingForDealer;
+                    playerHit = true;
+                    break;
+
+                case GameState.WaitingForDealer:
+                    if (GetBlockjuckScore(dealerHand) <= 16)
+                    {
+                        currentState = GameState.DealerHitting;
+                    }
+                    else
+                    {
+                        currentState = GameState.CheckingHandOver;
+                    }
+                    break;
+
+                case GameState.DealerHitting:
+                    Card cardDealer = deck.TakeTopCard();
+                    cardDealer.X = WindowWidth - HorizontalCardOffset;
+                    cardDealer.Y = dealerHand.Count * TopCardOffset + VerticalCardSpacing;
+                    cardDealer.FlipOver();
+                    dealerHand.Add(cardDealer);
+                    currentState = GameState.CheckingHandOver;
+                    dealerHit = true;
+                    break;
+
+                case GameState.CheckingHandOver:
+                    if (GetBlockjuckScore(playerHand) >= MaxHandValue ||
+                        GetBlockjuckScore(dealerHand) >= MaxHandValue ||
+                        (!dealerHit && !playerHit))
+                    {
+                        string winnerText;
+                        if (GetBlockjuckScore(playerHand) == GetBlockjuckScore(dealerHand))
+                        {
+                            winnerText = "Tie!";
+                        }
+                        else if (GetBlockjuckScore(playerHand) <= MaxHandValue && GetBlockjuckScore(dealerHand) > MaxHandValue ||
+                                 GetBlockjuckScore(playerHand) <= MaxHandValue && GetBlockjuckScore(playerHand) > GetBlockjuckScore(dealerHand))
+                        {
+                            winnerText = "Player Won!";
+                        }
+                        else
+                        {
+                            winnerText = "Dealer Won!";
+                        }
+
+                        winnerMessage = new Message(winnerText, messageFont, winnerMessageLocation);
+                        messages.Add(winnerMessage);
+
+                        dealerHand[0].FlipOver();
+
+                        dealerScoreMessage = new Message(ScoreMessagePrefix + GetBlockjuckScore(dealerHand).ToString(),
+                            messageFont, new Vector2(WindowWidth - HorizontalMessageOffset, ScoreMessageTopOffset));
+                        messages.Add(dealerScoreMessage);
+
+                        menuButtons.Clear();
+                        Vector2 centerQuit = new Vector2(HorizontalMenuButtonOffset, WindowHeight - VeryicalMenuButtonSpacing);
+                        MenuButton quitButton = new MenuButton(Content.Load<Texture2D>(@"graphics/quitbutton"), centerQuit, GameState.Exiting);
+                        menuButtons.Add(quitButton);
+
+                        currentState = GameState.DisplayingHandResults;
+
+                    }
+                    else
+                    {
+                        currentState = GameState.WaitingForPlayer;
+                        dealerHit = false;
+                        playerHit = false;
+                    }
+                    break;
+
+                case GameState.Exiting:
+
+                    this.Exit();
+                    break;
+
+            }
 
             base.Update(gameTime);
         }
@@ -164,13 +283,27 @@ namespace Blockjuck361
             spriteBatch.Begin();
 
             // draw hands
+            for(int i = 0; i < playerHand.Count; i++)
+            {
+                playerHand[i].Draw(spriteBatch);
+            }
 
+            for(int i = 0; i < dealerHand.Count; i++)
+            {
+                dealerHand[i].Draw(spriteBatch);
+            }
 
             // draw messages
-
+            for(int i = 0; i < messages.Count; i++)
+            {
+                messages[i].Draw(spriteBatch);
+            }
 
             // draw menu buttons
-
+            for(int i = 0; i < menuButtons.Count; i++)
+            {
+                menuButtons[i].Draw(spriteBatch);
+            }
 
             spriteBatch.End();
 
@@ -270,5 +403,9 @@ namespace Blockjuck361
         {
             currentState = newState;
         }
+
+
+
     }
 }
+
