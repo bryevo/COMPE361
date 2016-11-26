@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace PA7___BlockJuck361
+namespace Blockjuck361
 {
     /// <summary>
     /// This is the main type for your game.

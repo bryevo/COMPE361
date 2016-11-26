@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PA7___BlockJuck361
+namespace Blockjuck361
 {
     /// <summary>
     /// The main class.

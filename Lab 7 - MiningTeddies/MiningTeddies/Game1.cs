@@ -92,7 +92,7 @@ namespace MiningTeddies
 
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-                Mine mine = new Mine(mineSprite, Mouse.GetState().X*2, Mouse.GetState().Y*2);
+                Mine mine = new Mine(mineSprite, Mouse.GetState().X, Mouse.GetState().Y);
                 mine.Active = true;
                 mineList.Add(mine);
             }

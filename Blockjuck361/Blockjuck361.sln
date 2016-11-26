@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PA7 - BlockJuck361", "PA7 - BlockJuck361\PA7 - BlockJuck361.csproj", "{C057B9DF-36D7-4892-8D2F-0563B399FA81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blockjuck361", "Blockjuck361\Blockjuck361.csproj", "{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C057B9DF-36D7-4892-8D2F-0563B399FA81}.Debug|x86.ActiveCfg = Debug|x86
-		{C057B9DF-36D7-4892-8D2F-0563B399FA81}.Debug|x86.Build.0 = Debug|x86
-		{C057B9DF-36D7-4892-8D2F-0563B399FA81}.Release|x86.ActiveCfg = Release|x86
-		{C057B9DF-36D7-4892-8D2F-0563B399FA81}.Release|x86.Build.0 = Release|x86
+		{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}.Debug|x86.ActiveCfg = Debug|x86
+		{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}.Debug|x86.Build.0 = Debug|x86
+		{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}.Release|x86.ActiveCfg = Release|x86
+		{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

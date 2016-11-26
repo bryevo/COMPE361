@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C057B9DF-36D7-4892-8D2F-0563B399FA81}</ProjectGuid>
+    <ProjectGuid>{D70701E3-E502-4448-9A47-F0FC7BF7AC1B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PA7___BlockJuck361</RootNamespace>
-    <AssemblyName>PA7 - BlockJuck361</AssemblyName>
+    <RootNamespace>Blockjuck361</RootNamespace>
+    <AssemblyName>Blockjuck361</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
