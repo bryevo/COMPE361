@@ -14,6 +14,8 @@ namespace MiningTeddies
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        private MouseState lastMouseState, currentMouseState;
         private Texture2D explosionSprite, mineSprite;
         private List<Texture2D> textureList;
         private List<TeddyBear> bearList;
@@ -90,29 +92,32 @@ namespace MiningTeddies
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            lastMouseState = currentMouseState;
+            currentMouseState = Mouse.GetState();
+
+            if (lastMouseState.LeftButton == ButtonState.Released && currentMouseState.LeftButton == ButtonState.Pressed)
             {
                 Mine mine = new Mine(mineSprite, Mouse.GetState().X, Mouse.GetState().Y);
                 mine.Active = true;
                 mineList.Add(mine);
             }
 
-            int randtime = rand.Next(1000,3001);
+            int randtime = rand.Next(1000, 3001);
             timer += gameTime.ElapsedGameTime.Milliseconds; // Increment the timer by the elapsed game time.
 
             Vector2 randVect = new Vector2();
             randText = rand.Next(0, textureList.Count);
             randVect.X = (float)rand.Next(-5, 5) / 10;
-            randVect.Y = (float) rand.Next(-5, 5) / 10;
-            randX = rand.Next(0,graphics.PreferredBackBufferWidth-1);    //random pixel in the windowWidth
-            randY = rand.Next(0, graphics.PreferredBackBufferHeight-1);    //random pixel in the windowHeight
+            randVect.Y = (float)rand.Next(-5, 5) / 10;
+            randX = rand.Next(0, graphics.PreferredBackBufferWidth - 1);    //random pixel in the windowWidth
+            randY = rand.Next(0, graphics.PreferredBackBufferHeight - 1);    //random pixel in the windowHeight
 
             if (timer >= randtime) // Check to see if X amount of seconds has passed.
             {
                 while (randVect.X.Equals(0) && randVect.Y.Equals(0))
                 {
                     randVect.X = (float)rand.Next(-5, 5) / 10;
-                    randVect.Y = (float) rand.Next(-5, 5) / 10;
+                    randVect.Y = (float)rand.Next(-5, 5) / 10;
                 }
                 bearList.Add(new TeddyBear(textureList[randText], randVect, randX, randY));
                 timer = 0; // Reset the timer.
@@ -122,19 +127,19 @@ namespace MiningTeddies
             {
                 foreach (Mine mine in mineList)
                 {
-                        if (bear.CollisionRectangle.Intersects(mine.CollisionRectangle) && mine.Active && bear.Active)
-                        {
-                            explosionList.Add(new Explosion(explosionSprite, mine.Location.X, mine.Location.Y));
-                            bear.Active = false;
-                            mine.Active = false;
-                            foreach (Explosion explosion in explosionList)
-                                explosion.Play(mine.Location.X, mine.Location.Y);
-                        }
+                    if (bear.CollisionRectangle.Intersects(mine.CollisionRectangle) && mine.Active && bear.Active)
+                    {
+                        explosionList.Add(new Explosion(explosionSprite, mine.Location.X, mine.Location.Y));
+                        bear.Active = false;
+                        mine.Active = false;
+                        foreach (Explosion explosion in explosionList)
+                            explosion.Play(mine.Location.X, mine.Location.Y);
+                    }
                 }
                 bear.Update(gameTime);
             }
             foreach (Explosion explosion in explosionList)
-                if(explosion.Playing)
+                if (explosion.Playing)
                     explosion.Update(gameTime);
 
             base.Update(gameTime);
@@ -153,12 +158,10 @@ namespace MiningTeddies
             foreach (Explosion explosion in explosionList)
                 explosion.Draw(spriteBatch);
             foreach (Mine mine in mineList)
-                   mine.Draw(spriteBatch);
+                mine.Draw(spriteBatch);
             foreach (TeddyBear bear in bearList)
                 bear.Draw(spriteBatch);
             spriteBatch.End();
-
-
             base.Draw(gameTime);
         }
     }
